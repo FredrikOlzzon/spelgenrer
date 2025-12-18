@@ -153,7 +153,7 @@ personer: [
     },
 
     Natalie: {
-		plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Nintendo Switch 2" ],
+		plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -741,6 +741,14 @@ personer: [
     },
 
     Fyghar: {
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
       alskar: [
         "RPG / CRPG",
         "Monsterfångar-RPG",
@@ -808,6 +816,14 @@ personer: [
     },
 
     Tony: {
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
       alskar: [
         "Looter shooters",
         "RPG / CRPG",
@@ -877,6 +893,14 @@ personer: [
     },
 
     Daniel: {
+		  plattformar: ["Playstation 5", "Xbox Series S|X", "Nintendo Switch", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
       alskar: [
         "FPS / Action (Singel)",
         "Boomer shooters",
@@ -964,6 +988,14 @@ personer: [
       ]
 	},
 Robin: {
+		  plattformar: ["PC", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
   alskar: [
     "FPS / Action (Singel)",
     "Boomer shooters",
@@ -1033,6 +1065,14 @@ Robin: {
       ]
     },
 	Jesper: {
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Nintendo Switch 2" ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
   alskar: [
     "RPG / CRPG",
     "JRPG",
@@ -1104,6 +1144,14 @@ Robin: {
   ]
 },
 Andres: {
+		  plattformar: ["PC", "Playstation 5",  "Nintendo Switch" ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
   alskar: [
     "FPS / Action (Singel)",
     "Boomer shooters",
@@ -1176,6 +1224,14 @@ Andres: {
   ]
 },
 Mattias: {
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
   alskar: [],
   oppen: [],
   undviker: [],
@@ -1183,6 +1239,14 @@ Mattias: {
 },
 
 Jim: {
+		  plattformar: ["PC", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
   alskar: [],
   oppen: [],
   undviker: [],
@@ -1190,6 +1254,14 @@ Jim: {
 },
 
 Emilia: {
+		  plattformar: ["PC", "Nintendo Switch", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
   alskar: [],
   oppen: [],
   undviker: [],
@@ -1197,6 +1269,14 @@ Emilia: {
 },
 
 Arvid: {
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
   alskar: [],
   oppen: [],
   undviker: [],
@@ -1204,6 +1284,14 @@ Arvid: {
 },
 
 Vanessa: {
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
   alskar: [],
   oppen: [],
   undviker: [],
@@ -1211,6 +1299,14 @@ Vanessa: {
 },
 
 Niclas: {
+		  plattformar: ["Playstation 5", "Nintendo Switch", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
   alskar: [],
   oppen: [],
   undviker: [],

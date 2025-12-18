@@ -71,6 +71,14 @@ personer: [
   personerData: {
 
     Fredrik: {
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Nintendo Switch 2" ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
       alskar: [
         "FPS / Action (Singel)",
         "3D Plattformare",
@@ -145,6 +153,14 @@ personer: [
     },
 
     Natalie: {
+		plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Nintendo Switch 2" ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
       alskar: [
         "RPG / CRPG",
         "Open-World / Öppna världar",
@@ -217,6 +233,14 @@ personer: [
     },
 
     Emil: {
+		  plattformar: ["PC", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
       alskar: [
         "FPS / Action (Singel)",
         "Boomer shooters",
@@ -289,6 +313,15 @@ personer: [
     },
 
     Victoria: {
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },	
+	
       alskar: [
         "RPG / CRPG",
         "JRPG",
@@ -369,6 +402,15 @@ personer: [
       ]
     },
 	    Danny: {
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 16,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
+			
       alskar: [
         "FPS / Action (Singel)",
         "Looter shooters",
@@ -439,6 +481,14 @@ personer: [
     },
 
     Odd: {
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
       alskar: [
         "FPS / Action (Singel)",
         "Boomer shooters",
@@ -535,6 +585,14 @@ personer: [
     },
 
     Peter: {
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
       alskar: [
         "Looter shooters",
         "RPG / CRPG",
@@ -605,6 +663,14 @@ personer: [
     },
 
     Oscar: {
+		  plattformar: ["PC", "Xbox Series S|X", "Nintendo Switch", "Nintendo Switch 2" ],
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "Intel ARC B580 12GB",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
       alskar: [
         "FPS / Action (Singel)",
         "3D Plattformare",

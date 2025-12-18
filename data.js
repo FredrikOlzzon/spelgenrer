@@ -1,8 +1,10 @@
 const DATA = {
-  personer: [
-    "Fredrik","Danny","Odd","Natalie","Oscar",
-    "Tony","Victoria","Fyghar","Peter","Emil","Daniel","Robin","Jesper","Andres"
-  ],
+personer: [
+  "Fredrik","Danny","Odd","Natalie","Oscar",
+  "Tony","Victoria","Fyghar","Peter","Emil",
+  "Daniel","Robin","Jesper","Andres",
+  "Mattias","Jim","Emilia","Arvid","Vanessa","Niclas"
+],
 
   genrer: [
     "FPS / Action (Singel)",
@@ -1106,9 +1108,47 @@ Andres: {
   "Match-3 spel",
   "Kortspel / Deckbuilding"
   ]
-}
+},
+Mattias: {
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
+},
 
+Jim: {
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
+},
 
+Emilia: {
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
+},
 
+Arvid: {
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
+},
+
+Vanessa: {
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
+},
+
+Niclas: {
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
   }
+}
 };

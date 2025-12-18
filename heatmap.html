@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Heatmap – Spelpreferenser</title>
+
+<style>
+body {
+  background:#0e0e11;
+  color:#eaeaf0;
+  font-family:Arial,sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+th, td {
+  border:1px solid #2a2a35;
+  padding:6px;
+  text-align:center;
+}
+
+th {
+  background:#18181f;
+  position:sticky;
+  top:0;
+}
+
+.genre {
+  text-align:left;
+  background:#18181f;
+  position:sticky;
+  left:0;
+}
+
+.love { background:#4ade80; color:#000; }
+.open { background:#facc15; color:#000; }
+.avoid { background:#f87171; color:#000; }
+.none { background:#111; }
+
+</style>
+</head>
+<body>
+
+<p><a href="index.html">⬅ Tillbaka</a></p>
+<h1>🔥 Heatmap – Spelpreferenser</h1>
+
+<table id="heatmap"></table>
+
+<script src="data.js"></script>
+<script>
+const personer = Object.keys(DATA.personerData);
+const genrer = new Set();
+
+Object.values(DATA.personerData).forEach(p => {
+  [...p.alskar, ...p.oppen, ...p.undviker].forEach(g => genrer.add(g));
+});
+
+const table = document.getElementById("heatmap");
+const header = document.createElement("tr");
+header.innerHTML = "<th>Genre</th>" + personer.map(p=>`<th>${p}</th>`).join("");
+table.appendChild(header);
+
+[...genrer].sort().forEach(genre => {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td class="genre">${genre}</td>`;
+
+  personer.forEach(person => {
+    const d = DATA.personerData[person];
+    let cls = "none";
+
+    if (d.alskar.includes(genre)) cls="love";
+    else if (d.oppen.includes(genre)) cls="open";
+    else if (d.undviker.includes(genre)) cls="avoid";
+
+    tr.innerHTML += `<td class="${cls}"></td>`;
+  });
+
+  table.appendChild(tr);
+});
+</script>
+
+</body>
+</html>

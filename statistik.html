@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Spelstatistik</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    canvas {
+      max-width: 1100px;
+      margin-bottom: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<p>
+  <a href="index.html">⬅ Personvy</a>
+</p>
+
+<h1>📊 Spelstatistik</h1>
+
+<h2>❤️ Älskade genrer</h2>
+<canvas id="alskarChart"></canvas>
+
+<h2>👍 Öppna för genrer</h2>
+<canvas id="oppenChart"></canvas>
+
+<h2>🚫 Undvikna genrer</h2>
+<canvas id="undvikerChart"></canvas>
+
+<script src="data.js"></script>
+<script>
+  const totalPersoner = Object.keys(DATA.personerData).length;
+
+  /* ===================== */
+  /* RÄKNA GENRER */
+  /* ===================== */
+
+  const genreStats = {};
+
+  Object.values(DATA.personerData).forEach(person => {
+    ["alskar", "oppen", "undviker"].forEach(kategori => {
+      person[kategori].forEach(genre => {
+        if (!genreStats[genre]) {
+          genreStats[genre] = { alskar: 0, oppen: 0, undviker: 0 };
+        }
+        genreStats[genre][kategori]++;
+      });
+    });
+  });
+
+  const labels = Object.keys(genreStats).sort((a, b) => a.localeCompare(b, "sv"));
+
+  function byggData(kategori) {
+    return labels.map(genre => {
+      const antal = genreStats[genre][kategori];
+      const procent = Math.round((antal / totalPersoner) * 100);
+      return {
+        label: `${genre} – ${antal} st (${procent}%)`,
+        value: antal
+      };
+    });
+  }
+
+  /* ===================== */
+  /* GEMENSAM DIAGRAMFUNKTION */
+  /* ===================== */
+
+  function skapaDiagram(canvasId, titel, dataObjekt, färg) {
+    new Chart(document.getElementById(canvasId), {
+      type: "bar",
+      data: {
+        labels: dataObjekt.map(d => d.label),
+        datasets: [{
+          label: titel,
+          data: dataObjekt.map(d => d.value),
+          backgroundColor: färg
+        }]
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        scales: {
+          x: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+  }
+
+  /* ===================== */
+  /* SKAPA ALLA DIAGRAM */
+  /* ===================== */
+
+  skapaDiagram(
+    "alskarChart",
+    "Älskar",
+    byggData("alskar"),
+    "rgba(75, 192, 192, 0.7)"
+  );
+
+  skapaDiagram(
+    "oppenChart",
+    "Öppen för",
+    byggData("oppen"),
+    "rgba(255, 205, 86, 0.7)"
+  );
+
+  skapaDiagram(
+    "undvikerChart",
+    "Undviker",
+    byggData("undviker"),
+    "rgba(255, 99, 132, 0.7)"
+  );
+</script>
+
+</body>
+</html>

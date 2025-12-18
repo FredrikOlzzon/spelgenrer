@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Nördliv – Ej valda genrer</title>
+
+<style>
+:root {
+  --bg:#0e0e11; --panel:#18181f; --text:#eaeaf0;
+  --muted:#a0a0b0; --accent:#e11d48; --border:#2a2a35;
+}
+
+body {
+  margin:0; font-family:system-ui;
+  background:var(--bg); color:var(--text);
+}
+
+header {
+  background:linear-gradient(90deg,#000,#111);
+  border-bottom:1px solid var(--border);
+  padding:20px;
+}
+
+.header-inner {
+  max-width:1300px; margin:auto;
+  display:flex; align-items:center; gap:20px;
+}
+
+header img { height:60px; }
+
+main {
+  max-width:1300px;
+  margin:auto;
+  padding:30px 20px;
+}
+
+.container {
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:30px;
+}
+
+.panel {
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:15px;
+}
+
+button {
+  width:100%;
+  background:#111;
+  color:var(--text);
+  border:1px solid var(--border);
+  padding:10px;
+  border-radius:6px;
+  margin-bottom:6px;
+  cursor:pointer;
+}
+
+button:hover { background:#1f1f2a; }
+
+ul { padding-left:18px; }
+li { color:var(--muted); margin-bottom:4px; }
+
+footer {
+  margin-top:40px;
+  padding:20px;
+  text-align:center;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <img src="Logo_Nerdlife.png">
+    <img src="LOGOTYP-Prototyp-2023-pureLOGO-.png">
+    <h1>Ej valda spelgenrer</h1>
+  </div>
+</header>
+
+<main>
+
+<a href="index.html">⬅ Tillbaka till personvy</a>
+
+<div class="container">
+
+  <div class="panel">
+    <h2>👤 Personer</h2>
+    <div id="personButtons"></div>
+
+    <hr>
+
+    <h2>🎮 Genrer</h2>
+    <div id="genreButtons"></div>
+  </div>
+
+  <div class="panel" id="resultat">
+
+  <h2>🚫 Mest ignorerade genrer</h2>
+  <div id="topIgnorerade"></div>
+
+  <hr>
+
+  <h2>Välj person eller genre</h2>
+
+</div>
+
+
+</div>
+
+</main>
+
+<footer>Nördliv – intern analys</footer>
+
+<script src="data.js"></script>
+<script>
+
+const resultat = document.getElementById("resultat");
+
+/* ===== PERSONER ===== */
+Object.entries(DATA.personerData).forEach(([person,data])=>{
+  const b=document.createElement("button");
+  b.textContent=person;
+  b.onclick=()=>visaPerson(person,data);
+  document.getElementById("personButtons").appendChild(b);
+});
+
+function visaPerson(person,data){
+  resultat.innerHTML=`
+    <h2>${person}</h2>
+    <h3>❌ Ej valda genrer</h3>
+    ${lista(data.ejValt)}
+  `;
+}
+
+/* ===== GENRER ===== */
+const allaGenrer=new Set();
+Object.values(DATA.personerData).forEach(p=>{
+  (p.ejValt||[]).forEach(g=>allaGenrer.add(g));
+});
+
+[...allaGenrer].sort().forEach(genre=>{
+  const b=document.createElement("button");
+  b.textContent=genre;
+  b.onclick=()=>visaGenre(genre);
+  document.getElementById("genreButtons").appendChild(b);
+});
+
+function visaGenre(genre){
+  const personer=[];
+  Object.entries(DATA.personerData).forEach(([p,d])=>{
+    if(d.ejValt?.includes(genre)) personer.push(p);
+  });
+
+  resultat.innerHTML=`
+    <h2>${genre}</h2>
+    <h3>👤 Ignorerad av</h3>
+    ${lista(personer)}
+  `;
+}
+
+function lista(arr){
+  if(!arr||arr.length===0) return "<em>Ingen</em>";
+  return "<ul>"+arr.map(a=>`<li>${a}</li>`).join("")+"</ul>";
+}
+/* =========================
+   TOP 10 – MEST IGNORERADE
+========================= */
+
+function mestIgnoreradeGenrer() {
+  const count = {};
+
+  Object.values(DATA.personerData).forEach(person => {
+    (person.ejValt || []).forEach(genre => {
+      count[genre] = (count[genre] || 0) + 1;
+    });
+  });
+
+  return Object.entries(count)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+}
+
+function renderTopIgnorerade() {
+  const top = mestIgnoreradeGenrer();
+  const div = document.getElementById("topIgnorerade");
+
+  if (!top.length) {
+    div.innerHTML = "<em>Ingen data</em>";
+    return;
+  }
+
+  div.innerHTML = `
+    <ul>
+      ${top.map(([genre, antal], i) => `
+        <li>
+          <strong>#${i + 1}</strong> – ${genre}
+          <span style="float:right;opacity:.7">${antal} pers</span>
+        </li>
+      `).join("")}
+    </ul>
+  `;
+}
+
+/* Kör automatiskt vid laddning */
+renderTopIgnorerade();
+
+</script>
+
+</body>
+</html>

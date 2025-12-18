@@ -6,221 +6,217 @@
 
   <style>
     :root {
-      --bg: #0e0e11;
-      --panel: #18181f;
-      --text: #eaeaf0;
-      --muted: #a0a0b0;
-
-      --love: #4ade80;
-      --open: #facc15;
-      --avoid: #f87171;
-
-      --accent: #e11d48;
-      --border: #2a2a35;
+      --bg:#0e0e11;
+      --panel:#18181f;
+      --text:#eaeaf0;
+      --muted:#a0a0b0;
+      --love:#4ade80;
+      --open:#facc15;
+      --avoid:#f87171;
+      --border:#2a2a35;
     }
 
-    * {
-      box-sizing: border-box;
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--text);
     }
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+    header{
+      background:linear-gradient(90deg,#000,#111);
+      border-bottom:1px solid var(--border);
+      padding:20px;
     }
 
-    header {
-      background: linear-gradient(90deg, #000, #111);
-      border-bottom: 1px solid var(--border);
-      padding: 20px;
+    .header-inner{
+      max-width:1300px;
+      margin:auto;
+      display:flex;
+      gap:20px;
+      align-items:center;
+      flex-wrap:wrap;
     }
 
-    .header-inner {
-      max-width: 1300px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    header img{height:60px}
+
+    h1{margin:0;font-size:2rem}
+
+    .top-nav{
+      margin-left:auto;
+      display:flex;
+      gap:12px;
     }
 
-    header img {
-      height: 60px;
+    .top-nav a{
+      text-decoration:none;
+      padding:8px 14px;
+      background:#f2f2f2;
+      border-radius:6px;
+      color:#333;
+      font-weight:bold;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-      letter-spacing: 1px;
+    main{
+      max-width:1300px;
+      margin:auto;
+      padding:30px 20px;
     }
 
-    main {
-      max-width: 1300px;
-      margin: auto;
-      padding: 30px 20px;
+    h2{
+      margin-top:0;
+      border-bottom:1px solid var(--border);
+      padding-bottom:6px;
     }
 
-    h2 {
-      margin-top: 0;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 6px;
+    .top-filter{
+      background:var(--panel);
+      padding:20px;
+      border-radius:10px;
+      margin-bottom:30px;
+      border:1px solid var(--border);
     }
 
-    /* ===== Layout ===== */
-
-    .top-filter {
-      background: var(--panel);
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      border: 1px solid var(--border);
+    .filter-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
     }
 
-    .container {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 30px;
+    select,button{
+      background:#111;
+      color:var(--text);
+      border:1px solid var(--border);
+      padding:8px;
+      border-radius:6px;
     }
 
-    /* ===== Personlista ===== */
+    button{cursor:pointer}
 
-    .personlista {
-      background: var(--panel);
-      border-radius: 10px;
-      padding: 15px;
-      border: 1px solid var(--border);
+    .container{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:30px;
     }
 
-    .personlista button {
-      width: 100%;
-      margin-bottom: 6px;
-      padding: 10px;
-      background: #111;
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.15s, transform 0.1s;
+    .personlista{
+      background:var(--panel);
+      padding:15px;
+      border-radius:10px;
+      border:1px solid var(--border);
     }
 
-    .personlista button:hover {
-      background: #1f1f2a;
-      transform: translateY(-1px);
+    .personlista button{
+      width:100%;
+      margin-bottom:6px;
     }
 
-    /* ===== Resultat ===== */
-
-    #resultat {
-      background: var(--panel);
-      border-radius: 10px;
-      padding: 20px;
-      border: 1px solid var(--border);
+    #resultat{
+      background:var(--panel);
+      padding:20px;
+      border-radius:10px;
+      border:1px solid var(--border);
     }
 
-    .kolumner {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 15px;
+    .kolumner{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:15px;
     }
 
-    .kolumn {
-      background: #111;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
+    .kolumn{
+      background:#111;
+      padding:15px;
+      border-radius:8px;
+      border:1px solid var(--border);
     }
 
-    .kolumn h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
+    .alskar h3{color:var(--love)}
+    .oppen h3{color:var(--open)}
+    .undviker h3{color:var(--avoid)}
+
+    ul{margin:0;padding-left:18px}
+    li{color:var(--muted);margin-bottom:4px}
+
+    footer{
+      margin-top:40px;
+      padding:20px;
+      text-align:center;
+      color:var(--muted);
     }
-
-    .alskar h3 { color: var(--love); }
-    .oppen h3 { color: var(--open); }
-    .undviker h3 { color: var(--avoid); }
-
-    ul {
-      padding-left: 18px;
-      margin: 0;
-    }
-
-    li {
-      margin-bottom: 4px;
-      color: var(--muted);
-    }
-
-    select, button {
-      background: #111;
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 8px;
-      border-radius: 6px;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-	.top-nav {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 15px;
-}
-
-.top-nav a {
-  text-decoration: none;
-  padding: 8px 14px;
-  background: #f2f2f2;
-  border-radius: 6px;
-  color: #333;
-  font-weight: bold;
-}
-
-.top-nav a:hover {
-  background: #ddd;
-}
-
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="header-inner">
-    <img src="Logo_Nerdlife.png" alt="Nördliv">
-    <img src="LOGOTYP-Prototyp-2023-pureLOGO-.png" alt="Nördliv logotyp">
+    <img src="Logo_Nerdlife.png">
+    <img src="LOGOTYP-Prototyp-2023-pureLOGO-.png">
     <h1>Spelpreferenser</h1>
-	<nav class="top-nav">
-  <a href="index.html">👤 Personvy</a>
-  <a href="statistik.html">📊 Statistik</a>
-  <a href="heatmap.html">🔥 Heatmap</a>
-  <a href="ej-valda.html">🚫 Ej valda genrer</a>
-</nav>
 
-<hr>
-
+    <nav class="top-nav">
+      <a href="index.html">👤 Personvy</a>
+      <a href="statistik.html">📊 Statistik</a>
+      <a href="heatmap.html">🔥 Heatmap</a>
+      <a href="ej-valda.html">🚫 Ej valda</a>
+    </nav>
   </div>
 </header>
 
 <main>
 
+  <!-- GENRE + PLATTFORM -->
   <div class="top-filter">
     <h2>🎮 Filtrera på genre</h2>
 
-    <select id="genreSelect">
-      <option value="">– Välj genre –</option>
-    </select>
+    <div class="filter-row">
+      <select id="genreSelect">
+        <option value="">– Välj genre –</option>
+      </select>
 
-    <button onclick="visaGenre()">Visa</button>
+      <select id="plattformGenre">
+        <option value="alla">Alla plattformar</option>
+        <option value="PC">PC</option>
+        <option value="Playstation 5">PlayStation 5</option>
+        <option value="Xbox Series S|X">Xbox Series S|X</option>
+        <option value="Nintendo Switch">Nintendo Switch</option>
+		<option value="Nintendo Switch 2">Nintendo Switch 2</option>
+      </select>
+
+      <button id="visaGenreBtn">Visa</button>
+    </div>
 
     <div id="genreResultat"></div>
+
+    <hr style="margin:25px 0;border-color:#2a2a35">
+
+    <!-- PLATTFORM → GENRER -->
+<div class="plattform-genrer" style="display:none">
+  <h3>🧹 Visa genrer per plattform</h3>
+
+  <div class="filter-row">
+    <select id="plattformOnly">
+      <option value="">– Välj plattform –</option>
+      <option value="PC">PC</option>
+      <option value="PS5">PlayStation 5</option>
+      <option value="Xbox">Xbox Series S|X</option>
+      <option value="Switch">Nintendo Switch / Switch 2</option>
+    </select>
+
+    <button id="filtreraGenrerBtn">Filtrera genrer</button>
   </div>
 
+  <div id="plattformGenreResultat"></div>
+</div>
+
+  <!-- PERSONVY -->
   <div class="container">
-  
+
     <div class="personlista">
       <h2>👤 Personer</h2>
       <div id="personButtons"></div>
@@ -228,107 +224,94 @@
 
     <div id="resultat">
       <h2>Välj en person</h2>
-      <p class="muted">Klicka på ett namn till vänster för att visa preferenser.</p>
+      <p class="muted">Klicka på ett namn.</p>
     </div>
+
   </div>
 
 </main>
 
-<footer>
-  Nördliv – Spelpreferensanalys
-</footer>
+<footer>Nördliv – Spelpreferensanalys</footer>
 
 <script src="data.js"></script>
 
 <script>
-  const buttonsDiv = document.getElementById("personButtons");
-  const resultatDiv = document.getElementById("resultat");
-  const genreSelect = document.getElementById("genreSelect");
-  const genreResultat = document.getElementById("genreResultat");
+const buttonsDiv=document.getElementById("personButtons");
+const resultatDiv=document.getElementById("resultat");
+const genreSelect=document.getElementById("genreSelect");
 
-  /* ===== Personknappar ===== */
-  Object.keys(DATA.personerData).forEach(person => {
-    const btn = document.createElement("button");
-    btn.textContent = person;
-    btn.onclick = () => visaPerson(person);
-    buttonsDiv.appendChild(btn);
+/* ===== PERSONKNAPPAR ===== */
+Object.keys(DATA.personerData).forEach(p=>{
+  const b=document.createElement("button");
+  b.textContent=p;
+  b.onclick=()=>visaPerson(p);
+  buttonsDiv.appendChild(b);
+});
+
+/* ===== FYLL GENRER ===== */
+const allaGenrer=new Set();
+Object.values(DATA.personerData).forEach(p=>{
+  [...p.alskar,...p.oppen,...p.undviker].forEach(g=>allaGenrer.add(g));
+});
+[...allaGenrer].sort((a,b)=>a.localeCompare(b,"sv")).forEach(g=>{
+  const o=document.createElement("option");
+  o.value=o.textContent=g;
+  genreSelect.appendChild(o);
+});
+
+/* ===== VISA GENRE ===== */
+document.getElementById("visaGenreBtn").onclick=()=>{
+  const genre=genreSelect.value;
+  const plattform=document.getElementById("plattformGenre").value;
+  if(!genre)return;
+
+  const A=[],O=[],U=[];
+  Object.entries(DATA.personerData).forEach(([p,d])=>{
+    if(plattform!=="alla" && (!d.plattformar||!d.plattformar.includes(plattform)))return;
+    if(d.alskar.includes(genre))A.push(p);
+    if(d.oppen.includes(genre))O.push(p);
+    if(d.undviker.includes(genre))U.push(p);
   });
 
-  /* ===== Genrer i dropdown ===== */
-  const allaGenrer = new Set();
+  document.getElementById("genreResultat").innerHTML=`
+    <h3>${genre}</h3>
+    <div class="kolumner">
+      <div class="kolumn alskar"><h3>❤️ Älskar</h3>${lista(A)}</div>
+      <div class="kolumn oppen"><h3>👍 Öppen</h3>${lista(O)}</div>
+      <div class="kolumn undviker"><h3>🚫 Undviker</h3>${lista(U)}</div>
+    </div>`;
+};
 
-  Object.values(DATA.personerData).forEach(p => {
-    [...p.alskar, ...p.oppen, ...p.undviker].forEach(g => allaGenrer.add(g));
+/* ===== PLATTFORM → GENRER ===== */
+document.getElementById("filtreraGenrerBtn").onclick=()=>{
+  const pl=document.getElementById("plattformOnly").value;
+  if(!pl)return;
+
+  const counter={};
+  Object.values(DATA.personerData).forEach(d=>{
+    if(!d.plattformar||!d.plattformar.includes(pl))return;
+    [...d.alskar,...d.oppen].forEach(g=>counter[g]=(counter[g]||0)+1);
   });
 
-  [...allaGenrer].sort((a,b)=>a.localeCompare(b,"sv")).forEach(genre => {
-    const opt = document.createElement("option");
-    opt.value = genre;
-    opt.textContent = genre;
-    genreSelect.appendChild(opt);
-  });
+  document.getElementById("plattformGenreResultat").innerHTML=`
+    <ul>${Object.entries(counter).sort((a,b)=>b[1]-a[1])
+      .map(([g,c])=>`<li>${g} (${c})</li>`).join("")}</ul>`;
+};
 
-  function visaPerson(person) {
-    const data = DATA.personerData[person];
+/* ===== PERSONVY ===== */
+function visaPerson(p){
+  const d=DATA.personerData[p];
+  resultatDiv.innerHTML=`
+    <h2>${p}</h2>
+    <div class="kolumner">
+      <div class="kolumn alskar"><h3>❤️ Älskar</h3>${lista(d.alskar)}</div>
+      <div class="kolumn oppen"><h3>👍 Öppen</h3>${lista(d.oppen)}</div>
+      <div class="kolumn undviker"><h3>🚫 Undviker</h3>${lista(d.undviker)}</div>
+    </div>`;
+}
 
-    resultatDiv.innerHTML = `
-      <h2>${person}</h2>
-      <div class="kolumner">
-        <div class="kolumn alskar">
-          <h3>❤️ Älskar</h3>
-          ${lista(data.alskar)}
-        </div>
-        <div class="kolumn oppen">
-          <h3>👍 Öppen för</h3>
-          ${lista(data.oppen)}
-        </div>
-        <div class="kolumn undviker">
-          <h3>🚫 Undviker helst</h3>
-          ${lista(data.undviker)}
-        </div>
-      </div>
-    `;
-  }
-
-  function visaGenre() {
-    const genre = genreSelect.value;
-    if (!genre) return;
-
-    const alskar = [];
-    const oppen = [];
-    const undviker = [];
-
-    Object.entries(DATA.personerData).forEach(([person, data]) => {
-      if (data.alskar.includes(genre)) alskar.push(person);
-      if (data.oppen.includes(genre)) oppen.push(person);
-      if (data.undviker.includes(genre)) undviker.push(person);
-    });
-
-    genreResultat.innerHTML = `
-      <h3>${genre}</h3>
-      <div class="kolumner">
-        <div class="kolumn alskar">
-          <h3>❤️ Älskar</h3>
-          ${lista(alskar)}
-        </div>
-        <div class="kolumn oppen">
-          <h3>👍 Öppna för</h3>
-          ${lista(oppen)}
-        </div>
-        <div class="kolumn undviker">
-          <h3>🚫 Undviker helst</h3>
-          ${lista(undviker)}
-        </div>
-      </div>
-    `;
-  }
-
-  function lista(arr) {
-    if (!arr || arr.length === 0) return "<em>Ingen</em>";
-    return "<ul>" + arr.map(item => `<li>${item}</li>`).join("") + "</ul>";
-  }
+function lista(a){return a.length?`<ul>${a.map(i=>`<li>${i}</li>`).join("")}</ul>`:"<em>Ingen</em>";}
 </script>
-
 
 </body>
 </html>

@@ -239,57 +239,6 @@
 </footer>
 
 <script src="data.js"></script>
-function valideraEjValt(DATA) {
-  const fel = [];
-
-  Object.entries(DATA.personerData).forEach(([person, data]) => {
-    const kategorier = {
-      alskar: new Set(data.alskar || []),
-      oppen: new Set(data.oppen || []),
-      undviker: new Set(data.undviker || []),
-      ejValt: new Set(data.ejValt || [])
-    };
-
-    const alla = [
-      ["alskar", kategorier.alskar],
-      ["oppen", kategorier.oppen],
-      ["undviker", kategorier.undviker],
-      ["ejValt", kategorier.ejValt]
-    ];
-
-    for (let i = 0; i < alla.length; i++) {
-      for (let j = i + 1; j < alla.length; j++) {
-        const [namnA, setA] = alla[i];
-        const [namnB, setB] = alla[j];
-
-        setA.forEach(genre => {
-          if (setB.has(genre)) {
-            fel.push({
-              person,
-              genre,
-              konflikt: `${namnA} ↔ ${namnB}`
-            });
-          }
-        });
-      }
-    }
-  });
-
-  if (fel.length === 0) {
-    console.log("✅ Validering klar: inga konflikter hittades.");
-  } else {
-    console.group("❌ Valideringsfel: genrer i flera kategorier");
-    fel.forEach(f => {
-      console.warn(
-        `👤 ${f.person} | 🎮 ${f.genre} | ⚠️ ${f.konflikt}`
-      );
-    });
-    console.groupEnd();
-  }
-}
-
-// Kör automatiskt vid sidladdning
-// valideraEjValt(DATA);
 
 <script>
   const buttonsDiv = document.getElementById("personButtons");
@@ -383,4 +332,3 @@ function valideraEjValt(DATA) {
 
 </body>
 </html>
-

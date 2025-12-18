@@ -1,7 +1,8 @@
 const DATA = {
   personer: [
   "Fredrik","Danny","Odd","Natalie","Oscar",
-  "Tony","Victoria","Fyghar","Peter","Emil","Daniel","Robin"
+  "Tony","Victoria","Fyghar","Peter","Emil",
+  "Daniel","Robin","Jesper",
 ],
 
   personerData: {
@@ -1050,3 +1051,4 @@ Andres: {
 
   }
 };
+

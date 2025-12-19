@@ -632,6 +632,7 @@ pcTier: "mid",
         "RPG / CRPG",
         "ARPG / Action-rollspel",
         "Souls- och Soulslike",
+		"Action Adventure",
         "Open-World / Öppna världar",
         "Interactive Story / Episodspel",
         "Visuella noveller / Storybaserade spel",
@@ -1423,6 +1424,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

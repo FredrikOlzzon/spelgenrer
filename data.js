@@ -1373,10 +1373,77 @@ pcTier: "low",
     ram: 8,
     notes: "Bärbar dator. Här kan ENBART extremt lågt krävande spel vara aktuella. Dubbelkolla systemkrav."
   },
-  alskar: [],
-  oppen: [],
-  undviker: [],
-  ejValt: []
+  alskar: [
+  "3D Plattformare",
+  "2D Plattformare",
+  "Metroidvania-spel",
+  "Taktiskt RPG / Turbaserat taktiskt RPG",
+  "Fighting",
+  "Arkadspel",
+  "Klassiska arkadhallsspel"
+],
+
+oppen: [
+  "Stealth-spel (smygarspel)",
+  "Action Adventure",
+  "JRPG",
+  "Monsterfångar-RPG",
+  "Visuella noveller / Storybaserade spel",
+  "Kart-racing",
+  "Mech-/Robot-strategi eller action",
+  "Walking Simulator i förstaperson",
+  "Peka & Klicka Äventyr",
+  "Partyspel / Micro-games",
+  "Beat-em-Up / Brawler",
+  "Bullet hell / Shoot ’em up (Shmup)",
+  "Match-3 spel",
+  "Tabletop / Digital Board Games"
+],
+
+undviker: [
+  "Souls- och Soulslike",
+  "Open-World / Öppna världar",
+  "Rogue-like / Rogue-lite spel",
+  "MOBA / Tactical Arena / Auto-battler",
+  "Arkad- och Simcade Racing",
+  "Full racing simulator",
+  "Flygsimulator",
+  "Övriga fordonsimulatorer",
+  "Ubåt / Rymdsimulatorer",
+  "Sportspel",
+  "Överlevnad / Crafting / Sandbox",
+  "Sandbox / Creativity / World-building",
+  "Life Simulation / Social Simulation",
+  "Economy / Tycoon Games",
+  "Kortspel / Deckbuilding"
+],
+
+ejValt: [
+  "FPS / Action (Singel)",
+  "Boomer shooters",
+  "Looter shooters",
+  "Taktisk FPS",
+  "Battle Royale",
+  "Hero shooter / MOBA-liknande FPS",
+  "Pusselspel i förstaperson",
+  "Physics-baserade spel / bygg- och experimentspel",
+  "RPG / CRPG",
+  "ARPG / Action-rollspel",
+  "Realtidsstrategi (RTS)",
+  "Turbaserade strategispel (TBS)",
+  "4X-strategi",
+  "Grand Strategy",
+  "Tower Defense",
+  "Card-based Strategy / Digital CCG",
+  "City building / Farming",
+  "Skräckspel",
+  "Survival Horror FPS",
+  "Competitive Online (FPS etc.)",
+  "Multiplayer / Coop",
+  "MMO (Onlinespel)",
+  "Rytmspel / Music / Rhythm action"
+]
+
 },
 
 Arvid: {
@@ -1490,6 +1557,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

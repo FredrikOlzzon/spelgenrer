@@ -1291,11 +1291,64 @@ pcTier: "mid",
     ram: 16,
     notes: "Okej dator överlag. Tänk dock på att RTX 4060 enbart har 8GB VRAM - och överlag är ökänt svagt."
   },
-  alskar: [],
-  oppen: [],
-  undviker: [],
+  alskar: [
+    "FPS",
+    "Taktisk FPS",
+    "Battle Royale",
+    "Hero Shooter",
+    "RPG / CRPG",
+    "Open World",
+    "Survival / Crafting",
+    "Sandbox / Creativity",
+    "Life Simulation",
+    "Competitive Online"
+  ],
+  oppen: [
+    "Boomer Shooter",
+    "Looter Shooter",
+    "Stealth",
+    "Action Adventure",
+    "3D Plattform",
+    "2D Plattform",
+    "Puzzle (First-Person)",
+    "Physics-based / Experiment",
+    "Metroidvania",
+    "Taktiskt RPG",
+    "Interactive Story",
+    "Racing (Arcade / Simcade)",
+    "Racing Simulator",
+    "Vehicle Simulator",
+    "Space / Submarine Simulation",
+    "Economy / Tycoon",
+    "Multiplayer / Co-op",
+    "Fighting",
+    "Beat 'em Up / Brawler",
+    "Bullet Hell / Shmup"
+  ],
+  undviker: [
+    "JRPG",
+    "ARPG",
+    "Soulslike",
+    "Monster Tamer RPG",
+    "Visual Novel",
+    "RTS",
+    "Turn-Based Strategy",
+    "4X Strategy",
+    "Grand Strategy",
+    "MOBA",
+    "Card / Deckbuilding",
+    "Sports",
+    "Horror",
+    "Walking Simulator",
+    "Point & Click Adventure",
+    "Survival Horror FPS",
+    "Arcade",
+    "Rhythm / Music",
+    "Match-3",
+    "Tabletop / Board Games"
+  ],
   ejValt: []
-},
+}
 
 Emilia: {
 		  plattformar: ["PC", "Nintendo Switch", ],
@@ -1424,6 +1477,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

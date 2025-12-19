@@ -290,6 +290,7 @@ pcTier: "low",
         "Taktisk FPS",
         "3D Plattformare",
         "2D Plattformare",
+		"Action Adventure",
         "Rogue-like / Rogue-lite spel",
         "4X-strategi",
         "Arkad- och Simcade Racing",
@@ -1689,6 +1690,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

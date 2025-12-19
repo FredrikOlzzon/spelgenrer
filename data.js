@@ -352,6 +352,7 @@ pcTier: "low",
       alskar: [
         "RPG / CRPG",
         "JRPG",
+		"Action Adventure",
         "Taktiskt RPG / Turbaserat taktiskt RPG",
         "Monsterfångar-RPG",
         "Interactive Story / Episodspel",
@@ -1420,3 +1421,4 @@ Niclas: {
   }
 }
 };
+

@@ -184,7 +184,15 @@ footer{
   color: var(--text);
 }
 
-
+.tool-title {
+  margin: 0 0 14px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+	  
 	.pc-tier {
   background:#0f172a;
   border:1px solid #334155;
@@ -280,7 +288,13 @@ footer{
 
   <!-- GENRE + PLATTFORM -->
   <div class="top-filter">
-<div class="tool-info">
+
+  <h2 class="tool-title">
+    Redaktörsverktyg – Recensenters föredragna spelgenrer 2026
+  </h2>
+
+  <div class="tool-info">
+	  
   <p>
     Detta verktyg är till för att ni <strong>redaktörer</strong> lättare ska kunna hitta
     rätt spel för rätt person. Kategorierna <strong>Älskar</strong>, <strong>Öppen</strong> och
@@ -565,6 +579,7 @@ function lista(a){return a.length?`<ul>${a.map(i=>`<li>${i}</li>`).join("")}</ul
 
 </body>
 </html>
+
 
 
 

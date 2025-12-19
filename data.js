@@ -1,3 +1,22 @@
+const PC_TIERS = {
+  low: {
+    label: "Låg PC-prestanda",
+    description: "Indie, 2D, lättare spel"
+  },
+  mid: {
+    label: "Mellan-PC",
+    description: "De flesta moderna spel på medium/hög"
+  },
+  high: {
+    label: "High-end PC",
+    description: "Tunga AAA-spel, hög upplösning"
+  },
+  extreme: {
+    label: "Extreme PC",
+    description: "Ray tracing, maxinställningar, framtidssäker"
+  }
+};
+
 const DATA = {
 personer: [
   "Fredrik","Danny","Odd","Natalie","Oscar",
@@ -72,6 +91,7 @@ personer: [
 
     Fredrik: {
 		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
+pcTier: "extreme",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -153,7 +173,8 @@ personer: [
     },
 
     Natalie: {
-		plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+		plattformar: ["PC", "Playstation 5", ],
+pcTier: "high",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -234,6 +255,7 @@ personer: [
 
     Emil: {
 		  plattformar: ["PC", ],
+pcTier: "low",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -314,6 +336,7 @@ personer: [
 
     Victoria: {
 		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+pcTier: "mid",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -403,6 +426,7 @@ personer: [
     },
 	    Danny: {
 		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", ],
+pcTier: "mid",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -481,7 +505,8 @@ personer: [
     },
 
     Odd: {
-		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", ],
+pcTier: "high",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -586,6 +611,7 @@ personer: [
 
     Peter: {
 		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", ],
+pcTier: "mid",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -664,6 +690,7 @@ personer: [
 
     Oscar: {
 		  plattformar: ["PC", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
+pcTier: "mid",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -742,6 +769,7 @@ personer: [
 
     Fyghar: {
 		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+pcTier: "mid",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -816,7 +844,8 @@ personer: [
     },
 
     Tony: {
-		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", ],
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+pcTier: "high",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -989,6 +1018,7 @@ personer: [
 	},
 Robin: {
 		  plattformar: ["PC", ],
+pcTier: "high",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -1066,6 +1096,7 @@ Robin: {
     },
 	Jesper: {
 		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
+pcTier: "mid",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -1144,7 +1175,8 @@ Robin: {
   ]
 },
 Andres: {
-		  plattformar: ["PC", "Playstation 5",  "Nintendo Switch" ],
+		  plattformar: ["PC", "Xbox Series S|X",  "Nintendo Switch" ],
+pcTier: "high",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -1225,6 +1257,7 @@ Andres: {
 },
 Mattias: {
 		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+pcTier: "high",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -1240,6 +1273,7 @@ Mattias: {
 
 Jim: {
 		  plattformar: ["PC", ],
+pcTier: "mid",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -1255,6 +1289,7 @@ Jim: {
 
 Emilia: {
 		  plattformar: ["PC", "Nintendo Switch", ],
+pcTier: "low",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -1269,7 +1304,8 @@ Emilia: {
 },
 
 Arvid: {
-		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+		  plattformar: ["PC", "Nintendo Switch", ],
+pcTier: "high",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -1284,7 +1320,8 @@ Arvid: {
 },
 
 Vanessa: {
-		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", ],
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+pcTier: "mid",
 
   pc: {
     cpu: "Ryzen 9 9950X3D",

@@ -342,7 +342,7 @@ pcTier: "low",
     cpu: "Okänd",
     gpu: "Nvidia Geforce RTX 2060 Super 8GB",
     ram: 16,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    notes: "Grafikkortet är dugligt, men överlag en svag dator."
   },	
 	
       alskar: [
@@ -1345,4 +1345,5 @@ Niclas: {
   }
 }
 };
+
 

@@ -71,7 +71,7 @@ personer: [
   personerData: {
 
     Fredrik: {
-		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Nintendo Switch 2" ],
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -663,7 +663,7 @@ personer: [
     },
 
     Oscar: {
-		  plattformar: ["PC", "Xbox Series S|X", "Nintendo Switch", "Nintendo Switch 2" ],
+		  plattformar: ["PC", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
 
   pc: {
     cpu: "Ryzen 9 9950X3D",
@@ -1065,7 +1065,7 @@ Robin: {
       ]
     },
 	Jesper: {
-		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Nintendo Switch 2" ],
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
 
   pc: {
     cpu: "Ryzen 9 9950X3D",

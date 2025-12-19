@@ -769,7 +769,7 @@ pcTier: "mid",
 
     Fyghar: {
 		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
-pcTier: "mid",
+pcTier: "low",
 
   pc: {
     cpu: "Ryzen 5 2600",
@@ -1171,7 +1171,7 @@ pcTier: "mid",
 },
 Andres: {
 		  plattformar: ["PC", "Xbox Series S|X",  "Nintendo Switch" ],
-pcTier: "high",
+pcTier: "mid",
 
   pc: {
     cpu: "Intel Core i7-13700f",
@@ -1346,4 +1346,5 @@ Niclas: {
   }
 }
 };
+
 

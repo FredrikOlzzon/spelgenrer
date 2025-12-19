@@ -1361,9 +1361,8 @@ Jim: {
     "Partyspel / Micro-games"
   ]
 },
-
-
-Emilia: {
+Emilia:
+ {
 		  plattformar: ["PC", "Nintendo Switch", ],
 pcTier: "low",
 
@@ -1490,6 +1489,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

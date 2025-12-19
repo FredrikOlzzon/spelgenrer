@@ -143,6 +143,49 @@
 
     ul{margin:0;padding-left:18px}
     li{color:var(--muted);margin-bottom:4px}
+	
+	/* ===== PERSONAVATAR ===== */
+.person-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.person-meta {
+  background: linear-gradient(180deg, #0b1220, #020617);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+
+/* ===== PERSON TOP LAYOUT ===== */
+.person-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.person-meta {
+  min-width: 0;
+}
+
+/* Justera avatar lite mer elegant */
+.person-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+
 
 footer{
   margin-top:40px;
@@ -598,17 +641,44 @@ if (d.plattformar && d.plattformar.length) {
   }
 
   /* ===== RENDER ===== */
+const imagePath = `images/people/${p.toLowerCase()}.jpg`;
+
 resultatDiv.innerHTML = `
   <h2>${p}</h2>
-  ${platformsHTML}
-  ${pcTierHTML}
-  ${pcSpecsHTML}
-  <div class="kolumner">
-      <div class="kolumn alskar"><h3>❤️ Älskar</h3>${lista(d.alskar)}</div>
-      <div class="kolumn oppen"><h3>👍 Öppen</h3>${lista(d.oppen)}</div>
-      <div class="kolumn undviker"><h3>🚫 Undviker</h3>${lista(d.undviker)}</div>
+
+  <div class="person-top">
+    <div class="person-meta">
+      ${platformsHTML}
+      ${pcTierHTML}
     </div>
-  `;
+
+    <img
+      src="${imagePath}"
+      alt="${p}"
+      class="person-avatar"
+      onerror="this.style.display='none'"
+    >
+  </div>
+
+  ${pcSpecsHTML}
+
+  <div class="kolumner">
+    <div class="kolumn alskar">
+      <h3>❤️ Älskar</h3>
+      ${lista(d.alskar)}
+    </div>
+    <div class="kolumn oppen">
+      <h3>👍 Öppen</h3>
+      ${lista(d.oppen)}
+    </div>
+    <div class="kolumn undviker">
+      <h3>🚫 Undviker</h3>
+      ${lista(d.undviker)}
+    </div>
+  </div>
+`;
+
+
 }
 
 
@@ -618,7 +688,6 @@ function lista(a){return a.length?`<ul>${a.map(i=>`<li>${i}</li>`).join("")}</ul
 
 </body>
 </html>
-
 
 
 

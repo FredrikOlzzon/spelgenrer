@@ -1276,10 +1276,78 @@ pcTier: "high",
     ram: 16,
     notes: "Bra allrounddator - särskilt pga det nya grafikkort. CPU-krävande spel kan potentiellt vara stoppklossar - men troligtvis kommer det ej vara något problem."
   },
-  alskar: [],
-  oppen: [],
-  undviker: [],
-  ejValt: []
+  alskar: [
+  "FPS / Action (Singel)",
+  "Boomer shooters",
+  "Action Adventure",
+  "RPG / CRPG",
+  "Open-World / Öppna världar",
+  "Arkad- och Simcade Racing",
+  "Skräckspel",
+  "Walking Simulator i förstaperson",
+  "Peka & Klicka Äventyr",
+  "Arkadspel"
+],
+
+oppen: [
+  "Looter shooters",
+  "Taktisk FPS",
+  "Stealth-spel (smygarspel)",
+  "3D Plattformare",
+  "2D Plattformare",
+  "Pusselspel i förstaperson",
+  "Metroidvania-spel",
+  "Taktiskt RPG / Turbaserat taktiskt RPG",
+  "ARPG / Action-rollspel",
+  "Souls- och Soulslike",
+  "Interactive Story / Episodspel",
+  "Rogue-like / Rogue-lite spel",
+  "Turbaserade strategispel (TBS)",
+  "Full racing simulator",
+  "Sportspel",
+  "Survival Horror FPS",
+  "Multiplayer / Coop",
+  "Beat-em-Up / Brawler",
+  "Klassiska arkadhallsspel",
+  "Bullet hell / Shoot ’em up (Shmup)"
+],
+
+undviker: [
+  "Battle Royale",
+  "Hero shooter / MOBA-liknande FPS",
+  "Physics-baserade spel / bygg- och experimentspel",
+  "JRPG",
+  "Monsterfångar-RPG",
+  "Visuella noveller / Storybaserade spel",
+  "Realtidsstrategi (RTS)",
+  "4X-strategi",
+  "Grand Strategy",
+  "Tower Defense",
+  "MOBA / Tactical Arena / Auto-battler",
+  "Card-based Strategy / Digital CCG",
+  "Kart-racing",
+  "Flygsimulator",
+  "Övriga fordonsimulatorer",
+  "Mech-/Robot-strategi eller action",
+  "Ubåt / Rymdsimulatorer",
+  "Sandbox / Creativity / World-building",
+  "City building / Farming",
+  "Life Simulation / Social Simulation",
+  "Economy / Tycoon Games",
+  "Competitive Online (FPS etc.)",
+  "MMO (Onlinespel)",
+  "Partyspel / Micro-games",
+  "Fighting",
+  "Rytmspel / Music / Rhythm action",
+  "Match-3 spel",
+  "Kortspel / Deckbuilding",
+  "Tabletop / Digital Board Games"
+],
+
+ejValt: [
+  "Överlevnad / Crafting / Sandbox"
+]
+
 },
 
 Jim: {
@@ -1456,10 +1524,74 @@ pcTier: "extreme",
     ram: 32,
     notes: "Han klarar allt i skrivande stund - riktigt bra dator sett till hur den är balanserad. Riktigt bra spel-CPU parad med stark GPU."
   },
-  alskar: [],
-  oppen: [],
-  undviker: [],
-  ejValt: []
+  alskar: [
+  "FPS / Action (Singel)",
+  "Looter shooters",
+  "Action Adventure",
+  "3D Plattformare",
+  "2D Plattformare",
+  "Metroidvania-spel",
+  "RPG / CRPG",
+  "Monsterfångar-RPG",
+  "Open-World / Öppna världar",
+  "Interactive Story / Episodspel",
+  "4X-strategi",
+  "Grand Strategy",
+  "Överlevnad / Crafting / Sandbox",
+  "City building / Farming",
+  "Multiplayer / Coop",
+  "Tabletop / Digital Board Games"
+],
+
+  oppen: [
+  "Boomer shooters",
+  "Hero shooter / MOBA-liknande FPS",
+  "Stealth-spel (smygarspel)",
+  "Physics-baserade spel / bygg- och experimentspel",
+  "JRPG",
+  "Taktiskt RPG / Turbaserat taktiskt RPG",
+  "ARPG / Action-rollspel",
+  "Rogue-like / Rogue-lite spel",
+  "Realtidsstrategi (RTS)",
+  "Turbaserade strategispel (TBS)",
+  "Tower Defense",
+  "Arkad- och Simcade Racing",
+  "Kart-racing",
+  "Mech-/Robot-strategi eller action",
+  "Sandbox / Creativity / World-building",
+  "Economy / Tycoon Games",
+  "Walking Simulator i förstaperson",
+  "Peka & Klicka Äventyr",
+  "Partyspel / Micro-games"
+],
+
+  undviker: [
+  "Card-based Strategy / Digital CCG",
+  "Sportspel",
+  "Skräckspel",
+  "Competitive Online (FPS etc.)",
+  "MMO (Onlinespel)",
+  "Beat-em-Up / Brawler",
+  "Arkadspel",
+  "Klassiska arkadhallsspel",
+  "Bullet hell / Shoot ’em up (Shmup)",
+  "Rytmspel / Music / Rhythm action",
+  "Match-3 spel",
+  "Kortspel / Deckbuilding"
+],
+
+  ejValt: [
+  "Pusselspel i förstaperson",
+  "Souls- och Soulslike",
+  "MOBA / Tactical Arena / Auto-battler",
+  "Flygsimulator",
+  "Övriga fordonsimulatorer",
+  "Ubåt / Rymdsimulatorer",
+  "Life Simulation / Social Simulation",
+  "Survival Horror FPS",
+  "Fighting"
+]
+
 },
 
 Vanessa: {
@@ -1557,6 +1689,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

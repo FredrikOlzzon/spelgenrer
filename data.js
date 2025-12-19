@@ -790,6 +790,7 @@ pcTier: "low",
         "Monsterfångar-RPG",
         "Arkad- och Simcade Racing",
         "Kart-racing",
+		"Action Adventure",
         "Multiplayer / Coop",
         "Partyspel / Micro-games",
         "Beat-em-Up / Brawler"
@@ -1035,6 +1036,7 @@ pcTier: "mid",
     "Looter shooters",
     "Taktisk FPS",
     "Battle Royale",
+	"Action Adventure",
     "Stealth-spel (smygarspel)",
     "Pusselspel i förstaperson",
     "Physics-baserade spel / bygg- och experimentspel",
@@ -1421,5 +1423,6 @@ Niclas: {
   }
 }
 };
+
 
 

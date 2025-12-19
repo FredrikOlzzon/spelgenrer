@@ -1347,7 +1347,16 @@ pcTier: "mid",
     "Match-3",
     "Tabletop / Board Games"
   ],
-  ejValt: []
+  ejValt: [
+  "Tower Defense",
+  "Kart-racing",
+  "Flygsimulator",
+  "Mech-/Robot-strategi eller action",
+  "City building / Farming",
+  "MMO (Onlinespel)",
+  "Partyspel / Micro-games"
+]
+
 }
 
 Emilia: {
@@ -1477,6 +1486,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

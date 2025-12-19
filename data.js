@@ -1090,13 +1090,13 @@ pcTier: "mid",
     },
 	Jesper: {
 		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
-pcTier: "mid",
+pcTier: "low",
 
   pc: {
     cpu: "Intel Core i7-12650H",
     gpu: "Nvidia Geforce RTX 3060",
     ram: 16,
-    notes: "Obs! Var uppmärksamma kring systemkrav. Detta är en bärbar dator. I regel är grafikkortet en tier under i prestanda. D.v.s en bärbar RTX 3060 är jämbördigt med en RTX 3050 på en stationär dator."
+    notes: "Obs! Var uppmärksamma kring systemkrav trots bra CPU. Detta är en bärbar dator. I regel är grafikkort på en laptio en tier under i prestanda. D.v.s en bärbar RTX 3060 är jämbördigt med en RTX 3050 på en stationär dator."
   },
   alskar: [
     "RPG / CRPG",
@@ -1345,4 +1345,5 @@ Niclas: {
   }
 }
 };
+
 

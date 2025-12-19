@@ -263,7 +263,7 @@ pcTier: "low",
 
   pc: {
     cpu: "Intel Core i7 4790K",
-    gpu: "Radeon RX 6600 XT 8GB",
+    gpu: "Radeon RX 6600 XT 8GB (snart)",
     ram: 16,
     notes: "Uppgradering av grafikkort möjliggör avsevärt fler spel.Dock hålls datorn tillbaka av föråldrad CPU. Dubbelkolla extra noga innan spel ges."
   },
@@ -1690,6 +1690,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

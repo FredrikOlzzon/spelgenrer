@@ -177,10 +177,10 @@ pcTier: "extreme",
 pcTier: "high",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
+    cpu: "Ryzen 5 9600X",
+    gpu: "Radeon 6800 XT 16GB",
     ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    notes: "Strax över mid-tier - nästan high"
   },
       alskar: [
         "RPG / CRPG",
@@ -258,10 +258,10 @@ pcTier: "high",
 pcTier: "low",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    cpu: "Intel Core i7 4790K",
+    gpu: "Radeon RX 6600 XT 8GB",
+    ram: 16,
+    notes: "Sedan uppgraderingen - klarar han avsevärt fler spel. Dock fortfarande tillbakahållen av svag CPU. Trots grafikkortsuppgradering."
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -336,12 +336,12 @@ pcTier: "low",
 
     Victoria: {
 		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
-pcTier: "mid",
+pcTier: "low",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 32,
+    cpu: "Okänd",
+    gpu: "Nvidia Geforce RTX 2060 Super 8GB,
+    ram: 16,
     notes: "Bra för alla typer av spel - utifrån prestanda"
   },	
 	
@@ -429,10 +429,10 @@ pcTier: "mid",
 pcTier: "mid",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 16,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    cpu: "Intel Core i5 11400F",
+    gpu: "Radeon RX 6750 XT 12GB",
+    ram: 32,
+    notes: "Bra avvägd dator - om än på väg att bli till åren."
   },
 			
       alskar: [
@@ -506,13 +506,13 @@ pcTier: "mid",
 
     Odd: {
 		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", ],
-pcTier: "high",
+pcTier: "mid",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
+    cpu: "Ryzen 7 5800X3D",
+    gpu: "Nvidia Geforce RTX 2080 ti",
     ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    notes: "Bra allroundmaskin"
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -614,10 +614,10 @@ pcTier: "high",
 pcTier: "mid",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    cpu: "Ryzen 5 5600",
+    gpu: "Radeon RX 6600 XT 8GB",
+    ram: 16,
+    notes: "God allroundmaskin sedan uppgradering av grafikkort."
   },
       alskar: [
         "Looter shooters",
@@ -693,10 +693,10 @@ pcTier: "mid",
 pcTier: "mid",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
+    cpu: "AMD Ryzen 5 9600X",
     gpu: "Intel ARC B580 12GB",
     ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    notes: "Bra för alla typer av spel - utifrån prestanda. Obs! Dubbelkolla stödet spelet har för Intel ARC!"
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -772,9 +772,9 @@ pcTier: "mid",
 pcTier: "mid",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 32,
+    cpu: "Ryzen 5 2600",
+    gpu: "Nvidia Geforce RTX 3060 12GB",
+    ram: 16,
     notes: "Bra för alla typer av spel - utifrån prestanda"
   },
       alskar: [
@@ -848,8 +848,8 @@ pcTier: "mid",
 pcTier: "high",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
+    cpu: "Intel(R) Core i7-12700F",
+    gpu: "Nvidia GeForce RTX 4070",
     ram: 32,
     notes: "Bra för alla typer av spel - utifrån prestanda"
   },
@@ -1018,13 +1018,13 @@ pcTier: "high",
 	},
 Robin: {
 		  plattformar: ["PC", ],
-pcTier: "high",
+pcTier: "mid",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    cpu: "Intel Core i7-13700f",
+    gpu: "Nvidia Geforce RTX 3070 8GB",
+    ram: 16,
+    notes: "God allroundmaskin"
   },
   alskar: [
     "FPS / Action (Singel)",
@@ -1099,10 +1099,10 @@ pcTier: "high",
 pcTier: "mid",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    cpu: "Intel Core i7-12650H",
+    gpu: "Nvidia Geforce RTX 3060",
+    ram: 16,
+    notes: "Obs! Var uppmärksamma kring systemkrav. Detta är en bärbar dator. I regel är grafikkortet en tier under i prestanda."
   },
   alskar: [
     "RPG / CRPG",
@@ -1179,8 +1179,8 @@ Andres: {
 pcTier: "high",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
+    cpu: "Intel Core i7-13700f",
+    gpu: "Nvidia Geforce RTX 3070 8GB",
     ram: 32,
     notes: "Bra för alla typer av spel - utifrån prestanda"
   },
@@ -1260,10 +1260,10 @@ Mattias: {
 pcTier: "high",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    cpu: "Intel Core i7 10700K",
+    gpu: "Radeon RX 9060 XT 16 GB",
+    ram: 16,
+    notes: "Bra allrounddator - mest utifrån grafikkort. CPU-krävande spel kan i vissa fall kanske vara problem."
   },
   alskar: [],
   oppen: [],
@@ -1276,9 +1276,9 @@ Jim: {
 pcTier: "mid",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 32,
+    cpu: "Intel Core i7 14700F",
+    gpu: "Nvidia Geforce RTX 4060 8GB",
+    ram: 16,
     notes: "Bra för alla typer av spel - utifrån prestanda"
   },
   alskar: [],
@@ -1292,10 +1292,10 @@ Emilia: {
 pcTier: "low",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    cpu: "AMD Ryzen 5 3550H",
+    gpu: "NVIDIA GeForce GTX 1050 3GB",
+    ram: 8,
+    notes: "Bärbar dator. Här kan ENBART extremt lågt krävande spel vara aktuella. Dubbelkolla systemkrav."
   },
   alskar: [],
   oppen: [],
@@ -1305,13 +1305,13 @@ pcTier: "low",
 
 Arvid: {
 		  plattformar: ["PC", "Nintendo Switch", ],
-pcTier: "high",
+pcTier: "extreme",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
+    cpu: "AMD Ryzen 7 7800X3D",
+    gpu: "NVIDIA GeForce RTX 4070 SUPER 12GB",
     ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    notes: "Han klarar allt i skrivande stund"
   },
   alskar: [],
   oppen: [],
@@ -1324,10 +1324,10 @@ Vanessa: {
 pcTier: "mid",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
+    cpu: "AMD Ryzen 7 5800X3D",
+    gpu: "NVIDIA GeForce RTX 4070",
     ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    notes: "Bra allrounddator"
   },
   alskar: [],
   oppen: [],
@@ -1339,10 +1339,10 @@ Niclas: {
 		  plattformar: ["Playstation 5", "Nintendo Switch", ],
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    cpu: "Intel Core m3",
+    gpu: "Intel HD Graphics 515",
+    ram: 8,
+    notes: "Det finns ingen värld där Niclas dator kan användas för PC-recensioner. Han måste uppgradera."
   },
   alskar: [],
   oppen: [],

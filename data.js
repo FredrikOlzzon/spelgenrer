@@ -33,6 +33,7 @@ personer: [
     "Battle Royale",
     "Hero shooter / MOBA-liknande FPS",
     "Stealth-spel (smygarspel)",
+	"Action Adventure",
     "3D Plattformare",
     "2D Plattformare",
     "Pusselspel i förstaperson",
@@ -101,6 +102,7 @@ pcTier: "extreme",
   },
       alskar: [
         "FPS / Action (Singel)",
+		"Action Adventure",
         "3D Plattformare",
         "RPG / CRPG",
         "Open-World / Öppna världar",
@@ -196,6 +198,7 @@ pcTier: "high",
         "Looter shooters",
         "Taktisk FPS",
         "Stealth-spel (smygarspel)",
+		"Action Adventure",
         "3D Plattformare",
         "2D Plattformare",
         "Pusselspel i förstaperson",
@@ -439,6 +442,7 @@ pcTier: "mid",
         "FPS / Action (Singel)",
         "Looter shooters",
         "Stealth-spel (smygarspel)",
+		"Action Adventure",
         "3D Plattformare",
         "2D Plattformare",
         "Metroidvania-spel",
@@ -468,7 +472,14 @@ pcTier: "mid",
         "Mech-/Robot-strategi eller action",
         "Överlevnad / Crafting / Sandbox",
         "Sandbox / Creativity / World-building",
-        "Bullet hell / Shoot ’em up (Shmup)"
+        "Bullet hell / Shoot ’em up (Shmup)",
+		"Monsterfångar-RPG",
+		"Flygsimulator",
+		"Övriga fordonsimulatorer",
+		"Ubåt / Rymdsimulatorer",
+		"City building / Farming",
+		"Life Simulation / Social Simulation",
+		"Partyspel / Micro-games"
       ],
       undviker: [
         "Taktisk FPS",
@@ -494,13 +505,7 @@ pcTier: "mid",
         "Tabletop / Digital Board Games"
 		],
 		ejValt: [
-  "Monsterfångar-RPG",
-  "Flygsimulator",
-  "Övriga fordonsimulatorer",
-  "Ubåt / Rymdsimulatorer",
-  "City building / Farming",
-  "Life Simulation / Social Simulation",
-  "Partyspel / Micro-games"
+
       ]
     },
 
@@ -521,6 +526,7 @@ pcTier: "mid",
         "Taktisk FPS",
         "Battle Royale",
         "Stealth-spel (smygarspel)",
+		"Action Adventure",
         "3D Plattformare",
         "2D Plattformare",
         "Pusselspel i förstaperson",
@@ -862,6 +868,7 @@ pcTier: "high",
       ],
       oppen: [
         "FPS / Action (Singel)",
+		"Action Adventure",
         "Metroidvania-spel",
         "Open-World / Öppna världar",
         "Rogue-like / Rogue-lite spel",
@@ -928,6 +935,7 @@ Daniel: {
         "FPS / Action (Singel)",
         "Boomer shooters",
         "Looter shooters",
+		"Action Adventure",
         "Stealth-spel (smygarspel)",
         "3D Plattformare",
         "2D Plattformare",
@@ -1090,13 +1098,13 @@ pcTier: "mid",
     },
 	Jesper: {
 		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
-pcTier: "low",
+pcTier: "mid",
 
   pc: {
     cpu: "Intel Core i7-12650H",
     gpu: "Nvidia Geforce RTX 3060",
     ram: 16,
-    notes: "Obs! Var uppmärksamma kring systemkrav trots bra CPU. Detta är en bärbar dator. I regel är grafikkort på en laptop en tier under i prestanda. D.v.s en bärbar RTX 3060 är jämbördigt med en RTX 3050 på en stationär dator."
+    notes: "Obs! Var uppmärksamma kring systemkrav. Detta är en bärbar dator. I regel är grafikkortet en tier under i prestanda. D.v.s en bärbar RTX 3060 är jämbördigt med en RTX 3050 på en stationär dator."
   },
   alskar: [
     "RPG / CRPG",
@@ -1109,6 +1117,7 @@ pcTier: "low",
     "FPS / Action (Singel)",
     "Boomer shooters",
     "Looter shooters",
+	"Action Adventure",
     "3D Plattformare",
     "2D Plattformare",
     "Metroidvania-spel",
@@ -1159,13 +1168,14 @@ pcTier: "low",
     "Economy / Tycoon Games",
     "Peka & Klicka Äventyr",
     "Competitive Online (FPS etc.)",
+	"Multiplayer / Coop",
+    "Mech-/Robot-strategi eller action",
+    "Tabletop / Digital Board Games",
+	"Match-3 spel",
     "Kortspel / Deckbuilding"
 	],
 	  ejValt: [
-    "Multiplayer / Coop",
-    "Mech-/Robot-strategi eller action",
-    "Tabletop / Digital Board Games",
-    "Match-3 spel"
+   
   ]
 },
 Andres: {
@@ -1182,11 +1192,13 @@ pcTier: "mid",
     "FPS / Action (Singel)",
     "Boomer shooters",
     "Looter shooters",
+	"Action Adventure",
     "Stealth-spel (smygarspel)",
     "2D Plattformare",
     "Metroidvania-spel",
     "RPG / CRPG",
     "ARPG / Action-rollspel",
+	"Beat-em-Up / Brawler",
     "Souls- och Soulslike",
     "Rogue-like / Rogue-lite spel",
     "Realtidsstrategi (RTS)",
@@ -1210,6 +1222,8 @@ pcTier: "mid",
 
   oppen: [
     "Looter shooters",
+	"3D Plattformare",
+	"Open-World / Öppna världar",
     "Taktisk FPS",
     "Battle Royale",
     "Hero shooter / MOBA-liknande FPS",
@@ -1219,34 +1233,32 @@ pcTier: "mid",
     "Taktiskt RPG / Turbaserat taktiskt RPG",
     "Grand Strategy",
     "Tower Defense",
+	"Sportspel",
+	"Fighting",
+	"MMO (Onlinespel)",
     "MOBA / Tactical Arena / Auto-battler",
+	"Kart-racing",
     "Full racing simulator",
     "Flygsimulator",
     "Övriga fordonsimulatorer",
     "Economy / Tycoon Games",
     "Walking Simulator i förstaperson",
-    "Peka & Klicka Äventyr"
+    "Peka & Klicka Äventyr",
+	"Match-3 spel",
+	"Kortspel / Deckbuilding"
   ],
 
   undviker: [
     "Monsterfångar-RPG",
     "Visuella noveller / Storybaserade spel",
+	"Interactive Story / Episodspel",
+	"Partyspel / Micro-games",
     "Card-based Strategy / Digital CCG",
     "Life Simulation / Social Simulation",
     "Tabletop / Digital Board Games"
 	],
 	ejValt: [
-  "3D Plattformare",
-  "Open-World / Öppna världar",
-  "Interactive Story / Episodspel",
-  "Sportspel",
-  "Kart-racing",
-  "MMO (Onlinespel)",
-  "Partyspel / Micro-games",
-  "Fighting",
-  "Beat-em-Up / Brawler",
-  "Match-3 spel",
-  "Kortspel / Deckbuilding"
+ 
   ]
 },
 Mattias: {
@@ -1322,12 +1334,75 @@ pcTier: "mid",
     gpu: "NVIDIA GeForce RTX 4070 12GB",
     ram: 32,
     notes: "Bra allrounddator - med bra GPU."
-  },
-  alskar: [],
-  oppen: [],
-  undviker: [],
-  ejValt: []
 },
+alskar: [
+  "Stealth-spel (smygarspel)",
+  "3D Plattformare",
+  "2D Plattformare",
+  "RPG / CRPG",
+  "Open-World / Öppna världar",
+  "Action Adventure",
+  "Interactive Story / Episodspel",
+  "Rogue-like / Rogue-lite spel",
+  "Turbaserade strategispel (TBS)",
+  "Grand Strategy",
+  "Överlevnad / Crafting / Sandbox",
+  "Life Simulation / Social Simulation",
+  "Skräckspel",
+  "Walking Simulator i förstaperson",
+  "Peka & Klicka Äventyr",
+  "Survival Horror FPS",
+  "Rytmspel / Music / Rhythm action"
+],
+oppen: [
+  "Looter shooters",
+  "Physics-baserade spel / bygg- och experimentspel",
+  "JRPG",
+  "Taktiskt RPG / Turbaserat taktiskt RPG",
+  "ARPG / Action-rollspel",
+  "Souls- och Soulslike",
+  "Monsterfångar-RPG",
+  "Card-based Strategy / Digital CCG",
+  "Kart-racing",
+  "Sandbox / Creativity / World-building",
+  "City building / Farming",
+  "Economy / Tycoon Games",
+  "Multiplayer / Coop",
+  "MMO (Onlinespel)",
+  "Partyspel / Micro-games",
+  "Arkadspel",
+  "Kortspel / Deckbuilding"
+],
+undviker: [
+  "FPS / Action (Singel)",
+  "Battle Royale",
+  "Hero shooter / MOBA-liknande FPS",
+  "4X-strategi",
+  "Tower Defense",
+  "Arkad- och Simcade Racing",
+  "Full racing simulator",
+  "Flygsimulator",
+  "Övriga fordonsimulatorer",
+  "Mech-/Robot-strategi eller action",
+  "Ubåt / Rymdsimulatorer",
+  "Sportspel",
+  "Competitive Online (FPS etc.)",
+  "Match-3 spel"
+],
+ejValt: [
+  "Boomer shooters",
+  "Taktisk FPS",
+  "Metroidvania-spel",
+  "Realtidsstrategi (RTS)",
+  "MOBA / Tactical Arena / Auto-battler",
+  "Fighting",
+  "Beat-em-Up / Brawler",
+  "Klassiska arkadhallsspel",
+  "Bullet hell / Shoot ’em up (Shmup)",
+  "Tabletop / Digital Board Games"
+]
+},
+
 
 Niclas: {
 		  plattformar: ["Playstation 5", "Nintendo Switch", ],
@@ -1345,6 +1420,3 @@ Niclas: {
   }
 }
 };
-
-
-

@@ -316,15 +316,35 @@ if (kravTier) {
 }
 
 if (typeof GPU_REFERENCE !== "undefined") {
-  Object.keys(GPU_REFERENCE)
-    .sort()
-    .forEach(gpu => {
-      const o = document.createElement("option");
-      o.value = gpu;
-      o.textContent = gpu;
-      gpuKrav.appendChild(o);
-    });
+
+  // Bygg lista med { name, tier }
+  const gpuLista = Object.entries(GPU_REFERENCE).map(
+    ([name, data]) => ({
+      name,
+      tier: data.tier
+    })
+  );
+
+  // Sortera: tier (low → extreme), sedan alfabetiskt
+  gpuLista.sort((a, b) => {
+    const tierDiff =
+      TIER_ORDER.indexOf(a.tier) -
+      TIER_ORDER.indexOf(b.tier);
+
+    if (tierDiff !== 0) return tierDiff;
+
+    return a.name.localeCompare(b.name, "sv");
+  });
+
+  // Skapa dropdown
+  gpuLista.forEach(gpu => {
+    const o = document.createElement("option");
+    o.value = gpu.name;
+    o.textContent = gpu.name;
+    gpuKrav.appendChild(o);
+  });
 }
+
 
 
 /* ===== RENDER ===== */

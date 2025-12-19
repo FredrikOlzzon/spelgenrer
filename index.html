@@ -1,570 +1,1348 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-  <meta charset="UTF-8">
-  <title>Nördliv – Spelpreferenser</title>
-
-  <style>
-    :root {
-      --bg:#0e0e11;
-      --panel:#18181f;
-      --text:#eaeaf0;
-      --muted:#a0a0b0;
-      --love:#4ade80;
-      --open:#facc15;
-      --avoid:#f87171;
-      --border:#2a2a35;
-    }
-
-    *{box-sizing:border-box}
-
-    body{
-      margin:0;
-      font-family:system-ui,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
-
-    header{
-      background:linear-gradient(90deg,#000,#111);
-      border-bottom:1px solid var(--border);
-      padding:20px;
-    }
-
-    .header-inner{
-      max-width:1300px;
-      margin:auto;
-      display:flex;
-      gap:20px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    header img{height:60px}
-
-    h1{margin:0;font-size:2rem}
-
-    .top-nav{
-      margin-left:auto;
-      display:flex;
-      gap:12px;
-    }
-
-    .top-nav a{
-      text-decoration:none;
-      padding:8px 14px;
-      background:#f2f2f2;
-      border-radius:6px;
-      color:#333;
-      font-weight:bold;
-    }
-
-    main{
-      max-width:1300px;
-      margin:auto;
-      padding:30px 20px;
-    }
-
-    h2{
-      margin-top:0;
-      border-bottom:1px solid var(--border);
-      padding-bottom:6px;
-    }
-
-    .top-filter{
-      background:var(--panel);
-      padding:20px;
-      border-radius:10px;
-      margin-bottom:30px;
-      border:1px solid var(--border);
-    }
-
-    .filter-row{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:10px;
-    }
-
-    select,button{
-      background:#111;
-      color:var(--text);
-      border:1px solid var(--border);
-      padding:8px;
-      border-radius:6px;
-    }
-
-    button{cursor:pointer}
-
-    .container{
-      display:grid;
-      grid-template-columns:260px 1fr;
-      gap:30px;
-    }
-
-    .personlista{
-      background:var(--panel);
-      padding:15px;
-      border-radius:10px;
-      border:1px solid var(--border);
-    }
-
-    .personlista button{
-      width:100%;
-      margin-bottom:6px;
-    }
-
-    #resultat{
-      background:var(--panel);
-      padding:20px;
-      border-radius:10px;
-      border:1px solid var(--border);
-    }
-
-    .kolumner{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
-      margin-top:15px;
-    }
-
-    .kolumn{
-      background:#111;
-      padding:15px;
-      border-radius:8px;
-      border:1px solid var(--border);
-    }
-
-    .alskar h3{color:var(--love)}
-    .oppen h3{color:var(--open)}
-    .undviker h3{color:var(--avoid)}
-
-    ul{margin:0;padding-left:18px}
-    li{color:var(--muted);margin-bottom:4px}
-
-footer{
-  margin-top:40px;
-  padding:20px;
-  text-align:center;
-  color:var(--muted);
-}
-
-/* ===== TOOL INFO TEXT ===== */
-.tool-info {
-  margin-bottom: 14px;
-  font-size: 0.95rem;
-  color: var(--muted);
-  line-height: 1.5;
-  max-width: 900px;
-}
-
-.tool-info p {
-  margin: 0 0 10px 0;
-}
-
-.tool-info hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 14px 0;
-}
-
-.tool-info-small {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.tool-info-list {
-  margin: 6px 0 12px 18px;
-  padding: 0;
-}
-
-.tool-info-list li {
-  margin-bottom: 4px;
-  color: var(--text);
-}
-
-
-	.pc-tier {
-  background:#0f172a;
-  border:1px solid #334155;
-  border-radius:8px;
-  padding:10px 14px;
-  margin-bottom:18px;
-  font-weight:600;
-}
-
-.pc-tier.low { color:#f87171; }
-.pc-tier.mid { color:#facc15; }
-.pc-tier.high { color:#4ade80; }
-.pc-tier.extreme { color:#38bdf8; } /* 🔵 EXTREME */
-
-.pc-specs {
-  background:#020617;
-  border:1px solid #334155;
-  border-radius:8px;
-  padding:12px 14px;
-  margin-bottom:20px;
-}
-
-.pc-specs h4 {
-  margin:0 0 8px 0;
-  font-size:0.95rem;
-  color:#93c5fd;
-}
-
-.pc-specs ul {
-  list-style:none;
-  padding:0;
-  margin:0;
-}
-
-.pc-specs li {
-  margin-bottom:4px;
-  color:#cbd5f5;
-  font-size:0.9rem;
-}
-
-/* ===== PC-TIER FILTER ===== */
-
-#pcTierFilter.low {
-  border-color:#f87171;
-  color:#f87171;
-}
-
-#pcTierFilter.mid {
-  border-color:#facc15;
-  color:#facc15;
-}
-
-#pcTierFilter.high {
-  border-color:#4ade80;
-  color:#4ade80;
-}
-
-#pcTierFilter.extreme {
-  border-color:#38bdf8;
-  color:#38bdf8;
-}
-
-/* Varningstext */
-.pc-tier-warning {
-  margin-top:8px;
-  font-size:0.85rem;
-  color:#f87171;
-}
-
-
-  </style>
-</head>
-
-<body>
-
-<header>
-  <div class="header-inner">
-    <img src="Logo_Nerdlife.png">
-    <img src="LOGOTYP-Prototyp-2023-pureLOGO-.png">
-    <h1>Spelpreferenser</h1>
-
-<nav class="top-nav">
-  <a href="index.html">👤 Personvy</a>
-  <a href="ej-valda.html">🚫 Ej valda</a>
-  <a href="heatmap.html">🔥 Heatmap</a>
-  <a href="statistik.html">📊 Statistik</a>
-</nav>
-  </div>
-</header>
-
-<main>
-
-  <!-- GENRE + PLATTFORM -->
-  <div class="top-filter">
-<div class="tool-info">
-  <p>
-    Detta verktyg är till för att ni <strong>redaktörer</strong> lättare ska kunna hitta
-    rätt spel för rätt person.
-  </p>
-
-  <p>
-    Kategorierna <strong>Älskar</strong>, <strong>Öppen</strong> och
-    <strong>Undviker</strong> är <em>preferenser</em> – <em>inte</em> absoluta regler.
-  </p>
-
-  <p>
-    Bara för att någon har vissa spelgenrer markerade som
-    <strong>Undviker</strong> innebär det <strong>inte</strong> att vi automatiskt
-    avstår från att fråga dem om sådana spel.
-    Det är ett stöd för att navigera smartare, inte ett förbud.
-  </p>
-
-  <p>
-    I slutänden är det alltid ett
-    <strong>redaktionellt beslut</strong> vilka personer som tillfrågas,
-    <strong>oavsett</strong> var ett spel hamnar sett till spelgenrepreferens.
-  </p>
-
-  <hr>
-
-  <p class="tool-info-small">
-    Fullständiga kategorinamn:
-  </p>
-
-  <ul class="tool-info-list">
-    <li><strong>Spelgenrer ni verkligen älskar</strong></li>
-    <li><strong>Spelgenrer ni är öppna för att testa eller tycker är okej</strong></li>
-    <li><strong>Spelgenrer ni har svårt för / helst undviker – om möjligt</strong></li>
-  </ul>
-
-  <p class="tool-info-small">
-    Observera direktlänken <strong>“Ej valda”</strong> högst upp – vissa recensenter
-    har spelgenrer som inte placerats i någon kategori.
-  </p>
-</div>
-
-
-    <h2>🎮 Filtrera på genre</h2>
-
-<div class="filter-row">
-  <select id="genreSelect">
-    <option value="">– Välj genre –</option>
-  </select>
-
-  <select id="plattformGenre">
-    <option value="alla">Alla plattformar</option>
-    <option value="PC">PC</option>
-    <option value="Playstation 5">PlayStation 5</option>
-    <option value="Xbox Series S|X">Xbox Series S|X</option>
-    <option value="Nintendo Switch">Nintendo Switch</option>
-    <option value="Switch 2">Switch 2</option>
-  </select>
-
-  <!-- ✅ PC-TIER – HÄR -->
-  <select id="pcTierFilter" style="display:none">
-  <option value="">Alla PC-tier</option>
-  <option value="low">Low</option>
-  <option value="mid">Mid</option>
-  <option value="high">High</option>
-  <option value="extreme">Extreme</option>
-</select>
-
-<div id="pcTierWarning" class="pc-tier-warning" style="display:none">
-  ⚠️ Low tier – dubbelkolla systemkrav. Endast lättare spel rekommenderas.
-</div>
-
-
-  <button id="visaGenreBtn">Visa</button>
-</div>
-
-    <div id="genreResultat"></div>
-
-    <hr style="margin:25px 0;border-color:#2a2a35">
-
-    <!-- PLATTFORM → GENRER -->
-<div class="plattform-genrer" style="display:none">
-  <h3>🧹 Visa genrer per plattform</h3>
-
-  <div class="filter-row">
-    <select id="plattformOnly">
-      <option value="">– Välj plattform –</option>
-      <option value="PC">PC</option>
-      <option value="Playstation 5">PlayStation 5</option>
-      <option value="Xbox Series S|X">Xbox Series S|X</option>
-      <option value="Nintendo Switch">Nintendo Switch</option>
-	  <option value="Switch 2">Switch 2</option>
-    </select>
-
-    <button id="filtreraGenrerBtn">Filtrera genrer</button>
-  </div>
-
-  <div id="plattformGenreResultat"></div>
-</div>
-
-  <!-- PERSONVY -->
-  <div class="container">
-
-    <div class="personlista">
-      <h2>👤 Personer</h2>
-      <div id="personButtons"></div>
-    </div>
-
-    <div id="resultat">
-      <h2>Välj en person</h2>
-      <p class="muted">Klicka på ett namn.</p>
-    </div>
-
-  </div>
-
-</main>
-
-<footer>Nördliv – Spelpreferensanalys</footer>
-
-<script src="data.js"></script>
-
-<script>
-const buttonsDiv=document.getElementById("personButtons");
-const resultatDiv=document.getElementById("resultat");
-const genreSelect=document.getElementById("genreSelect");
-
-/* ===== PERSONKNAPPAR ===== */
-Object.keys(DATA.personerData).forEach(p=>{
-  const b=document.createElement("button");
-  b.textContent=p;
-  b.onclick=()=>visaPerson(p);
-  buttonsDiv.appendChild(b);
-});
-const plattformSelect = document.getElementById("plattformGenre");
-const pcTierSelect = document.getElementById("pcTierFilter");
-
-plattformSelect.addEventListener("change", () => {
-  if (plattformSelect.value === "PC") {
-    pcTierSelect.style.display = "inline-block";
-  } else {
-    pcTierSelect.style.display = "none";
-    pcTierSelect.value = ""; // nollställ
+const PC_TIERS = {
+  low: {
+    label: "Låg PC-prestanda",
+    description: "Indie, 2D, lättare spel"
+  },
+  mid: {
+    label: "Mellan-PC",
+    description: "De flesta moderna spel på medium/hög"
+  },
+  high: {
+    label: "High-end PC",
+    description: "Tunga AAA-spel, hög upplösning"
+  },
+  extreme: {
+    label: "Extreme PC",
+    description: "Ray tracing, maxinställningar, framtidssäker"
   }
-});
-
-const pcTierWarning = document.getElementById("pcTierWarning");
-
-pcTierSelect.addEventListener("change", () => {
-  // Rensa gamla klasser
-  pcTierSelect.classList.remove("low","mid","high","extreme");
-
-  const tier = pcTierSelect.value;
-
-  if (tier) {
-    pcTierSelect.classList.add(tier);
-  }
-
-  // Visa varning endast för low
-  if (tier === "low") {
-    pcTierWarning.style.display = "block";
-  } else {
-    pcTierWarning.style.display = "none";
-  }
-});
-
-/* ===== FYLL GENRER ===== */
-const allaGenrer=new Set();
-Object.values(DATA.personerData).forEach(p=>{
-  [...p.alskar,...p.oppen,...p.undviker].forEach(g=>allaGenrer.add(g));
-});
-[...allaGenrer].sort((a,b)=>a.localeCompare(b,"sv")).forEach(g=>{
-  const o=document.createElement("option");
-  o.value=o.textContent=g;
-  genreSelect.appendChild(o);
-});
-
-/* ===== VISA GENRE ===== */
-document.getElementById("visaGenreBtn").onclick=()=>{
-  const genre=genreSelect.value;
-  const plattform=document.getElementById("plattformGenre").value;
-  if(!genre)return;
-  
-  const pcTier = pcTierSelect.value;
-
-  const A=[],O=[],U=[];
-  Object.entries(DATA.personerData).forEach(([p,d])=>{
-    if (plattform !== "alla") {
-  if (!d.plattformar || !d.plattformar.includes(plattform)) return;
-
-  if (
-    plattform === "PC" &&
-    pcTier &&
-    d.pcTier !== pcTier
-  ) return;
-}
-    if(d.alskar.includes(genre))A.push(p);
-    if(d.oppen.includes(genre))O.push(p);
-    if(d.undviker.includes(genre))U.push(p);
-  });
-
-  document.getElementById("genreResultat").innerHTML=`
-    <h3>${genre}</h3>
-    <div class="kolumner">
-      <div class="kolumn alskar"><h3>❤️ Älskar</h3>${lista(A)}</div>
-      <div class="kolumn oppen"><h3>👍 Öppen</h3>${lista(O)}</div>
-      <div class="kolumn undviker"><h3>🚫 Undviker</h3>${lista(U)}</div>
-    </div>`;
 };
 
-/* ===== PLATTFORM → GENRER ===== */
-document.getElementById("filtreraGenrerBtn").onclick=()=>{
-  const pl=document.getElementById("plattformOnly").value;
-  if(!pl)return;
+const DATA = {
+personer: [
+  "Fredrik","Danny","Odd","Natalie","Oscar",
+  "Tony","Victoria","Fyghar","Peter","Emil",
+  "Daniel","Robin","Jesper","Andres",
+  "Mattias","Jim","Emilia","Arvid","Vanessa","Niclas"
+],
 
-  const counter={};
-  Object.values(DATA.personerData).forEach(d=>{
-    if(!d.plattformar||!d.plattformar.includes(pl))return;
-    [...d.alskar,...d.oppen].forEach(g=>counter[g]=(counter[g]||0)+1);
-  });
+  genrer: [
+    "FPS / Action (Singel)",
+    "Boomer shooters",
+    "Looter shooters",
+    "Taktisk FPS",
+    "Battle Royale",
+    "Hero shooter / MOBA-liknande FPS",
+    "Stealth-spel (smygarspel)",
+    "3D Plattformare",
+    "2D Plattformare",
+    "Pusselspel i förstaperson",
+    "Physics-baserade spel / bygg- och experimentspel",
+    "Metroidvania-spel",
+    "RPG / CRPG",
+    "JRPG",
+    "Taktiskt RPG / Turbaserat taktiskt RPG",
+    "ARPG / Action-rollspel",
+    "Souls- och Soulslike",
+    "Monsterfångar-RPG",
+    "Open-World / Öppna världar",
+    "Interactive Story / Episodspel",
+    "Visuella noveller / Storybaserade spel",
+    "Rogue-like / Rogue-lite spel",
+    "Realtidsstrategi (RTS)",
+    "Turbaserade strategispel (TBS)",
+    "4X-strategi",
+    "Grand Strategy",
+    "Tower Defense",
+    "MOBA / Tactical Arena / Auto-battler",
+    "Card-based Strategy / Digital CCG",
+    "Arkad- och Simcade Racing",
+    "Kart-racing",
+    "Full racing simulator",
+    "Flygsimulator",
+    "Övriga fordonsimulatorer",
+    "Mech-/Robot-strategi eller action",
+    "Ubåt / Rymdsimulatorer",
+    "Sportspel",
+    "Överlevnad / Crafting / Sandbox",
+    "Sandbox / Creativity / World-building",
+    "City building / Farming",
+    "Life Simulation / Social Simulation",
+    "Economy / Tycoon Games",
+    "Skräckspel",
+    "Walking Simulator i förstaperson",
+    "Peka & Klicka Äventyr",
+    "Survival Horror FPS",
+    "Competitive Online (FPS etc.)",
+    "Multiplayer / Coop",
+    "MMO (Onlinespel)",
+    "Partyspel / Micro-games",
+    "Fighting",
+    "Beat-em-Up / Brawler",
+    "Arkadspel",
+    "Klassiska arkadhallsspel",
+    "Bullet hell / Shoot ’em up (Shmup)",
+    "Rytmspel / Music / Rhythm action",
+    "Match-3 spel",
+    "Kortspel / Deckbuilding",
+    "Tabletop / Digital Board Games"
+  ],
 
-  document.getElementById("plattformGenreResultat").innerHTML=`
-    <ul>${Object.entries(counter).sort((a,b)=>b[1]-a[1])
-      .map(([g,c])=>`<li>${g} (${c})</li>`).join("")}</ul>`;
-	  
+  personerData: {
+
+    Fredrik: {
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
+pcTier: "extreme",
+
+  pc: {
+    cpu: "Ryzen 9 9950X3D",
+    gpu: "RTX 4090",
+    ram: 32,
+    notes: "Klarar alla typer av spel per 2025-12-19 - utifrån prestanda"
+  },
+      alskar: [
+        "FPS / Action (Singel)",
+        "3D Plattformare",
+        "RPG / CRPG",
+        "Open-World / Öppna världar",
+        "Tower Defense",
+        "Arkad- och Simcade Racing",
+        "Överlevnad / Crafting / Sandbox",
+        "City building / Farming",
+        "Klassiska arkadhallsspel",
+        "Bullet hell / Shoot ’em up (Shmup)",
+        "Match-3 spel"
+      ],
+      oppen: [
+        "FPS / Action (Singel)",
+        "Boomer shooters",
+        "Looter shooters",
+        "3D Plattformare",
+        "2D Plattformare",
+        "Pusselspel i förstaperson",
+        "Physics-baserade spel / bygg- och experimentspel",
+        "Metroidvania-spel",
+        "RPG / CRPG",
+        "JRPG",
+        "ARPG / Action-rollspel",
+        "Souls- och Soulslike",
+        "Monsterfångar-RPG",
+        "Open-World / Öppna världar",
+        "Realtidsstrategi (RTS)",
+        "Turbaserade strategispel (TBS)",
+        "4X-strategi",
+        "Tower Defense",
+        "Arkad- och Simcade Racing",
+        "Kart-racing",
+        "Sandbox / Creativity / World-building",
+        "Life Simulation / Social Simulation",
+        "Economy / Tycoon Games",
+        "Skräckspel",
+        "Peka & Klicka Äventyr",
+        "Survival Horror FPS",
+        "Beat-em-Up / Brawler",
+        "Arkadspel",
+        "Rytmspel / Music / Rhythm action"
+      ],
+      undviker: [
+        "Battle Royale",
+        "Hero shooter / MOBA-liknande FPS",
+        "Stealth-spel (smygarspel)",
+        "Visuella noveller / Storybaserade spel",
+        "Grand Strategy",
+        "MOBA / Tactical Arena / Auto-battler",
+        "Card-based Strategy / Digital CCG",
+        "Övriga fordonsimulatorer",
+        "Mech-/Robot-strategi eller action",
+        "Ubåt / Rymdsimulatorer",
+        "Sportspel",
+        "Competitive Online (FPS etc.)",
+        "Multiplayer / Coop",
+        "MMO (Onlinespel)",
+        "Fighting",
+        "Kortspel / Deckbuilding",
+        "Tabletop / Digital Board Games"
+		],
+		ejValt: [
+    "Taktisk FPS",
+    "Interactive Story / Episodspel",
+    "Rogue-like / Rogue-lite spel",
+    "Full racing simulator",
+    "Flygsimulator",
+    "Partyspel / Micro-games"
+      ]
+    },
+
+    Natalie: {
+		plattformar: ["PC", "Playstation 5", ],
+pcTier: "high",
+
+  pc: {
+    cpu: "Ryzen 5 9600X",
+    gpu: "Radeon 6800 XT 16GB",
+    ram: 32,
+    notes: "Strax över mid-tier - nästan high. Bra allrounddator som är över genomsnittet."
+  },
+      alskar: [
+        "RPG / CRPG",
+        "Open-World / Öppna världar",
+        "Överlevnad / Crafting / Sandbox",
+        "Sandbox / Creativity / World-building",
+        "City building / Farming",
+        "Life Simulation / Social Simulation",
+        "Economy / Tycoon Games"
+      ],
+      oppen: [
+        "FPS / Action (Singel)",
+        "Looter shooters",
+        "Taktisk FPS",
+        "Stealth-spel (smygarspel)",
+        "3D Plattformare",
+        "2D Plattformare",
+        "Pusselspel i förstaperson",
+        "Metroidvania-spel",
+        "RPG / CRPG",
+        "ARPG / Action-rollspel",
+        "Souls- och Soulslike",
+        "Open-World / Öppna världar",
+        "Interactive Story / Episodspel",
+        "Visuella noveller / Storybaserade spel",
+        "Rogue-like / Rogue-lite spel",
+        "Grand Strategy",
+        "Arkad- och Simcade Racing",
+        "Övriga fordonsimulatorer",
+        "Survival Horror FPS",
+        "Multiplayer / Coop",
+        "Klassiska arkadhallsspel"
+      ],
+      undviker: [
+        "Boomer shooters",
+        "Hero shooter / MOBA-liknande FPS",
+        "Monsterfångar-RPG",
+        "Turbaserade strategispel (TBS)",
+        "Tower Defense",
+        "MOBA / Tactical Arena / Auto-battler",
+        "Card-based Strategy / Digital CCG",
+        "Flygsimulator",
+        "Mech-/Robot-strategi eller action",
+        "Ubåt / Rymdsimulatorer",
+        "Sportspel"
+		],
+		ejValt: [
+  "Battle Royale",
+  "Physics-baserade spel / bygg- och experimentspel",
+  "JRPG",
+  "Taktiskt RPG / Turbaserat taktiskt RPG",
+  "Realtidsstrategi (RTS)",
+  "4X-strategi",
+  "Kart-racing",
+  "Full racing simulator",
+  "Skräckspel",
+  "Walking Simulator i förstaperson",
+  "Peka & Klicka Äventyr",
+  "Competitive Online (FPS etc.)",
+  "MMO (Onlinespel)",
+  "Partyspel / Micro-games",
+  "Fighting",
+  "Beat-em-Up / Brawler",
+  "Arkadspel",
+  "Bullet hell / Shoot ’em up (Shmup)",
+  "Rytmspel / Music / Rhythm action",
+  "Match-3 spel",
+  "Kortspel / Deckbuilding",
+  "Tabletop / Digital Board Games"
+      ]
+    },
+
+    Emil: {
+		  plattformar: ["PC", ],
+pcTier: "low",
+
+  pc: {
+    cpu: "Intel Core i7 4790K",
+    gpu: "Radeon RX 6600 XT 8GB",
+    ram: 16,
+    notes: "Uppgradering av grafikkort möjliggör avsevärt fler spel.Dock hålls datorn tillbaka av föråldrad CPU. Dubbelkolla extra noga innan spel ges."
+  },
+      alskar: [
+        "FPS / Action (Singel)",
+        "Boomer shooters",
+        "Taktisk FPS",
+        "Pusselspel i förstaperson",
+        "Souls- och Soulslike",
+        "Realtidsstrategi (RTS)",
+        "Ubåt / Rymdsimulatorer",
+        "City building / Farming",
+        "Economy / Tycoon Games",
+        "Skräckspel",
+        "Walking Simulator i förstaperson",
+        "Peka & Klicka Äventyr",
+        "Arkadspel",
+        "Klassiska arkadhallsspel",
+        "Bullet hell / Shoot ’em up (Shmup)",
+        "Match-3 spel"
+      ],
+      oppen: [
+        "FPS / Action (Singel)",
+        "Taktisk FPS",
+        "3D Plattformare",
+        "2D Plattformare",
+        "Rogue-like / Rogue-lite spel",
+        "4X-strategi",
+        "Arkad- och Simcade Racing",
+        "Flygsimulator",
+        "Överlevnad / Crafting / Sandbox",
+        "Survival Horror FPS"
+      ],
+      undviker: [
+        "Looter shooters",
+        "Battle Royale",
+        "Hero shooter / MOBA-liknande FPS",
+        "JRPG",
+        "Taktiskt RPG / Turbaserat taktiskt RPG",
+        "Sportspel",
+        "Competitive Online (FPS etc.)",
+        "Multiplayer / Coop",
+        "MMO (Onlinespel)",
+        "Partyspel / Micro-games",
+        "Fighting",
+        "Beat-em-Up / Brawler",
+        "Tabletop / Digital Board Games"
+		],
+		ejValt: [
+  "Stealth-spel (smygarspel)",
+  "Physics-baserade spel / bygg- och experimentspel",
+  "Metroidvania-spel",
+  "RPG / CRPG",
+  "ARPG / Action-rollspel",
+  "Monsterfångar-RPG",
+  "Open-World / Öppna världar",
+  "Interactive Story / Episodspel",
+  "Visuella noveller / Storybaserade spel",
+  "Turbaserade strategispel (TBS)",
+  "Grand Strategy",
+  "Tower Defense",
+  "MOBA / Tactical Arena / Auto-battler",
+  "Card-based Strategy / Digital CCG",
+  "Kart-racing",
+  "Full racing simulator",
+  "Övriga fordonsimulatorer",
+  "Mech-/Robot-strategi eller action",
+  "Sandbox / Creativity / World-building",
+  "Life Simulation / Social Simulation",
+  "Rytmspel / Music / Rhythm action",
+  "Kortspel / Deckbuilding"
+      ]
+    },
+
+    Victoria: {
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+pcTier: "low",
+
+  pc: {
+    cpu: "Intel Core",
+    gpu: "Nvidia Geforce RTX 2060 Super 8GB",
+    ram: 16,
+    notes: "Grafikkortet är dugligt, men överlag en svag dator. Inväntar ny HW Info undersökning."
+  },	
+	
+      alskar: [
+        "RPG / CRPG",
+        "JRPG",
+        "Taktiskt RPG / Turbaserat taktiskt RPG",
+        "Monsterfångar-RPG",
+        "Interactive Story / Episodspel",
+        "Visuella noveller / Storybaserade spel",
+        "Life Simulation / Social Simulation",
+        "Economy / Tycoon Games",
+        "Walking Simulator i förstaperson",
+        "Peka & Klicka Äventyr",
+        "Tabletop / Digital Board Games"
+      ],
+      oppen: [
+        "Stealth-spel (smygarspel)",
+        "3D Plattformare",
+        "2D Plattformare",
+        "Pusselspel i förstaperson",
+        "RPG / CRPG",
+        "JRPG",
+        "Taktiskt RPG / Turbaserat taktiskt RPG",
+        "ARPG / Action-rollspel",
+        "Monsterfångar-RPG",
+        "Open-World / Öppna världar",
+        "Interactive Story / Episodspel",
+        "Visuella noveller / Storybaserade spel",
+        "Rogue-like / Rogue-lite spel",
+        "Turbaserade strategispel (TBS)",
+        "Card-based Strategy / Digital CCG",
+        "Överlevnad / Crafting / Sandbox",
+        "Sandbox / Creativity / World-building",
+        "City building / Farming",
+        "Life Simulation / Social Simulation",
+        "Economy / Tycoon Games",
+        "Walking Simulator i förstaperson",
+        "Peka & Klicka Äventyr",
+        "Partyspel / Micro-games",
+        "Beat-em-Up / Brawler",
+        "Arkadspel",
+        "Rytmspel / Music / Rhythm action",
+        "Match-3 spel",
+        "Kortspel / Deckbuilding",
+        "Tabletop / Digital Board Games"
+      ],
+      undviker: [
+        "FPS / Action (Singel)",
+        "Boomer shooters",
+        "Battle Royale",
+        "Hero shooter / MOBA-liknande FPS",
+        "Physics-baserade spel / bygg- och experimentspel",
+        "Metroidvania-spel",
+        "Souls- och Soulslike",
+        "Realtidsstrategi (RTS)",
+        "4X-strategi",
+        "Grand Strategy",
+        "MOBA / Tactical Arena / Auto-battler",
+        "Arkad- och Simcade Racing",
+        "Full racing simulator",
+        "Sportspel",
+        "Skräckspel",
+        "Survival Horror FPS",
+        "Competitive Online (FPS etc.)",
+        "Fighting",
+        "Bullet hell / Shoot ’em up (Shmup)"
+		],
+		ejValt: [
+  "Looter shooters",
+  "Taktisk FPS",
+  "Tower Defense",
+  "Kart-racing",
+  "Flygsimulator",
+  "Övriga fordonsimulatorer",
+  "Mech-/Robot-strategi eller action",
+  "Ubåt / Rymdsimulatorer",
+  "Multiplayer / Coop",
+  "MMO (Onlinespel)",
+  "Klassiska arkadhallsspel"
+      ]
+    },
+	    Danny: {
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", ],
+pcTier: "mid",
+
+  pc: {
+    cpu: "Intel Core i5 11400F",
+    gpu: "Radeon RX 6750 XT 12GB",
+    ram: 32,
+    notes: "Okej allrounddator. Om än på väg att bli lite väl till åren. Grafikkortets VRAM gör att den höjer sig över genomsnittet."
+  },
+			
+      alskar: [
+        "FPS / Action (Singel)",
+        "Looter shooters",
+        "Stealth-spel (smygarspel)",
+        "3D Plattformare",
+        "2D Plattformare",
+        "Metroidvania-spel",
+        "RPG / CRPG",
+        "JRPG",
+        "ARPG / Action-rollspel",
+        "Open-World / Öppna världar",
+        "Arkad- och Simcade Racing",
+        "Kart-racing",
+        "Skräckspel",
+        "Walking Simulator i förstaperson",
+        "Peka & Klicka Äventyr",
+        "Survival Horror FPS",
+        "Multiplayer / Coop",
+        "Beat-em-Up / Brawler",
+        "Arkadspel",
+        "Klassiska arkadhallsspel"
+      ],
+      oppen: [
+        "Boomer shooters",
+        "Pusselspel i förstaperson",
+        "Physics-baserade spel / bygg- och experimentspel",
+        "Interactive Story / Episodspel",
+        "Visuella noveller / Storybaserade spel",
+        "Realtidsstrategi (RTS)",
+        "Full racing simulator",
+        "Mech-/Robot-strategi eller action",
+        "Överlevnad / Crafting / Sandbox",
+        "Sandbox / Creativity / World-building",
+        "Bullet hell / Shoot ’em up (Shmup)"
+      ],
+      undviker: [
+        "Taktisk FPS",
+        "Battle Royale",
+        "Hero shooter / MOBA-liknande FPS",
+        "Rogue-like / Rogue-lite spel",
+        "Taktiskt RPG / Turbaserat taktiskt RPG",
+        "Souls- och Soulslike",
+        "Turbaserade strategispel (TBS)",
+        "4X-strategi",
+        "Grand Strategy",
+        "Tower Defense",
+        "MOBA / Tactical Arena / Auto-battler",
+        "Card-based Strategy / Digital CCG",
+        "Sportspel",
+        "Economy / Tycoon Games",
+        "Competitive Online (FPS etc.)",
+        "MMO (Onlinespel)",
+        "Fighting",
+        "Rytmspel / Music / Rhythm action",
+        "Match-3 spel",
+        "Kortspel / Deckbuilding",
+        "Tabletop / Digital Board Games"
+		],
+		ejValt: [
+  "Monsterfångar-RPG",
+  "Flygsimulator",
+  "Övriga fordonsimulatorer",
+  "Ubåt / Rymdsimulatorer",
+  "City building / Farming",
+  "Life Simulation / Social Simulation",
+  "Partyspel / Micro-games"
+      ]
+    },
+
+    Odd: {
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", ],
+pcTier: "mid",
+
+  pc: {
+    cpu: "Ryzen 7 5800X3D",
+    gpu: "Nvidia Geforce RTX 2080 Ti 11GB",
+    ram: 32,
+    notes: "Bra allroundmaskin - även om GPU är något föråldrad. Vägs däremot upp av att ha gott om VRAM."
+  },
+      alskar: [
+        "FPS / Action (Singel)",
+        "Boomer shooters",
+        "Looter shooters",
+        "Taktisk FPS",
+        "Battle Royale",
+        "Stealth-spel (smygarspel)",
+        "3D Plattformare",
+        "2D Plattformare",
+        "Pusselspel i förstaperson",
+        "Metroidvania-spel",
+        "RPG / CRPG",
+        "Taktiskt RPG / Turbaserat taktiskt RPG",
+        "ARPG / Action-rollspel",
+        "Souls- och Soulslike",
+        "Open-World / Öppna världar",
+        "Realtidsstrategi (RTS)",
+        "Turbaserade strategispel (TBS)",
+        "Tower Defense",
+        "MOBA / Tactical Arena / Auto-battler",
+        "Mech-/Robot-strategi eller action",
+        "Ubåt / Rymdsimulatorer",
+        "Överlevnad / Crafting / Sandbox",
+        "City building / Farming",
+        "Skräckspel",
+        "Survival Horror FPS",
+        "Multiplayer / Coop",
+        "Fighting",
+        "Bullet hell / Shoot ’em up (Shmup)",
+        "Rytmspel / Music / Rhythm action"
+      ],
+      oppen: [
+        "FPS / Action (Singel)",
+        "Boomer shooters",
+        "Looter shooters",
+        "Taktisk FPS",
+        "Battle Royale",
+        "Hero shooter / MOBA-liknande FPS",
+        "Stealth-spel (smygarspel)",
+        "3D Plattformare",
+        "2D Plattformare",
+        "Pusselspel i förstaperson",
+        "Physics-baserade spel / bygg- och experimentspel",
+        "Metroidvania-spel",
+        "RPG / CRPG",
+        "JRPG",
+        "Taktiskt RPG / Turbaserat taktiskt RPG",
+        "ARPG / Action-rollspel",
+        "Souls- och Soulslike",
+        "Monsterfångar-RPG",
+        "Open-World / Öppna världar",
+        "Interactive Story / Episodspel",
+        "Visuella noveller / Storybaserade spel",
+        "Rogue-like / Rogue-lite spel",
+        "Realtidsstrategi (RTS)",
+        "Turbaserade strategispel (TBS)",
+        "4X-strategi",
+        "Grand Strategy",
+        "Tower Defense",
+        "MOBA / Tactical Arena / Auto-battler",
+        "Card-based Strategy / Digital CCG",
+        "Arkad- och Simcade Racing",
+        "Kart-racing",
+        "Mech-/Robot-strategi eller action",
+        "Ubåt / Rymdsimulatorer",
+        "Sportspel",
+        "Överlevnad / Crafting / Sandbox",
+        "Sandbox / Creativity / World-building",
+        "City building / Farming",
+        "Economy / Tycoon Games",
+        "Skräckspel",
+        "Walking Simulator i förstaperson",
+        "Peka & Klicka Äventyr",
+        "Survival Horror FPS",
+        "Competitive Online (FPS etc.)",
+        "Multiplayer / Coop",
+        "MMO (Onlinespel)",
+        "Partyspel / Micro-games",
+        "Fighting",
+        "Beat-em-Up / Brawler",
+        "Arkadspel",
+        "Klassiska arkadhallsspel",
+        "Bullet hell / Shoot ’em up (Shmup)",
+        "Rytmspel / Music / Rhythm action",
+        "Kortspel / Deckbuilding",
+        "Tabletop / Digital Board Games"
+      ],
+      undviker: [
+        "Full racing simulator",
+        "Flygsimulator",
+        "Life Simulation / Social Simulation",
+        "Match-3 spel"
+      ]
+    },
+
+    Peter: {
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", ],
+pcTier: "mid",
+
+  pc: {
+    cpu: "Ryzen 5 5600",
+    gpu: "Radeon RX 6600 XT 8GB",
+    ram: 16,
+    notes: "God allroundmaskin sedan uppgradering av grafikkort."
+  },
+      alskar: [
+        "Looter shooters",
+        "RPG / CRPG",
+        "ARPG / Action-rollspel",
+        "Souls- och Soulslike",
+        "Open-World / Öppna världar",
+        "Interactive Story / Episodspel",
+        "Visuella noveller / Storybaserade spel",
+        "Överlevnad / Crafting / Sandbox",
+        "Skräckspel",
+        "Walking Simulator i förstaperson",
+        "Peka & Klicka Äventyr",
+        "Survival Horror FPS",
+        "Tabletop / Digital Board Games"
+      ],
+      oppen: [
+        "FPS / Action (Singel)",
+        "Battle Royale",
+        "Rogue-like / Rogue-lite spel",
+        "4X-strategi",
+        "Card-based Strategy / Digital CCG",
+        "Arkad- och Simcade Racing",
+        "Sportspel",
+        "Competitive Online (FPS etc.)",
+        "Multiplayer / Coop",
+        "Bullet hell / Shoot ’em up (Shmup)"
+      ],
+      undviker: [
+        "3D Plattformare",
+        "2D Plattformare",
+        "JRPG",
+        "Realtidsstrategi (RTS)",
+        "Kart-racing",
+        "Fighting",
+        "Beat-em-Up / Brawler"
+		],
+		ejValt: [
+  "Boomer shooters",
+  "Taktisk FPS",
+  "Hero shooter / MOBA-liknande FPS",
+  "Stealth-spel (smygarspel)",
+  "Pusselspel i förstaperson",
+  "Physics-baserade spel / bygg- och experimentspel",
+  "Metroidvania-spel",
+  "Taktiskt RPG / Turbaserat taktiskt RPG",
+  "Monsterfångar-RPG",
+  "Turbaserade strategispel (TBS)",
+  "Grand Strategy",
+  "Tower Defense",
+  "MOBA / Tactical Arena / Auto-battler",
+  "Full racing simulator",
+  "Flygsimulator",
+  "Övriga fordonsimulatorer",
+  "Mech-/Robot-strategi eller action",
+  "Ubåt / Rymdsimulatorer",
+  "Sandbox / Creativity / World-building",
+  "City building / Farming",
+  "Life Simulation / Social Simulation",
+  "Economy / Tycoon Games",
+  "MMO (Onlinespel)",
+  "Partyspel / Micro-games",
+  "Arkadspel",
+  "Klassiska arkadhallsspel",
+  "Rytmspel / Music / Rhythm action",
+  "Match-3 spel",
+  "Kortspel / Deckbuilding"
+      ]
+    },
+
+    Oscar: {
+		  plattformar: ["PC", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
+pcTier: "mid",
+
+  pc: {
+    cpu: "AMD Ryzen 5 9600X",
+    gpu: "Intel ARC B580 12GB",
+    ram: 32,
+    notes: "Bra för alla typer av spel utifrån råprestanda. Obs! Dubbelkolla spelstöd för Intel ARC!"
+  },
+      alskar: [
+        "FPS / Action (Singel)",
+        "3D Plattformare",
+        "2D Plattformare",
+        "Pusselspel i förstaperson",
+        "RPG / CRPG",
+        "JRPG",
+        "Taktiskt RPG / Turbaserat taktiskt RPG",
+        "ARPG / Action-rollspel",
+        "Monsterfångar-RPG",
+        "Open-World / Öppna världar",
+        "Visuella noveller / Storybaserade spel",
+        "Turbaserade strategispel (TBS)",
+        "Card-based Strategy / Digital CCG",
+        "Arkad- och Simcade Racing",
+        "Kart-racing",
+        "Full racing simulator",
+        "Övriga fordonsimulatorer",
+        "City building / Farming",
+        "Life Simulation / Social Simulation",
+        "Economy / Tycoon Games",
+        "Peka & Klicka Äventyr",
+        "Partyspel / Micro-games",
+        "Arkadspel",
+        "Klassiska arkadhallsspel",
+        "Kortspel / Deckbuilding"
+      ],
+      oppen: [
+        "Taktisk FPS",
+        "Metroidvania-spel",
+        "Rogue-like / Rogue-lite spel",
+        "4X-strategi",
+        "Grand Strategy",
+        "Överlevnad / Crafting / Sandbox",
+        "Sandbox / Creativity / World-building",
+        "MMO (Onlinespel)",
+        "Bullet hell / Shoot ’em up (Shmup)",
+        "Match-3 spel"
+      ],
+      undviker: [
+        "Boomer shooters",
+        "Souls- och Soulslike",
+        "MOBA / Tactical Arena / Auto-battler",
+        "Flygsimulator",
+        "Skräckspel",
+        "Competitive Online (FPS etc.)",
+        "Rytmspel / Music / Rhythm action",
+        "Tabletop / Digital Board Games"
+		],
+		ejValt: [
+  "Looter shooters",
+  "Battle Royale",
+  "Hero shooter / MOBA-liknande FPS",
+  "Stealth-spel (smygarspel)",
+  "Physics-baserade spel / bygg- och experimentspel",
+  "Interactive Story / Episodspel",
+  "Realtidsstrategi (RTS)",
+  "Tower Defense",
+  "Mech-/Robot-strategi eller action",
+  "Ubåt / Rymdsimulatorer",
+  "Sportspel",
+  "Walking Simulator i förstaperson",
+  "Survival Horror FPS",
+  "Multiplayer / Coop",
+  "Fighting",
+  "Beat-em-Up / Brawler"
+      ]
+    },
+
+    Fyghar: {
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+pcTier: "low",
+
+  pc: {
+    cpu: "Ryzen 5 2600",
+    gpu: "Nvidia Geforce RTX 3060 12GB",
+    ram: 16,
+    notes: "Okej dator, grafikkort är dock föråldrat, även om det har större mängd VRAM än genomsnittet."
+  },
+      alskar: [
+        "RPG / CRPG",
+        "Monsterfångar-RPG",
+        "Arkad- och Simcade Racing",
+        "Kart-racing",
+        "Multiplayer / Coop",
+        "Partyspel / Micro-games",
+        "Beat-em-Up / Brawler"
+      ],
+      oppen: [
+        "FPS / Action (Singel)",
+        "Boomer shooters",
+        "Looter shooters",
+        "Taktisk FPS",
+        "3D Plattformare",
+        "2D Plattformare",
+        "Physics-baserade spel / bygg- och experimentspel",
+        "Metroidvania-spel",
+        "JRPG",
+        "Taktiskt RPG / Turbaserat taktiskt RPG",
+        "ARPG / Action-rollspel",
+        "Interactive Story / Episodspel",
+        "Visuella noveller / Storybaserade spel",
+        "Rogue-like / Rogue-lite spel",
+        "Turbaserade strategispel (TBS)",
+        "4X-strategi",
+        "Tower Defense",
+        "Card-based Strategy / Digital CCG",
+        "Övriga fordonsimulatorer",
+        "City building / Farming",
+        "Life Simulation / Social Simulation",
+        "Economy / Tycoon Games",
+        "Walking Simulator i förstaperson",
+        "Peka & Klicka Äventyr",
+        "Arkadspel",
+        "Klassiska arkadhallsspel",
+        "Bullet hell / Shoot ’em up (Shmup)",
+        "Rytmspel / Music / Rhythm action",
+        "Match-3 spel",
+        "Kortspel / Deckbuilding",
+        "Tabletop / Digital Board Games"
+      ],
+      undviker: [
+        "Hero shooter / MOBA-liknande FPS",
+        "Souls- och Soulslike",
+        "Skräckspel",
+        "Survival Horror FPS",
+        "Competitive Online (FPS etc.)",
+        "MMO (Onlinespel)"
+		],
+		ejValt: [
+  "Battle Royale",
+  "Stealth-spel (smygarspel)",
+  "Pusselspel i förstaperson",
+  "Open-World / Öppna världar",
+  "Realtidsstrategi (RTS)",
+  "Grand Strategy",
+  "MOBA / Tactical Arena / Auto-battler",
+  "Full racing simulator",
+  "Flygsimulator",
+  "Mech-/Robot-strategi eller action",
+  "Ubåt / Rymdsimulatorer",
+  "Sportspel"
+      ]
+    },
+
+    Tony: {
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+pcTier: "high",
+
+  pc: {
+    cpu: "Intel(R) Core i7-12700F",
+    gpu: "Nvidia GeForce RTX 4070 12GB",
+    ram: 32,
+    notes: "Bra för alla typer av spel - utifrån prestanda"
+  },
+      alskar: [
+        "Looter shooters",
+        "RPG / CRPG",
+        "Souls- och Soulslike",
+        "MOBA / Tactical Arena / Auto-battler",
+        "MMO (Onlinespel)"
+      ],
+      oppen: [
+        "FPS / Action (Singel)",
+        "Metroidvania-spel",
+        "Open-World / Öppna världar",
+        "Rogue-like / Rogue-lite spel",
+        "Realtidsstrategi (RTS)",
+        "Turbaserade strategispel (TBS)",
+        "Tower Defense",
+        "Kart-racing",
+        "Fighting",
+        "Beat-em-Up / Brawler",
+        "Kortspel / Deckbuilding"
+      ],
+      undviker: [
+        "Interactive Story / Episodspel",
+        "Visuella noveller / Storybaserade spel",
+        "Sportspel",
+        "Skräckspel",
+        "Rytmspel / Music / Rhythm action",
+        "Tabletop / Digital Board Games"
+		],
+		ejValt: [
+  "Boomer shooters",
+  "Taktisk FPS",
+  "Battle Royale",
+  "Hero shooter / MOBA-liknande FPS",
+  "Stealth-spel (smygarspel)",
+  "3D Plattformare",
+  "2D Plattformare",
+  "Pusselspel i förstaperson",
+  "Physics-baserade spel / bygg- och experimentspel",
+  "JRPG",
+  "Taktiskt RPG / Turbaserat taktiskt RPG",
+  "ARPG / Action-rollspel",
+  "Monsterfångar-RPG",
+  "Grand Strategy",
+  "Card-based Strategy / Digital CCG",
+  "Arkad- och Simcade Racing",
+  "Full racing simulator",
+  "Flygsimulator",
+  "Övriga fordonsimulatorer",
+  "Mech-/Robot-strategi eller action",
+  "Ubåt / Rymdsimulatorer",
+  "Överlevnad / Crafting / Sandbox",
+  "Sandbox / Creativity / World-building",
+  "City building / Farming",
+  "Life Simulation / Social Simulation",
+  "Economy / Tycoon Games",
+  "Walking Simulator i förstaperson",
+  "Peka & Klicka Äventyr",
+  "Survival Horror FPS",
+  "Competitive Online (FPS etc.)",
+  "Multiplayer / Coop",
+  "Partyspel / Micro-games",
+  "Arkadspel",
+  "Klassiska arkadhallsspel",
+  "Bullet hell / Shoot ’em up (Shmup)",
+  "Match-3 spel"
+      ]
+    },
+
+Daniel: {
+  plattformar: ["Playstation 5", "Xbox Series S|X", "Nintendo Switch"],
+
+  alskar: [
+        "FPS / Action (Singel)",
+        "Boomer shooters",
+        "Looter shooters",
+        "Stealth-spel (smygarspel)",
+        "3D Plattformare",
+        "2D Plattformare",
+        "Pusselspel i förstaperson",
+        "Metroidvania-spel",
+        "RPG / CRPG",
+        "JRPG",
+        "ARPG / Action-rollspel",
+        "Souls- och Soulslike",
+        "Open-World / Öppna världar",
+        "Interactive Story / Episodspel",
+        "Realtidsstrategi (RTS)",
+        "Turbaserade strategispel (TBS)",
+        "4X-strategi",
+        "Grand Strategy",
+        "Arkad- och Simcade Racing",
+        "Kart-racing",
+        "Full racing simulator",
+        "Mech-/Robot-strategi eller action",
+        "Ubåt / Rymdsimulatorer",
+        "Överlevnad / Crafting / Sandbox",
+        "Sandbox / Creativity / World-building",
+        "Skräckspel",
+        "Survival Horror FPS",
+        "Walking Simulator i förstaperson",
+        "Peka & Klicka Äventyr",
+        "Partyspel / Micro-games",
+        "Fighting",
+        "Beat-em-Up / Brawler",
+        "Arkadspel",
+        "Klassiska arkadhallsspel",
+        "Bullet hell / Shoot ’em up (Shmup)",
+        "Rytmspel / Music / Rhythm action",
+        "Match-3 spel",
+        "Tabletop / Digital Board Games"
+      ],
+      oppen: [
+        "Taktisk FPS",
+        "Battle Royale",
+        "Hero shooter / MOBA-liknande FPS",
+        "Physics-baserade spel / bygg- och experimentspel",
+        "Monsterfångar-RPG",
+        "Tower Defense",
+        "MOBA / Tactical Arena / Auto-battler",
+        "Card-based Strategy / Digital CCG",
+        "Flygsimulator",
+        "Övriga fordonsimulatorer",
+		"Full racing simulator",
+        "Sportspel",
+        "City building / Farming",
+        "Life Simulation / Social Simulation",
+        "Economy / Tycoon Games",
+        "Competitive Online (FPS etc.)",
+        "Multiplayer / Coop",
+        "MMO (Onlinespel)",
+        "Kortspel / Deckbuilding"
+      ],
+      undviker: [
+        "Hero shooter / MOBA-liknande FPS",
+        "MOBA / Tactical Arena / Auto-battler",
+        "Card-based Strategy / Digital CCG",
+        "Övriga fordonsimulatorer",
+        "Sportspel",
+        "Life Simulation / Social Simulation",
+        "Competitive Online (FPS etc.)",
+        "Multiplayer / Coop",
+        "MMO (Onlinespel)",
+        "Kortspel / Deckbuilding"
+		],
+		ejValt: [
+  "Monsterfångar-RPG",
+  "Visuella noveller / Storybaserade spel",
+  "Rogue-like / Rogue-lite spel",
+  "Tower Defense",
+  "Card-based Strategy / Digital CCG",
+  "Överlevnad / Crafting / Sandbox",
+  "Sandbox / Creativity / World-building",
+  "City building / Farming",
+  "Economy / Tycoon Games",
+  "Match-3 spel"
+      ]
+	},
+Robin: {
+		  plattformar: ["PC", ],
+pcTier: "mid",
+
+  pc: {
+    cpu: "Intel Core i7-13700f",
+    gpu: "Nvidia Geforce RTX 3070 8GB",
+    ram: 16,
+    notes: "God allroundmaskin, tänk dock på att RTX 3070 enbart har 8GB VRAM."
+  },
+  alskar: [
+    "FPS / Action (Singel)",
+    "Boomer shooters",
+    "Looter shooters",
+    "Taktisk FPS",
+    "Battle Royale",
+    "Stealth-spel (smygarspel)",
+    "Pusselspel i förstaperson",
+    "Physics-baserade spel / bygg- och experimentspel",
+    "RPG / CRPG",
+    "Taktiskt RPG / Turbaserat taktiskt RPG",
+    "ARPG / Action-rollspel",
+    "Souls- och Soulslike",
+    "Open-World / Öppna världar",
+    "Rogue-like / Rogue-lite spel",
+    "4X-strategi",
+    "Grand Strategy",
+    "Tower Defense",
+    "Arkad- och Simcade Racing",
+    "Övriga fordonsimulatorer",
+    "Överlevnad / Crafting / Sandbox",
+    "Sandbox / Creativity / World-building",
+    "City building / Farming",
+    "Life Simulation / Social Simulation",
+    "Economy / Tycoon Games",
+    "Skräckspel",
+    "Survival Horror FPS",
+    "Competitive Online (FPS etc.)",
+    "MMO (Onlinespel)",
+    "Bullet hell / Shoot ’em up (Shmup)"
+  ],
+
+  oppen: [
+    "Hero shooter / MOBA-liknande FPS",
+    "JRPG",
+    "Souls- och Soulslike",
+    "Realtidsstrategi (RTS)",
+    "MOBA / Tactical Arena / Auto-battler",
+    "Mech-/Robot-strategi eller action",
+    "Ubåt / Rymdsimulatorer",
+    "Peka & Klicka Äventyr"
+  ],
+
+  undviker: [
+    "Interactive Story / Episodspel",
+    "Visuella noveller / Storybaserade spel",
+    "Card-based Strategy / Digital CCG",
+    "Kart-racing",
+    "Full racing simulator",
+    "Flygsimulator",
+    "Sportspel",
+    "Walking Simulator i förstaperson",
+    "Partyspel / Micro-games",
+    "Fighting",
+    "Arkadspel",
+    "Klassiska arkadhallsspel",
+    "Rytmspel / Music / Rhythm action",
+    "Match-3 spel",
+    "Kortspel / Deckbuilding",
+    "Tabletop / Digital Board Games"
+	],
+	ejValt: [
+  "3D Plattformare",
+  "2D Plattformare",
+  "Metroidvania-spel",
+  "Multiplayer / Coop"
+      ]
+    },
+	Jesper: {
+		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
+pcTier: "mid",
+
+  pc: {
+    cpu: "Intel Core i7-12650H",
+    gpu: "Nvidia Geforce RTX 3060",
+    ram: 16,
+    notes: "Obs! Var uppmärksamma kring systemkrav. Detta är en bärbar dator. I regel är grafikkortet en tier under i prestanda. D.v.s en bärbar RTX 3060 är jämbördigt med en RTX 3050 på en stationär dator."
+  },
+  alskar: [
+    "RPG / CRPG",
+    "JRPG",
+    "Monsterfångar-RPG",
+    "Walking Simulator i förstaperson"
+  ],
+
+  oppen: [
+    "FPS / Action (Singel)",
+    "Boomer shooters",
+    "Looter shooters",
+    "3D Plattformare",
+    "2D Plattformare",
+    "Metroidvania-spel",
+    "Taktiskt RPG / Turbaserat taktiskt RPG",
+    "ARPG / Action-rollspel",
+    "Souls- och Soulslike",
+    "Open-World / Öppna världar",
+    "Interactive Story / Episodspel",
+    "Visuella noveller / Storybaserade spel",
+    "Rogue-like / Rogue-lite spel",
+    "Arkad- och Simcade Racing",
+    "Kart-racing",
+    "Skräckspel",
+    "Survival Horror FPS",
+    "MMO (Onlinespel)",
+    "Partyspel / Micro-games",
+    "Fighting",
+    "Beat-em-Up / Brawler",
+    "Arkadspel",
+    "Klassiska arkadhallsspel",
+    "Bullet hell / Shoot ’em up (Shmup)",
+    "Rytmspel / Music / Rhythm action"
+  ],
+
+  undviker: [
+    "Taktisk FPS",
+    "Battle Royale",
+    "Hero shooter / MOBA-liknande FPS",
+    "Stealth-spel (smygarspel)",
+    "Pusselspel i förstaperson",
+    "Physics-baserade spel / bygg- och experimentspel",
+    "Realtidsstrategi (RTS)",
+    "Turbaserade strategispel (TBS)",
+    "4X-strategi",
+    "Grand Strategy",
+    "Tower Defense",
+    "MOBA / Tactical Arena / Auto-battler",
+    "Card-based Strategy / Digital CCG",
+    "Full racing simulator",
+    "Flygsimulator",
+    "Övriga fordonsimulatorer",
+    "Ubåt / Rymdsimulatorer",
+    "Sportspel",
+    "Överlevnad / Crafting / Sandbox",
+    "Sandbox / Creativity / World-building",
+    "City building / Farming",
+    "Life Simulation / Social Simulation",
+    "Economy / Tycoon Games",
+    "Peka & Klicka Äventyr",
+    "Competitive Online (FPS etc.)",
+    "Kortspel / Deckbuilding"
+	],
+	  ejValt: [
+    "Multiplayer / Coop",
+    "Mech-/Robot-strategi eller action",
+    "Tabletop / Digital Board Games",
+    "Match-3 spel"
+  ]
+},
+Andres: {
+		  plattformar: ["PC", "Xbox Series S|X",  "Nintendo Switch" ],
+pcTier: "mid",
+
+  pc: {
+    cpu: "Intel Core i7-13700f",
+    gpu: "Nvidia Geforce RTX 3070 8GB",
+    ram: 32,
+    notes: "God allroundmaskin, tänk dock på att RTX 3070 enbart har 8GB VRAM."
+  },
+  alskar: [
+    "FPS / Action (Singel)",
+    "Boomer shooters",
+    "Looter shooters",
+    "Stealth-spel (smygarspel)",
+    "2D Plattformare",
+    "Metroidvania-spel",
+    "RPG / CRPG",
+    "ARPG / Action-rollspel",
+    "Souls- och Soulslike",
+    "Rogue-like / Rogue-lite spel",
+    "Realtidsstrategi (RTS)",
+    "Turbaserade strategispel (TBS)",
+    "4X-strategi",
+    "Arkad- och Simcade Racing",
+    "Mech-/Robot-strategi eller action",
+    "Ubåt / Rymdsimulatorer",
+    "Överlevnad / Crafting / Sandbox",
+    "Sandbox / Creativity / World-building",
+    "City building / Farming",
+    "Skräckspel",
+    "Survival Horror FPS",
+    "Competitive Online (FPS etc.)",
+    "Multiplayer / Coop",
+    "Arkadspel",
+    "Klassiska arkadhallsspel",
+    "Bullet hell / Shoot ’em up (Shmup)",
+    "Rytmspel / Music / Rhythm action"
+  ],
+
+  oppen: [
+    "Looter shooters",
+    "Taktisk FPS",
+    "Battle Royale",
+    "Hero shooter / MOBA-liknande FPS",
+    "Pusselspel i förstaperson",
+    "Physics-baserade spel / bygg- och experimentspel",
+    "JRPG",
+    "Taktiskt RPG / Turbaserat taktiskt RPG",
+    "Grand Strategy",
+    "Tower Defense",
+    "MOBA / Tactical Arena / Auto-battler",
+    "Full racing simulator",
+    "Flygsimulator",
+    "Övriga fordonsimulatorer",
+    "Economy / Tycoon Games",
+    "Walking Simulator i förstaperson",
+    "Peka & Klicka Äventyr"
+  ],
+
+  undviker: [
+    "Monsterfångar-RPG",
+    "Visuella noveller / Storybaserade spel",
+    "Card-based Strategy / Digital CCG",
+    "Life Simulation / Social Simulation",
+    "Tabletop / Digital Board Games"
+	],
+	ejValt: [
+  "3D Plattformare",
+  "Open-World / Öppna världar",
+  "Interactive Story / Episodspel",
+  "Sportspel",
+  "Kart-racing",
+  "MMO (Onlinespel)",
+  "Partyspel / Micro-games",
+  "Fighting",
+  "Beat-em-Up / Brawler",
+  "Match-3 spel",
+  "Kortspel / Deckbuilding"
+  ]
+},
+Mattias: {
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+pcTier: "high",
+
+  pc: {
+    cpu: "Intel Core i7 10700K",
+    gpu: "Radeon RX 9060 XT 16 GB",
+    ram: 16,
+    notes: "Bra allrounddator - särskilt pga det nya grafikkort. CPU-krävande spel kan potentiellt vara stoppklossar - men troligtvis kommer det ej vara något problem."
+  },
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
+},
+
+Jim: {
+		  plattformar: ["PC", ],
+pcTier: "mid",
+
+  pc: {
+    cpu: "Intel Core i7 14700F",
+    gpu: "Nvidia Geforce RTX 4060 8GB",
+    ram: 16,
+    notes: "Okej dator överlag. Tänk dock på att RTX 4060 enbart har 8GB VRAM - och överlag är ökänt svagt."
+  },
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
+},
+
+Emilia: {
+		  plattformar: ["PC", "Nintendo Switch", ],
+pcTier: "low",
+
+  pc: {
+    cpu: "AMD Ryzen 5 3550H",
+    gpu: "NVIDIA GeForce GTX 1050 3GB",
+    ram: 8,
+    notes: "Bärbar dator. Här kan ENBART extremt lågt krävande spel vara aktuella. Dubbelkolla systemkrav."
+  },
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
+},
+
+Arvid: {
+		  plattformar: ["PC", "Nintendo Switch", ],
+pcTier: "extreme",
+
+  pc: {
+    cpu: "AMD Ryzen 7 7800X3D",
+    gpu: "NVIDIA GeForce RTX 4070 SUPER 12GB",
+    ram: 32,
+    notes: "Han klarar allt i skrivande stund - riktigt bra dator sett till hur den är balanserad. Riktigt bra spel-CPU parad med stark GPU."
+  },
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
+},
+
+Vanessa: {
+		  plattformar: ["PC", "Playstation 5", "Nintendo Switch", ],
+pcTier: "mid",
+
+  pc: {
+    cpu: "AMD Ryzen 7 5800X3D",
+    gpu: "NVIDIA GeForce RTX 4070 12GB",
+    ram: 32,
+    notes: "Bra allrounddator - med bra GPU."
+  },
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
+},
+
+Niclas: {
+		  plattformar: ["Playstation 5", "Nintendo Switch", ],
+
+  pc: {
+    cpu: "Intel Core m3",
+    gpu: "Intel HD Graphics 515",
+    ram: 8,
+    notes: "Det finns ingen värld där Niclas dator kan användas för PC-recensioner. Han måste uppgradera."
+  },
+  alskar: [],
+  oppen: [],
+  undviker: [],
+  ejValt: []
+  }
+}
 };
 
-
-/* ===== PERSONVY ===== */
-function visaPerson(p){
-  const d = DATA.personerData[p];
-
-  /* ===== PC-TIER ===== */
-  let pcTierHTML = "";
-  if (d.pcTier) {
-    const tierLabel = {
-      low: "🖥️ PC – Low tier",
-      mid: "🖥️ PC – Mid tier",
-      high: "🖥️ PC – High tier",
-      extreme: "🚀 PC – Extreme tier"
-    };
-
-    pcTierHTML = `
-      <div class="pc-tier ${d.pcTier}">
-        ${tierLabel[d.pcTier] || "🖥️ PC – Okänd nivå"}
-      </div>
-    `;
-  }
-
-  /* ===== PC-SPECS ===== */
-  let pcSpecsHTML = `
-    <div class="pc-specs">
-      <h4>🖥️ PC-hårdvara</h4>
-      <em>Ingen speldator registrerad</em>
-    </div>
-  `;
-
-  if (d.pc) {
-    pcSpecsHTML = `
-      <div class="pc-specs">
-        <h4>🖥️ PC-hårdvara</h4>
-        <ul>
-          <li><strong>CPU:</strong> ${d.pc.cpu}</li>
-          <li><strong>GPU:</strong> ${d.pc.gpu}</li>
-          <li><strong>RAM:</strong> ${d.pc.ram} GB</li>
-          ${d.pc.notes ? `<li><em>${d.pc.notes}</em></li>` : ""}
-        </ul>
-      </div>
-    `;
-  }
-
-  /* ===== RENDER ===== */
-  resultatDiv.innerHTML = `
-    <h2>${p}</h2>
-    ${pcTierHTML}
-    ${pcSpecsHTML}
-    <div class="kolumner">
-      <div class="kolumn alskar"><h3>❤️ Älskar</h3>${lista(d.alskar)}</div>
-      <div class="kolumn oppen"><h3>👍 Öppen</h3>${lista(d.oppen)}</div>
-      <div class="kolumn undviker"><h3>🚫 Undviker</h3>${lista(d.undviker)}</div>
-    </div>
-  `;
-}
-
-
-
-function lista(a){return a.length?`<ul>${a.map(i=>`<li>${i}</li>`).join("")}</ul>`:"<em>Ingen</em>";}
-</script>
-
-</body>
-</html>

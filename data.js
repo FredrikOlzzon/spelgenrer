@@ -123,6 +123,7 @@ pcTier: "extreme",
         "Pusselspel i förstaperson",
         "Physics-baserade spel / bygg- och experimentspel",
         "Metroidvania-spel",
+		"Rogue-like / Rogue-lite spel",
         "RPG / CRPG",
         "JRPG",
         "ARPG / Action-rollspel",
@@ -148,15 +149,20 @@ pcTier: "extreme",
       undviker: [
         "Battle Royale",
         "Hero shooter / MOBA-liknande FPS",
+		"Taktisk FPS",
         "Stealth-spel (smygarspel)",
         "Visuella noveller / Storybaserade spel",
+		"Interactive Story / Episodspel",
         "Grand Strategy",
         "MOBA / Tactical Arena / Auto-battler",
         "Card-based Strategy / Digital CCG",
         "Övriga fordonsimulatorer",
         "Mech-/Robot-strategi eller action",
         "Ubåt / Rymdsimulatorer",
+		"Full racing simulator",
         "Sportspel",
+		"Flygsimulator",
+		"Partyspel / Micro-games",
         "Competitive Online (FPS etc.)",
         "Multiplayer / Coop",
         "MMO (Onlinespel)",
@@ -165,12 +171,7 @@ pcTier: "extreme",
         "Tabletop / Digital Board Games"
 		],
 		ejValt: [
-    "Taktisk FPS",
-    "Interactive Story / Episodspel",
-    "Rogue-like / Rogue-lite spel",
-    "Full racing simulator",
-    "Flygsimulator",
-    "Partyspel / Micro-games"
+
       ]
     },
 
@@ -1420,3 +1421,4 @@ Niclas: {
   }
 }
 };
+

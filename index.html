@@ -215,26 +215,42 @@
   <div class="top-filter">
     <h2>🎮 Filtrera på genre</h2>
 
-    <div class="filter-row">
-      <select id="genreSelect">
-        <option value="">– Välj genre –</option>
-      </select>
+<div class="filter-row">
+  <select id="genreSelect">
+    <option value="">– Välj genre –</option>
+  </select>
 
-      <select id="plattformGenre">
-        <option value="alla">Alla plattformar</option>
-        <option value="PC">PC</option>
-        <option value="Playstation 5">PlayStation 5</option>
-        <option value="Xbox Series S|X">Xbox Series S|X</option>
-        <option value="Nintendo Switch">Nintendo Switch</option>
-		<option value="Switch 2">Switch 2</option>
-      </select>
+  <select id="plattformGenre">
+    <option value="alla">Alla plattformar</option>
+    <option value="PC">PC</option>
+    <option value="Playstation 5">PlayStation 5</option>
+    <option value="Xbox Series S|X">Xbox Series S|X</option>
+    <option value="Nintendo Switch">Nintendo Switch</option>
+    <option value="Switch 2">Switch 2</option>
+  </select>
 
-      <button id="visaGenreBtn">Visa</button>
-    </div>
+  <!-- ✅ PC-TIER – HÄR -->
+  <select id="pcTierFilter" style="display:none">
+    <option value="">Alla PC-tier</option>
+    <option value="low">Low</option>
+    <option value="mid">Mid</option>
+    <option value="high">High</option>
+    <option value="extreme">Extreme</option>
+  </select>
+
+  <button id="visaGenreBtn">Visa</button>
+</div>
 
     <div id="genreResultat"></div>
 
     <hr style="margin:25px 0;border-color:#2a2a35">
+
+  <option value="">Alla PC-tier</option>
+  <option value="low">Low</option>
+  <option value="mid">Mid</option>
+  <option value="high">High</option>
+  <option value="extreme">Extreme</option>
+</select>
 
     <!-- PLATTFORM → GENRER -->
 <div class="plattform-genrer" style="display:none">
@@ -289,6 +305,18 @@ Object.keys(DATA.personerData).forEach(p=>{
   b.onclick=()=>visaPerson(p);
   buttonsDiv.appendChild(b);
 });
+const plattformSelect = document.getElementById("plattformGenre");
+const pcTierSelect = document.getElementById("pcTierFilter");
+
+plattformSelect.addEventListener("change", () => {
+  if (plattformSelect.value === "PC") {
+    pcTierSelect.style.display = "inline-block";
+  } else {
+    pcTierSelect.style.display = "none";
+    pcTierSelect.value = ""; // nollställ
+  }
+});
+
 
 /* ===== FYLL GENRER ===== */
 const allaGenrer=new Set();
@@ -306,10 +334,20 @@ document.getElementById("visaGenreBtn").onclick=()=>{
   const genre=genreSelect.value;
   const plattform=document.getElementById("plattformGenre").value;
   if(!genre)return;
+  
+  const pcTier = pcTierSelect.value;
 
   const A=[],O=[],U=[];
   Object.entries(DATA.personerData).forEach(([p,d])=>{
-    if(plattform!=="alla" && (!d.plattformar||!d.plattformar.includes(plattform)))return;
+    if (plattform !== "alla") {
+  if (!d.plattformar || !d.plattformar.includes(plattform)) return;
+
+  if (
+    plattform === "PC" &&
+    pcTier &&
+    d.pcTier !== pcTier
+  ) return;
+}
     if(d.alskar.includes(genre))A.push(p);
     if(d.oppen.includes(genre))O.push(p);
     if(d.undviker.includes(genre))U.push(p);
@@ -338,7 +376,9 @@ document.getElementById("filtreraGenrerBtn").onclick=()=>{
   document.getElementById("plattformGenreResultat").innerHTML=`
     <ul>${Object.entries(counter).sort((a,b)=>b[1]-a[1])
       .map(([g,c])=>`<li>${g} (${c})</li>`).join("")}</ul>`;
+	  
 };
+
 
 /* ===== PERSONVY ===== */
 function visaPerson(p){

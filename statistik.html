@@ -186,6 +186,56 @@
   background: #ddd;
 }
 
+/* ===== STATISTIKTABELL ===== */
+
+.stats-table-wrapper {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+#genreTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+#genreTable th,
+#genreTable td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+#genreTable th {
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: var(--text);
+  background: #111;
+}
+
+#genreTable th:hover {
+  background: #1f1f2a;
+}
+
+#genreTable td:first-child,
+#genreTable th:first-child {
+  text-align: left;
+}
+
+#genreTable tbody tr:hover {
+  background: #151520;
+}
+
+/* Färgkodning */
+.col-alskar { color: var(--love); font-weight: 600; }
+.col-oppen { color: var(--open); font-weight: 600; }
+.col-undviker { color: var(--avoid); font-weight: 600; }
+
+
   </style>
 </head>
 <body>
@@ -206,18 +256,97 @@
 <p>
 </p>
 
-<h1>📊 Spelstatistik</h1>
+<h1>📊 Spelstatistik – Översikt</h1>
 
-<h2>❤️ Älskade genrer</h2>
-<canvas id="alskarChart"></canvas>
+<p class="tool-info">
+  Tabellen nedan visar hur redaktionen förhåller sig till olika spelgenrer.
+  Klicka på kolumnrubrikerna för att sortera efter <strong>Älskar</strong>,
+  <strong>Öppen</strong> eller <strong>Undviker</strong>. Obs. tryck flera gånger för att ändra om du vill ha stort->litet eller litet->stort sett till antal.
+</p>
 
-<h2>👍 Öppna för genrer</h2>
-<canvas id="oppenChart"></canvas>
-
-<h2>🚫 Undvikna genrer</h2>
-<canvas id="undvikerChart"></canvas>
+<div class="stats-table-wrapper">
+  <table id="genreTable">
+    <thead>
+      <tr>
+        <th data-sort="genre">Genre</th>
+        <th data-sort="alskar">❤️ Älskar</th>
+        <th data-sort="oppen">👍 Öppen</th>
+        <th data-sort="undviker">🚫 Undviker</th>
+        <th data-sort="total">📊 Totalt</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
 
 <script src="data.js"></script>
+<script>
+const personer = Object.values(DATA.personerData);
+const totalPersoner = personer.length;
+
+const genreStats = {};
+
+// Samla statistik
+personer.forEach(person => {
+  ["alskar", "oppen", "undviker"].forEach(kategori => {
+    person[kategori].forEach(genre => {
+      if (!genreStats[genre]) {
+        genreStats[genre] = { alskar: 0, oppen: 0, undviker: 0 };
+      }
+      genreStats[genre][kategori]++;
+    });
+  });
+});
+
+// Konvertera till array
+let genreArray = Object.entries(genreStats).map(([genre, data]) => ({
+  genre,
+  alskar: data.alskar,
+  oppen: data.oppen,
+  undviker: data.undviker,
+  total: data.alskar + data.oppen + data.undviker
+}));
+
+const tbody = document.querySelector("#genreTable tbody");
+
+// Rendera tabell
+function renderTable(data) {
+  tbody.innerHTML = "";
+  data.forEach(row => {
+    tbody.innerHTML += `
+      <tr>
+        <td>${row.genre}</td>
+        <td class="col-alskar">${row.alskar}</td>
+        <td class="col-oppen">${row.oppen}</td>
+        <td class="col-undviker">${row.undviker}</td>
+        <td>${row.total}</td>
+      </tr>
+    `;
+  });
+}
+
+renderTable(genreArray);
+
+// Sortering
+let sortDirection = 1;
+
+document.querySelectorAll("#genreTable th").forEach(th => {
+  th.addEventListener("click", () => {
+    const key = th.dataset.sort;
+    sortDirection *= -1;
+
+    genreArray.sort((a, b) => {
+      if (typeof a[key] === "string") {
+        return a[key].localeCompare(b[key], "sv") * sortDirection;
+      }
+      return (a[key] - b[key]) * sortDirection;
+    });
+
+    renderTable(genreArray);
+  });
+});
+</script>
+
 <script>
   const totalPersoner = Object.keys(DATA.personerData).length;
 
@@ -312,4 +441,5 @@
 
 </body>
 </html>
+
 

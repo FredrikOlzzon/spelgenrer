@@ -1282,82 +1282,86 @@ pcTier: "high",
 },
 
 Jim: {
-		  plattformar: ["PC", ],
-pcTier: "mid",
+  plattformar: ["PC"],
+  pcTier: "mid",
 
   pc: {
     cpu: "Intel Core i7 14700F",
     gpu: "Nvidia Geforce RTX 4060 8GB",
     ram: 16,
-    notes: "Okej dator överlag. Tänk dock på att RTX 4060 enbart har 8GB VRAM - och överlag är ökänt svagt."
+    notes: "Okej dator överlag. RTX 4060 har begränsat VRAM."
   },
+
   alskar: [
-    "FPS",
+    "FPS / Action (Singel)",
     "Taktisk FPS",
     "Battle Royale",
-    "Hero Shooter",
+    "Hero shooter / MOBA-liknande FPS",
     "RPG / CRPG",
-    "Open World",
-    "Survival / Crafting",
-    "Sandbox / Creativity",
-    "Life Simulation",
-    "Competitive Online"
+    "Open-World / Öppna världar",
+    "Överlevnad / Crafting / Sandbox",
+    "Sandbox / Creativity / World-building",
+    "Life Simulation / Social Simulation",
+    "Competitive Online (FPS etc.)"
   ],
+
   oppen: [
-    "Boomer Shooter",
-    "Looter Shooter",
-    "Stealth",
+    "Boomer shooters",
+    "Looter shooters",
+    "Stealth-spel (smygarspel)",
     "Action Adventure",
-    "3D Plattform",
-    "2D Plattform",
-    "Puzzle (First-Person)",
-    "Physics-based / Experiment",
-    "Metroidvania",
-    "Taktiskt RPG",
-    "Interactive Story",
-    "Racing (Arcade / Simcade)",
-    "Racing Simulator",
-    "Vehicle Simulator",
-    "Space / Submarine Simulation",
-    "Economy / Tycoon",
-    "Multiplayer / Co-op",
+    "3D Plattformare",
+    "2D Plattformare",
+    "Pusselspel i förstaperson",
+    "Physics-baserade spel / bygg- och experimentspel",
+    "Metroidvania-spel",
+    "Taktiskt RPG / Turbaserat taktiskt RPG",
+    "Interactive Story / Episodspel",
+    "Arkad- och Simcade Racing",
+    "Full racing simulator",
+    "Övriga fordonsimulatorer",
+    "Ubåt / Rymdsimulatorer",
+    "Economy / Tycoon Games",
+    "Multiplayer / Coop",
     "Fighting",
-    "Beat 'em Up / Brawler",
-    "Bullet Hell / Shmup"
+    "Beat-em-Up / Brawler",
+    "Bullet hell / Shoot ’em up (Shmup)"
   ],
+
   undviker: [
     "JRPG",
-    "ARPG",
-    "Soulslike",
-    "Monster Tamer RPG",
-    "Visual Novel",
-    "RTS",
-    "Turn-Based Strategy",
-    "4X Strategy",
+    "ARPG / Action-rollspel",
+    "Souls- och Soulslike",
+    "Monsterfångar-RPG",
+    "Visuella noveller / Storybaserade spel",
+    "Realtidsstrategi (RTS)",
+    "Turbaserade strategispel (TBS)",
+    "4X-strategi",
     "Grand Strategy",
-    "MOBA",
-    "Card / Deckbuilding",
-    "Sports",
-    "Horror",
-    "Walking Simulator",
-    "Point & Click Adventure",
+    "MOBA / Tactical Arena / Auto-battler",
+    "Card-based Strategy / Digital CCG",
+    "Sportspel",
+    "Skräckspel",
+    "Walking Simulator i förstaperson",
+    "Peka & Klicka Äventyr",
     "Survival Horror FPS",
-    "Arcade",
-    "Rhythm / Music",
-    "Match-3",
-    "Tabletop / Board Games"
+    "Arkadspel",
+    "Rytmspel / Music / Rhythm action",
+    "Match-3 spel",
+    "Tabletop / Digital Board Games"
   ],
-  ejValt: [
-  "Tower Defense",
-  "Kart-racing",
-  "Flygsimulator",
-  "Mech-/Robot-strategi eller action",
-  "City building / Farming",
-  "MMO (Onlinespel)",
-  "Partyspel / Micro-games"
-]
 
-}
+  ejValt: [
+    "Tower Defense",
+    "Kart-racing",
+    "Flygsimulator",
+    "Mech-/Robot-strategi eller action",
+    "City building / Farming",
+    "MMO (Onlinespel)",
+    "Partyspel / Micro-games"
+  ]
+},
+
 
 Emilia: {
 		  plattformar: ["PC", "Nintendo Switch", ],
@@ -1486,6 +1490,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

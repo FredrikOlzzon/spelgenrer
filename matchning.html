@@ -123,6 +123,41 @@ footer {
   margin-left: auto;
 }
 
+/* ===== MATCHNING – LAYOUT ===== */
+
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.match-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pc-box {
+  background: #111;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.pc-box h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.match-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
 </style>
 </head>
 
@@ -150,49 +185,71 @@ footer {
 <div class="panel">
   <h2>🎮 Spelinformation</h2>
 
-  <p>
-    <label>Genre</label><br>
-    <select id="genreSelect">
-      <option value="">– Välj genre –</option>
-    </select>
-  </p>
+  <div class="match-grid">
 
-  <p>
-    <label>Plattform</label><br>
-    <select id="plattformSelect">
-      <option value="">– Välj –</option>
-      <option value="PC">PC</option>
-      <option value="Playstation 5">PlayStation 5</option>
-      <option value="Xbox Series S|X">Xbox Series S|X</option>
-      <option value="Nintendo Switch">Nintendo Switch</option>
-      <option value="Switch 2">Switch 2</option>
-    </select>
-  </p>
+    <!-- VÄNSTER KOLUMN -->
+    <div class="match-section">
 
-  <p>
-    <label>PC-krav (endast PC)</label><br>
-    <select id="pcKrav">
-      <option value="">– Ej relevant –</option>
-      <option value="low">Low</option>
-      <option value="mid">Mid</option>
-      <option value="high">High</option>
-      <option value="extreme">Extreme</option>
-    </select>
-	<label>🖥️ GPU-krav (referens)</label><br>
-<select id="gpuKrav">
-  <option value="">– Välj grafikkort –</option>
-</select>
-  </p>
+      <p>
+        <label>Genre</label><br>
+        <select id="genreSelect">
+          <option value="">– Välj genre –</option>
+        </select>
+      </p>
 
-  <p>
-    <label>
-      <input type="checkbox" id="tillatUndviker">
-      Tillåt recensenter som undviker genren
-    </label>
-  </p>
+      <p>
+        <label>Plattform</label><br>
+        <select id="plattformSelect">
+          <option value="">– Välj –</option>
+          <option value="PC">PC</option>
+          <option value="Playstation 5">PlayStation 5</option>
+          <option value="Xbox Series S|X">Xbox Series S|X</option>
+          <option value="Nintendo Switch">Nintendo Switch</option>
+          <option value="Switch 2">Switch 2</option>
+        </select>
+      </p>
 
-  <button id="matchaBtn">🔍 Matcha recensenter</button>
+    </div>
+
+    <!-- HÖGER KOLUMN -->
+    <div class="match-section">
+
+      <div class="pc-box">
+        <h3>🖥️ PC-krav (endast PC)</h3>
+
+        <p>
+          <label>PC-nivå</label><br>
+          <select id="pcKrav">
+            <option value="">– Ej relevant –</option>
+            <option value="low">Low</option>
+            <option value="mid">Mid</option>
+            <option value="high">High</option>
+            <option value="extreme">Extreme</option>
+          </select>
+        </p>
+
+        <p>
+          <label>GPU-krav (referens)</label><br>
+          <select id="gpuKrav">
+            <option value="">– Välj grafikkort –</option>
+          </select>
+        </p>
+      </div>
+
+      <div class="match-actions">
+        <label>
+          <input type="checkbox" id="tillatUndviker">
+          Tillåt recensenter som undviker genren
+        </label>
+
+        <button id="matchaBtn">🔍 Matcha recensenter</button>
+      </div>
+
+    </div>
+
+  </div>
 </div>
+
 
 <div class="panel">
   <h2>📋 Matchningsförslag</h2>
@@ -371,3 +428,4 @@ document.getElementById("matchaBtn").onclick = matcha;
 
 </body>
 </html>
+

@@ -921,11 +921,10 @@ pcTier: "high",
       ]
     },
 
-    Daniel: {
-		  plattformar: ["Playstation 5", "Xbox Series S|X", "Nintendo Switch", ],
-		
-  },
-      alskar: [
+Daniel: {
+  plattformar: ["Playstation 5", "Xbox Series S|X", "Nintendo Switch"],
+
+  alskar: [
         "FPS / Action (Singel)",
         "Boomer shooters",
         "Looter shooters",
@@ -1346,5 +1345,3 @@ Niclas: {
   }
 }
 };
-
-

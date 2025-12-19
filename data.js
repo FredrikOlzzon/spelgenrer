@@ -979,6 +979,7 @@ Daniel: {
         "Hero shooter / MOBA-liknande FPS",
         "Physics-baserade spel / bygg- och experimentspel",
         "Monsterfångar-RPG",
+		"Rogue-like / Rogue-lite spel",
         "Tower Defense",
         "MOBA / Tactical Arena / Auto-battler",
         "Card-based Strategy / Digital CCG",
@@ -988,6 +989,7 @@ Daniel: {
         "Sportspel",
         "City building / Farming",
         "Life Simulation / Social Simulation",
+		"Visuella noveller / Storybaserade spel",
         "Economy / Tycoon Games",
         "Competitive Online (FPS etc.)",
         "Multiplayer / Coop",
@@ -998,25 +1000,22 @@ Daniel: {
         "Hero shooter / MOBA-liknande FPS",
         "MOBA / Tactical Arena / Auto-battler",
         "Card-based Strategy / Digital CCG",
+		"Överlevnad / Crafting / Sandbox",
+		"Sandbox / Creativity / World-building",
+		"Tower Defense",
         "Övriga fordonsimulatorer",
         "Sportspel",
         "Life Simulation / Social Simulation",
         "Competitive Online (FPS etc.)",
         "Multiplayer / Coop",
         "MMO (Onlinespel)",
-        "Kortspel / Deckbuilding"
+        "Kortspel / Deckbuilding",
+		"City building / Farming",
+  		"Economy / Tycoon Games",
+  		"Match-3 spel"
 		],
 		ejValt: [
-  "Monsterfångar-RPG",
-  "Visuella noveller / Storybaserade spel",
-  "Rogue-like / Rogue-lite spel",
-  "Tower Defense",
-  "Card-based Strategy / Digital CCG",
-  "Överlevnad / Crafting / Sandbox",
-  "Sandbox / Creativity / World-building",
-  "City building / Farming",
-  "Economy / Tycoon Games",
-  "Match-3 spel"
+  
       ]
 	},
 Robin: {
@@ -1421,4 +1420,5 @@ Niclas: {
   }
 }
 };
+
 

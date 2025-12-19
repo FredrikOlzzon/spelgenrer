@@ -142,12 +142,48 @@
     ul{margin:0;padding-left:18px}
     li{color:var(--muted);margin-bottom:4px}
 
-    footer{
-      margin-top:40px;
-      padding:20px;
-      text-align:center;
-      color:var(--muted);
-    }
+footer{
+  margin-top:40px;
+  padding:20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+/* ===== TOOL INFO TEXT ===== */
+.tool-info {
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 900px;
+}
+
+.tool-info p {
+  margin: 0 0 10px 0;
+}
+
+.tool-info hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 14px 0;
+}
+
+.tool-info-small {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.tool-info-list {
+  margin: 6px 0 12px 18px;
+  padding: 0;
+}
+
+.tool-info-list li {
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+
 	.pc-tier {
   background:#0f172a;
   border:1px solid #334155;
@@ -218,7 +254,6 @@
 }
 
 
-
   </style>
 </head>
 
@@ -243,6 +278,49 @@
 
   <!-- GENRE + PLATTFORM -->
   <div class="top-filter">
+<div class="tool-info">
+  <p>
+    Detta verktyg är till för att ni <strong>redaktörer</strong> lättare ska kunna hitta
+    rätt spel med rätt person.
+  </p>
+
+  <p>
+    Kategorierna <strong>Älskar</strong>, <strong>Öppen</strong> och
+    <strong>Undviker</strong> är <em>preferenser</em> – inte absoluta regler.
+  </p>
+
+  <p>
+    Bara för att någon har vissa spelgenrer markerade som
+    <strong>Undviker</strong> innebär det <strong>inte</strong> att vi automatiskt
+    avstår från att fråga dem om sådana spel.
+    Det är ett stöd för att navigera smartare, inte ett förbud.
+  </p>
+
+  <p>
+    I slutänden är det alltid ett
+    <strong>redaktionellt beslut</strong> vilka personer som tillfrågas,
+    <strong>oavsett</strong> var ett spel hamnar sett till spelgenrepreferens.
+  </p>
+
+  <hr>
+
+  <p class="tool-info-small">
+    Fullständiga kategorinamn:
+  </p>
+
+  <ul class="tool-info-list">
+    <li><strong>Spelgenrer ni verkligen älskar</strong></li>
+    <li><strong>Spelgenrer ni är öppna för att testa eller tycker är okej</strong></li>
+    <li><strong>Spelgenrer ni har svårt för / helst undviker – om möjligt</strong></li>
+  </ul>
+
+  <p class="tool-info-small">
+    Observera direktlänken <strong>“Ej valda”</strong> högst upp – vissa recensenter
+    har spelgenrer som inte placerats i någon kategori.
+  </p>
+</div>
+
+
     <h2>🎮 Filtrera på genre</h2>
 
 <div class="filter-row">

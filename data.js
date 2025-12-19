@@ -923,12 +923,7 @@ pcTier: "high",
 
     Daniel: {
 		  plattformar: ["Playstation 5", "Xbox Series S|X", "Nintendo Switch", ],
-
-  pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
-    ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+		
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -1351,3 +1346,4 @@ Niclas: {
   }
 }
 };
+

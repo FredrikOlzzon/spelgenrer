@@ -148,6 +148,47 @@
       text-align:center;
       color:var(--muted);
     }
+	.pc-tier {
+  background:#0f172a;
+  border:1px solid #334155;
+  border-radius:8px;
+  padding:10px 14px;
+  margin-bottom:18px;
+  font-weight:600;
+}
+
+.pc-tier.low { color:#f87171; }
+.pc-tier.mid { color:#facc15; }
+.pc-tier.high { color:#4ade80; }
+.pc-tier.extreme { color:#38bdf8; } /* 🔵 EXTREME */
+
+.pc-specs {
+  background:#020617;
+  border:1px solid #334155;
+  border-radius:8px;
+  padding:12px 14px;
+  margin-bottom:20px;
+}
+
+.pc-specs h4 {
+  margin:0 0 8px 0;
+  font-size:0.95rem;
+  color:#93c5fd;
+}
+
+.pc-specs ul {
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.pc-specs li {
+  margin-bottom:4px;
+  color:#cbd5f5;
+  font-size:0.9rem;
+}
+
+
   </style>
 </head>
 
@@ -301,15 +342,61 @@ document.getElementById("filtreraGenrerBtn").onclick=()=>{
 
 /* ===== PERSONVY ===== */
 function visaPerson(p){
-  const d=DATA.personerData[p];
-  resultatDiv.innerHTML=`
+  const d = DATA.personerData[p];
+
+  /* ===== PC-TIER ===== */
+  let pcTierHTML = "";
+  if (d.pcTier) {
+    const tierLabel = {
+      low: "🖥️ PC – Low tier",
+      mid: "🖥️ PC – Mid tier",
+      high: "🖥️ PC – High tier",
+      extreme: "🚀 PC – Extreme tier"
+    };
+
+    pcTierHTML = `
+      <div class="pc-tier ${d.pcTier}">
+        ${tierLabel[d.pcTier] || "🖥️ PC – Okänd nivå"}
+      </div>
+    `;
+  }
+
+  /* ===== PC-SPECS ===== */
+  let pcSpecsHTML = `
+    <div class="pc-specs">
+      <h4>🖥️ PC-hårdvara</h4>
+      <em>Ingen speldator registrerad</em>
+    </div>
+  `;
+
+  if (d.pc) {
+    pcSpecsHTML = `
+      <div class="pc-specs">
+        <h4>🖥️ PC-hårdvara</h4>
+        <ul>
+          <li><strong>CPU:</strong> ${d.pc.cpu}</li>
+          <li><strong>GPU:</strong> ${d.pc.gpu}</li>
+          <li><strong>RAM:</strong> ${d.pc.ram} GB</li>
+          ${d.pc.notes ? `<li><em>${d.pc.notes}</em></li>` : ""}
+        </ul>
+      </div>
+    `;
+  }
+
+  /* ===== RENDER ===== */
+  resultatDiv.innerHTML = `
     <h2>${p}</h2>
+    ${pcTierHTML}
+    ${pcSpecsHTML}
     <div class="kolumner">
       <div class="kolumn alskar"><h3>❤️ Älskar</h3>${lista(d.alskar)}</div>
       <div class="kolumn oppen"><h3>👍 Öppen</h3>${lista(d.oppen)}</div>
       <div class="kolumn undviker"><h3>🚫 Undviker</h3>${lista(d.undviker)}</div>
-    </div>`;
+    </div>
+  `;
 }
+
+
 
 function lista(a){return a.length?`<ul>${a.map(i=>`<li>${i}</li>`).join("")}</ul>`:"<em>Ingen</em>";}
 </script>

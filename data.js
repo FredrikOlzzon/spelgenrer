@@ -740,6 +740,7 @@ pcTier: "mid",
         "Rogue-like / Rogue-lite spel",
         "4X-strategi",
         "Grand Strategy",
+		"Action Adventure",
         "Överlevnad / Crafting / Sandbox",
         "Sandbox / Creativity / World-building",
         "MMO (Onlinespel)",
@@ -1489,6 +1490,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

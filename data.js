@@ -97,7 +97,7 @@ pcTier: "extreme",
     cpu: "Ryzen 9 9950X3D",
     gpu: "RTX 4090",
     ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    notes: "Klarar alla typer av spel per 2025-12-19 - utifrån prestanda"
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -180,7 +180,7 @@ pcTier: "high",
     cpu: "Ryzen 5 9600X",
     gpu: "Radeon 6800 XT 16GB",
     ram: 32,
-    notes: "Strax över mid-tier - nästan high"
+    notes: "Strax över mid-tier - nästan high. Bra allrounddator som är över genomsnittet."
   },
       alskar: [
         "RPG / CRPG",
@@ -261,7 +261,7 @@ pcTier: "low",
     cpu: "Intel Core i7 4790K",
     gpu: "Radeon RX 6600 XT 8GB",
     ram: 16,
-    notes: "Sedan uppgraderingen - klarar han avsevärt fler spel. Dock fortfarande tillbakahållen av svag CPU. Trots grafikkortsuppgradering."
+    notes: "Uppgradering av grafikkort möjliggör avsevärt fler spel.Dock hålls datorn tillbaka av föråldrad CPU. Dubbelkolla extra noga innan spel ges."
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -339,10 +339,10 @@ pcTier: "low",
 pcTier: "low",
 
   pc: {
-    cpu: "Okänd",
+    cpu: "Intel Core",
     gpu: "Nvidia Geforce RTX 2060 Super 8GB",
     ram: 16,
-    notes: "Grafikkortet är dugligt, men överlag en svag dator."
+    notes: "Grafikkortet är dugligt, men överlag en svag dator. Inväntar ny HW Info undersökning."
   },	
 	
       alskar: [
@@ -432,7 +432,7 @@ pcTier: "mid",
     cpu: "Intel Core i5 11400F",
     gpu: "Radeon RX 6750 XT 12GB",
     ram: 32,
-    notes: "Bra avvägd dator - om än på väg att bli till åren."
+    notes: "Okej allrounddator. Om än på väg att bli lite väl till åren. Grafikkortets VRAM gör att den höjer sig över genomsnittet."
   },
 			
       alskar: [
@@ -510,9 +510,9 @@ pcTier: "mid",
 
   pc: {
     cpu: "Ryzen 7 5800X3D",
-    gpu: "Nvidia Geforce RTX 2080 ti",
+    gpu: "Nvidia Geforce RTX 2080 Ti 11GB",
     ram: 32,
-    notes: "Bra allroundmaskin"
+    notes: "Bra allroundmaskin - även om GPU är något föråldrad. Vägs däremot upp av att ha gott om VRAM."
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -696,7 +696,7 @@ pcTier: "mid",
     cpu: "AMD Ryzen 5 9600X",
     gpu: "Intel ARC B580 12GB",
     ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda. Obs! Dubbelkolla stödet spelet har för Intel ARC!"
+    notes: "Bra för alla typer av spel utifrån råprestanda. Obs! Dubbelkolla spelstöd för Intel ARC!"
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -775,7 +775,7 @@ pcTier: "low",
     cpu: "Ryzen 5 2600",
     gpu: "Nvidia Geforce RTX 3060 12GB",
     ram: 16,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    notes: "Okej dator, grafikkort är dock föråldrat, även om det har större mängd VRAM än genomsnittet."
   },
       alskar: [
         "RPG / CRPG",
@@ -849,7 +849,7 @@ pcTier: "high",
 
   pc: {
     cpu: "Intel(R) Core i7-12700F",
-    gpu: "Nvidia GeForce RTX 4070",
+    gpu: "Nvidia GeForce RTX 4070 12GB",
     ram: 32,
     notes: "Bra för alla typer av spel - utifrån prestanda"
   },
@@ -1018,7 +1018,7 @@ pcTier: "mid",
     cpu: "Intel Core i7-13700f",
     gpu: "Nvidia Geforce RTX 3070 8GB",
     ram: 16,
-    notes: "God allroundmaskin"
+    notes: "God allroundmaskin, tänk dock på att RTX 3070 enbart har 8GB VRAM."
   },
   alskar: [
     "FPS / Action (Singel)",
@@ -1176,7 +1176,7 @@ pcTier: "mid",
     cpu: "Intel Core i7-13700f",
     gpu: "Nvidia Geforce RTX 3070 8GB",
     ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    notes: "God allroundmaskin, tänk dock på att RTX 3070 enbart har 8GB VRAM."
   },
   alskar: [
     "FPS / Action (Singel)",
@@ -1257,7 +1257,7 @@ pcTier: "high",
     cpu: "Intel Core i7 10700K",
     gpu: "Radeon RX 9060 XT 16 GB",
     ram: 16,
-    notes: "Bra allrounddator - mest utifrån grafikkort. CPU-krävande spel kan i vissa fall kanske vara problem."
+    notes: "Bra allrounddator - särskilt pga det nya grafikkort. CPU-krävande spel kan potentiellt vara stoppklossar - men troligtvis kommer det ej vara något problem."
   },
   alskar: [],
   oppen: [],
@@ -1273,7 +1273,7 @@ pcTier: "mid",
     cpu: "Intel Core i7 14700F",
     gpu: "Nvidia Geforce RTX 4060 8GB",
     ram: 16,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    notes: "Okej dator överlag. Tänk dock på att RTX 4060 enbart har 8GB VRAM - och överlag är ökänt svagt."
   },
   alskar: [],
   oppen: [],
@@ -1305,7 +1305,7 @@ pcTier: "extreme",
     cpu: "AMD Ryzen 7 7800X3D",
     gpu: "NVIDIA GeForce RTX 4070 SUPER 12GB",
     ram: 32,
-    notes: "Han klarar allt i skrivande stund"
+    notes: "Han klarar allt i skrivande stund - riktigt bra dator sett till hur den är balanserad. Riktigt bra spel-CPU parad med stark GPU."
   },
   alskar: [],
   oppen: [],
@@ -1319,9 +1319,9 @@ pcTier: "mid",
 
   pc: {
     cpu: "AMD Ryzen 7 5800X3D",
-    gpu: "NVIDIA GeForce RTX 4070",
+    gpu: "NVIDIA GeForce RTX 4070 12GB",
     ram: 32,
-    notes: "Bra allrounddator"
+    notes: "Bra allrounddator - med bra GPU."
   },
   alskar: [],
   oppen: [],
@@ -1345,5 +1345,4 @@ Niclas: {
   }
 }
 };
-
 

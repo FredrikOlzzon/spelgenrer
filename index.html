@@ -192,6 +192,30 @@ footer{
   border-bottom: 1px solid var(--border);
   padding-bottom: 6px;
 }
+
+.platforms-owned {
+  background:#020617;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:10px 14px;
+  margin-bottom:14px;
+  font-size:0.9rem;
+}
+
+.platforms-owned strong {
+  color:#93c5fd;
+}
+
+.platform-tag {
+  display:inline-block;
+  margin:4px 6px 0 0;
+  padding:4px 8px;
+  border-radius:6px;
+  background:#111;
+  border:1px solid var(--border);
+  font-size:0.85rem;
+}
+
 	  
 	.pc-tier {
   background:#0f172a;
@@ -519,6 +543,19 @@ document.getElementById("filtreraGenrerBtn").onclick=()=>{
 /* ===== PERSONVY ===== */
 function visaPerson(p){
   const d = DATA.personerData[p];
+/* ===== PLATTFORMAR ===== */
+let platformsHTML = "";
+
+if (d.plattformar && d.plattformar.length) {
+  platformsHTML = `
+    <div class="platforms-owned">
+      <strong>🎮 Plattformar</strong><br>
+      ${d.plattformar.map(pl =>
+        `<span class="platform-tag">${pl}</span>`
+      ).join("")}
+    </div>
+  `;
+}
 
   /* ===== PC-TIER ===== */
   let pcTierHTML = "";
@@ -560,11 +597,12 @@ function visaPerson(p){
   }
 
   /* ===== RENDER ===== */
-  resultatDiv.innerHTML = `
-    <h2>${p}</h2>
-    ${pcTierHTML}
-    ${pcSpecsHTML}
-    <div class="kolumner">
+resultatDiv.innerHTML = `
+  <h2>${p}</h2>
+  ${platformsHTML}
+  ${pcTierHTML}
+  ${pcSpecsHTML}
+  <div class="kolumner">
       <div class="kolumn alskar"><h3>❤️ Älskar</h3>${lista(d.alskar)}</div>
       <div class="kolumn oppen"><h3>👍 Öppen</h3>${lista(d.oppen)}</div>
       <div class="kolumn undviker"><h3>🚫 Undviker</h3>${lista(d.undviker)}</div>

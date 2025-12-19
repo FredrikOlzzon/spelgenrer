@@ -1108,7 +1108,7 @@ pcTier: "mid",
     cpu: "Intel Core i7-12650H",
     gpu: "Nvidia Geforce RTX 3060",
     ram: 16,
-    notes: "Obs! Var uppmärksamma kring systemkrav. Detta är en bärbar dator. I regel är grafikkortet en tier under i prestanda. D.v.s en bärbar RTX 3060 är jämbördigt med en RTX 3050 på en stationär dator."
+    notes: "Obs! Var uppmärksamma kring systemkrav. En laptops grafikkort är ej jämbördigt med en stationär dators motsvarighet. En laptop med RTX 3060 är jämbördigt med RTX 3050 på en stationär dator."
   },
   alskar: [
     "RPG / CRPG",
@@ -1489,6 +1489,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

@@ -188,6 +188,36 @@
   font-size:0.9rem;
 }
 
+/* ===== PC-TIER FILTER ===== */
+
+#pcTierFilter.low {
+  border-color:#f87171;
+  color:#f87171;
+}
+
+#pcTierFilter.mid {
+  border-color:#facc15;
+  color:#facc15;
+}
+
+#pcTierFilter.high {
+  border-color:#4ade80;
+  color:#4ade80;
+}
+
+#pcTierFilter.extreme {
+  border-color:#38bdf8;
+  color:#38bdf8;
+}
+
+/* Varningstext */
+.pc-tier-warning {
+  margin-top:8px;
+  font-size:0.85rem;
+  color:#f87171;
+}
+
+
 
   </style>
 </head>
@@ -231,12 +261,17 @@
 
   <!-- ✅ PC-TIER – HÄR -->
   <select id="pcTierFilter" style="display:none">
-    <option value="">Alla PC-tier</option>
-    <option value="low">Low</option>
-    <option value="mid">Mid</option>
-    <option value="high">High</option>
-    <option value="extreme">Extreme</option>
-  </select>
+  <option value="">Alla PC-tier</option>
+  <option value="low">Low</option>
+  <option value="mid">Mid</option>
+  <option value="high">High</option>
+  <option value="extreme">Extreme</option>
+</select>
+
+<div id="pcTierWarning" class="pc-tier-warning" style="display:none">
+  ⚠️ Low tier – dubbelkolla systemkrav. Endast lättare spel rekommenderas.
+</div>
+
 
   <button id="visaGenreBtn">Visa</button>
 </div>
@@ -244,13 +279,6 @@
     <div id="genreResultat"></div>
 
     <hr style="margin:25px 0;border-color:#2a2a35">
-
-  <option value="">Alla PC-tier</option>
-  <option value="low">Low</option>
-  <option value="mid">Mid</option>
-  <option value="high">High</option>
-  <option value="extreme">Extreme</option>
-</select>
 
     <!-- PLATTFORM → GENRER -->
 <div class="plattform-genrer" style="display:none">
@@ -317,6 +345,25 @@ plattformSelect.addEventListener("change", () => {
   }
 });
 
+const pcTierWarning = document.getElementById("pcTierWarning");
+
+pcTierSelect.addEventListener("change", () => {
+  // Rensa gamla klasser
+  pcTierSelect.classList.remove("low","mid","high","extreme");
+
+  const tier = pcTierSelect.value;
+
+  if (tier) {
+    pcTierSelect.classList.add(tier);
+  }
+
+  // Visa varning endast för low
+  if (tier === "low") {
+    pcTierWarning.style.display = "block";
+  } else {
+    pcTierWarning.style.display = "none";
+  }
+});
 
 /* ===== FYLL GENRER ===== */
 const allaGenrer=new Set();

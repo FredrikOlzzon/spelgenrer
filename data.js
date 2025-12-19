@@ -1388,7 +1388,8 @@ undviker: [
   "Ubåt / Rymdsimulatorer",
   "Sportspel",
   "Competitive Online (FPS etc.)",
-  "Match-3 spel"
+  "Match-3 spel",
+"Tabletop / Digital Board Games"
 ],
 ejValt: [
   "Boomer shooters",
@@ -1400,7 +1401,6 @@ ejValt: [
   "Beat-em-Up / Brawler",
   "Klassiska arkadhallsspel",
   "Bullet hell / Shoot ’em up (Shmup)",
-  "Tabletop / Digital Board Games"
 ]
 },
 
@@ -1421,4 +1421,5 @@ Niclas: {
   }
 }
 };
+
 

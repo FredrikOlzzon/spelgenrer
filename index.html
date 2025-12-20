@@ -329,6 +329,20 @@ footer{
   color:#f87171;
 }
 
+.filter-search-row {
+  align-items: center;
+}
+
+.filter-search-spacer {
+  flex: 1;
+}
+
+#genreSearch {
+  min-width: 300px;
+}
+
+
+
 
   </style>
 </head>
@@ -403,16 +417,20 @@ footer{
 <h2>🎮 Filtrera på genre</h2>
 
 <!-- 🔍 NY: SÖKRUTA FÖR GENRE -->
-<div class="filter-row">
-  <input
-    type="text"
-    id="genreSearch"
-    list="genreSuggestions"
-    placeholder="Sök spelgenre…"
-    style="min-width:260px"
-  >
+<div class="filter-row filter-search-row">
+  <div class="filter-search-spacer"></div>
+
+<input
+  type="text"
+  id="genreSearch"
+  list="genreSuggestions"
+  placeholder="Sök spelgenre…"
+  style="min-width:260px;margin-left:auto"
+>
+
   <datalist id="genreSuggestions"></datalist>
 </div>
+
 
 <!-- BEFINTLIG FILTER-RAD -->
 <div class="filter-row">
@@ -753,9 +771,6 @@ genreSelect.addEventListener("change", () => {
 
 </body>
 </html>
-
-
-
 
 
 

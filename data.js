@@ -103,7 +103,6 @@ pcTier: "extreme",
       alskar: [
         "FPS / Action (Singel)",
 		"Action Adventure",
-        "3D Plattformare",
         "RPG / CRPG",
         "Open-World / Öppna världar",
         "Tower Defense",
@@ -1691,6 +1690,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

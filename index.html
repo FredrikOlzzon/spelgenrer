@@ -341,6 +341,39 @@ footer{
   min-width: 300px;
 }
 
+.filter-search-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  max-width: 520px;
+  line-height: 1.4;
+}
+
+#genreSearch {
+  min-width: 300px;
+}
+
+.filter-search-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.filter-search-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.search-arrow {
+  margin-left: 6px;
+  opacity: 0.7;
+}
+
+#genreSearch {
+  min-width: 300px;
+}
+
 
 
 
@@ -418,18 +451,23 @@ footer{
 
 <!-- 🔍 NY: SÖKRUTA FÖR GENRE -->
 <div class="filter-row filter-search-row">
-  <div class="filter-search-spacer"></div>
 
-<input
-  type="text"
-  id="genreSearch"
-  list="genreSuggestions"
-  placeholder="Sök spelgenre…"
-  style="min-width:260px;margin-left:auto"
->
+  <div class="filter-search-label">
+    <strong>Sökruta</strong> – påbörja skriv och filtrera själv spelgenrer
+    <span class="search-arrow">➜</span>
+  </div>
 
+  <input
+    type="text"
+    id="genreSearch"
+    list="genreSuggestions"
+    placeholder="Sök spelgenre…"
+  >
   <datalist id="genreSuggestions"></datalist>
+
 </div>
+
+
 
 
 <!-- BEFINTLIG FILTER-RAD -->
@@ -771,6 +809,5 @@ genreSelect.addEventListener("change", () => {
 
 </body>
 </html>
-
 
 

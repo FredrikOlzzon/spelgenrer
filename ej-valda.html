@@ -120,12 +120,37 @@ footer {
 <script>
 
 const resultat = document.getElementById("resultat");
+const PERSON_ORDNING = [
+  "Fredrik",
+  "Odd",
+  "Jesper",
+  "Danny",
+  "Mattias",
+  "Fyghar",
+  "Emilia",
+  "Oscar",
+  "Robin",
+  "Daniel",
+  "Vanessa",
+  "Arvid",
+  "Jim",
+  "Tony",
+  "Andres",
+  "Peter",
+  "Emil",
+  "Victoria",
+  "Natalie",
+  "Niclas"
+];
 
-/* ===== PERSONER ===== */
-Object.entries(DATA.personerData).forEach(([person,data])=>{
-  const b=document.createElement("button");
-  b.textContent=person;
-  b.onclick=()=>visaPerson(person,data);
+/* ===== PERSONER (FAST ORDNING) ===== */
+PERSON_ORDNING.forEach(person => {
+  const data = DATA.personerData[person];
+  if (!data) return; // skydd om någon saknas i data.js
+
+  const b = document.createElement("button");
+  b.textContent = person;
+  b.onclick = () => visaPerson(person, data);
   document.getElementById("personButtons").appendChild(b);
 });
 
@@ -213,4 +238,5 @@ renderTopIgnorerade();
 
 </body>
 </html>
+
 

@@ -1332,6 +1332,7 @@ undviker: [
   "Mech-/Robot-strategi eller action",
   "Ubåt / Rymdsimulatorer",
   "Sandbox / Creativity / World-building",
+"Överlevnad / Crafting / Sandbox",
   "City building / Farming",
   "Life Simulation / Social Simulation",
   "Economy / Tycoon Games",
@@ -1346,7 +1347,7 @@ undviker: [
 ],
 
 ejValt: [
-  "Överlevnad / Crafting / Sandbox"
+  
 ]
 
 },
@@ -1690,6 +1691,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

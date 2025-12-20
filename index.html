@@ -480,16 +480,41 @@ footer{
 
 <script>
 const buttonsDiv=document.getElementById("personButtons");
+	const PERSON_ORDNING = [
+  "Fredrik",
+  "Odd",
+  "Jesper",
+  "Danny",
+  "Mattias",
+  "Fyghar",
+  "Emilia",
+  "Oscar",
+  "Robin",
+  "Daniel",
+  "Vanessa",
+  "Arvid",
+  "Jim",
+  "Tony",
+  "Andres",
+  "Peter",
+  "Emil",
+  "Victoria",
+  "Natalie",
+  "Niclas"
+];
+
 const resultatDiv=document.getElementById("resultat");
 const genreSelect=document.getElementById("genreSelect");
 
-/* ===== PERSONKNAPPAR ===== */
-Object.keys(DATA.personerData).forEach(p=>{
-  const b=document.createElement("button");
-  b.textContent=p;
-  b.onclick=()=>visaPerson(p);
+PERSON_ORDNING.forEach(p => {
+  if (!DATA.personerData[p]) return; // skydd om någon saknas i data.js
+
+  const b = document.createElement("button");
+  b.textContent = p;
+  b.onclick = () => visaPerson(p);
   buttonsDiv.appendChild(b);
 });
+
 const plattformSelect = document.getElementById("plattformGenre");
 const pcTierSelect = document.getElementById("pcTierFilter");
 
@@ -688,6 +713,7 @@ function lista(a){return a.length?`<ul>${a.map(i=>`<li>${i}</li>`).join("")}</ul
 
 </body>
 </html>
+
 
 
 

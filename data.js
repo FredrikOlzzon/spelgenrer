@@ -95,10 +95,10 @@ personer: [
 pcTier: "extreme",
 
   pc: {
-    cpu: "Ryzen 9 9950X3D",
-    gpu: "RTX 4090",
+    cpu: "AMD Ryzen 9 9950X3D",
+    gpu: "NVIDIA Geforce RTX 4090",
     ram: 32,
-    notes: "Klarar alla typer av spel per 2025-12-19 - utifrån prestanda"
+    notes: "Högpresterande dator vilket lär klara allt den ställs inför utifrån systemspecs"
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -179,10 +179,10 @@ pcTier: "extreme",
 pcTier: "high",
 
   pc: {
-    cpu: "Ryzen 5 9600X",
+    cpu: "AMD Ryzen 5 9600X",
     gpu: "Radeon 6800 XT 16GB",
     ram: 32,
-    notes: "Strax över mid-tier - nästan high. Bra allrounddator som är över genomsnittet."
+    notes: "PC-prestanda är strax över mid-tier - borderline high."
   },
       alskar: [
         "RPG / CRPG",
@@ -262,9 +262,9 @@ pcTier: "low",
 
   pc: {
     cpu: "Intel Core i7 4790K",
-    gpu: "Radeon RX 6600 XT 8GB (snart)",
+    gpu: "AMD Radeon RX 6600 XT 8GB (snart)",
     ram: 16,
-    notes: "Uppgradering av grafikkort möjliggör avsevärt fler spel.Dock hålls datorn tillbaka av föråldrad CPU. Dubbelkolla extra noga innan spel ges."
+    notes: "Uppgradering av grafikkort innebär att fler spel kan spelas. Datorn hålls dock tillbaka av föråldrad CPU. Dubbelkolla kompletta systemkrav innan spel ges."
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -344,9 +344,9 @@ pcTier: "low",
 
   pc: {
     cpu: "Intel Core",
-    gpu: "Nvidia Geforce RTX 2060 Super 8GB",
+    gpu: "NVIDIA Geforce RTX 2060 Super 8GB",
     ram: 16,
-    notes: "Grafikkortet är dugligt, men överlag en svag dator. Inväntar ny HW Info undersökning."
+    notes: "Grafikkortet är dugligt, men resterande system är ej utforskat. Inväntar HW Info undersökning."
   },	
 	
       alskar: [
@@ -435,9 +435,9 @@ pcTier: "mid",
 
   pc: {
     cpu: "Intel Core i5 11400F",
-    gpu: "Radeon RX 6750 XT 12GB",
+    gpu: "AMD Radeon RX 6750 XT 12GB",
     ram: 32,
-    notes: "Okej allrounddator. Om än på väg att bli lite väl till åren. Grafikkortets VRAM gör att den höjer sig över genomsnittet."
+    notes: "Duglig allrounddator. Om än på väg att bli lite till åren. Grafikkortets VRAM dock gör att den höjer sig över genomsnittet."
   },
 			
       alskar: [
@@ -516,10 +516,10 @@ pcTier: "mid",
 pcTier: "mid",
 
   pc: {
-    cpu: "Ryzen 7 5800X3D",
-    gpu: "Nvidia Geforce RTX 2080 Ti 11GB",
+    cpu: "AMD Ryzen 7 5800X3D",
+    gpu: "NVIDIA Geforce RTX 2080 Ti 11GB",
     ram: 32,
-    notes: "Bra allroundmaskin - även om GPU är något föråldrad. Vägs däremot upp av att ha gott om VRAM."
+    notes: "God allroundmaskin. GPU är förvisso av en äldre generation, men det vägs upp av dess goda VRAM-mängd."
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -622,10 +622,10 @@ pcTier: "mid",
 pcTier: "mid",
 
   pc: {
-    cpu: "Ryzen 5 5600",
-    gpu: "Radeon RX 6600 XT 8GB",
+    cpu: "AMD Ryzen 5 5600",
+    gpu: "AMD Radeon RX 6600 XT 8GB",
     ram: 16,
-    notes: "God allroundmaskin sedan uppgradering av grafikkort."
+    notes: "God allroundmaskin - om än på gränsen mot 'low' - men sedan uppgradering av grafikkort kommer den klara fler spel utan problem."
   },
       alskar: [
         "Looter shooters",
@@ -703,9 +703,9 @@ pcTier: "mid",
 
   pc: {
     cpu: "AMD Ryzen 5 9600X",
-    gpu: "Intel ARC B580 12GB",
+    gpu: "Intel Arc B580 12GB",
     ram: 32,
-    notes: "Bra för alla typer av spel utifrån råprestanda. Obs! Dubbelkolla spelstöd för Intel ARC!"
+    notes: "Duglig för de flesta typerna av spel. Men uppmärksamma att Intel Arc-grafikkort kan ibland ha problem med drivrutinsstöd. Säkerställ spelstöd."
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -782,10 +782,10 @@ pcTier: "mid",
 pcTier: "low",
 
   pc: {
-    cpu: "Ryzen 5 2600",
-    gpu: "Nvidia Geforce RTX 3060 12GB",
+    cpu: "AMD Ryzen 5 2600",
+    gpu: "NVIDIA Geforce RTX 3060 12GB",
     ram: 16,
-    notes: "Okej dator, grafikkort är dock föråldrat, även om det har större mängd VRAM än genomsnittet."
+    notes: "Duglig dator, grafikkort är något föråldrat, även om det har större mängd VRAM än genomsnittet. Datorn i sin helhet är lägre, då CPU är avsevärt mycket äldre."
   },
       alskar: [
         "RPG / CRPG",
@@ -859,10 +859,10 @@ pcTier: "low",
 pcTier: "high",
 
   pc: {
-    cpu: "Intel(R) Core i7-12700F",
-    gpu: "Nvidia GeForce RTX 4070 12GB",
+    cpu: "Intel Core i7-12700F",
+    gpu: "NVIDIA GeForce RTX 4070 12GB",
     ram: 32,
-    notes: "Bra för alla typer av spel - utifrån prestanda"
+    notes: "Bra system för alla typer av spel."
   },
       alskar: [
         "Looter shooters",
@@ -1109,7 +1109,7 @@ pcTier: "mid",
     cpu: "Intel Core i7-12650H",
     gpu: "Nvidia Geforce RTX 3060",
     ram: 16,
-    notes: "Obs! Var uppmärksamma kring systemkrav. En laptops grafikkort är ej jämbördigt med en stationär dators motsvarighet. En laptop med RTX 3060 är jämbördigt med RTX 3050 på en stationär dator."
+    notes: "Obs! Var uppmärksamma kring systemkrav. En laptops grafikkort är ej jämbördigt med en stationär dators motsvarighet. En laptop med RTX 3060 är i snitt jämbördigt med stationär dators RTX 3050."
   },
   alskar: [
     "RPG / CRPG",
@@ -1272,9 +1272,9 @@ pcTier: "high",
 
   pc: {
     cpu: "Intel Core i7 10700K",
-    gpu: "Radeon RX 9060 XT 16 GB",
+    gpu: "AMD Radeon RX 9060 XT 16 GB",
     ram: 16,
-    notes: "Bra allrounddator - särskilt pga det nya grafikkort. CPU-krävande spel kan potentiellt vara stoppklossar - men troligtvis kommer det ej vara något problem."
+    notes: "Bra allrounddator - särskilt pga det nya grafikkort. CPU-krävande spel kan potentiellt vara stoppklossar - men troligtvis kommer det ej vara något problem för merparten av datorspel."
   },
   alskar: [
   "FPS / Action (Singel)",
@@ -1357,9 +1357,9 @@ Jim: {
 
   pc: {
     cpu: "Intel Core i7 14700F",
-    gpu: "Nvidia Geforce RTX 4060 8GB",
+    gpu: "NVIDIA Geforce RTX 4060 8GB",
     ram: 16,
-    notes: "Okej dator överlag. RTX 4060 har begränsat VRAM."
+    notes: "Okej dator överlag. RTX 4060 har begränsat VRAM (grafikkortsminne)."
   },
 
   alskar: [
@@ -1440,7 +1440,7 @@ pcTier: "low",
     cpu: "AMD Ryzen 5 3550H",
     gpu: "NVIDIA GeForce GTX 1050 3GB",
     ram: 8,
-    notes: "Bärbar dator. Här kan ENBART extremt lågt krävande spel vara aktuella. Dubbelkolla systemkrav."
+    notes: "Bärbar dator. Här kan ENBART lågt krävande spel vara aktuella. Dubbelkolla systemkrav om det avser PC-spel."
   },
   alskar: [
   "3D Plattformare",
@@ -1523,7 +1523,7 @@ pcTier: "extreme",
     cpu: "AMD Ryzen 7 7800X3D",
     gpu: "NVIDIA GeForce RTX 4070 SUPER 12GB",
     ram: 32,
-    notes: "Han klarar allt i skrivande stund - riktigt bra dator sett till hur den är balanserad. Riktigt bra spel-CPU parad med stark GPU."
+    notes: "Detta system klarar allt i skrivande stund. Välbalanserad GPU/CPU kombo. Denna dator lär klara merparten av dagens mest krävande spel."
   },
   alskar: [
   "FPS / Action (Singel)",
@@ -1690,19 +1690,3 @@ Niclas: {
   }
 }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

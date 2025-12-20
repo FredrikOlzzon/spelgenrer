@@ -785,7 +785,7 @@ pcTier: "low",
     cpu: "AMD Ryzen 5 2600",
     gpu: "NVIDIA Geforce RTX 3060 12GB",
     ram: 16,
-    notes: "Duglig dator, grafikkort är något föråldrat, även om det har större mängd VRAM än genomsnittet. Datorn i sin helhet är lägre, då CPU är avsevärt mycket äldre."
+    notes: "Duglig dator, grafikkort är något föråldrat, även om det har större mängd VRAM än genomsnittet. Datorn i sin helhet är lägre (sett till PC-tier), då CPU är avsevärt äldre."
   },
       alskar: [
         "RPG / CRPG",
@@ -1690,3 +1690,4 @@ Niclas: {
   }
 }
 };
+

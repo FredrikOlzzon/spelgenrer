@@ -400,8 +400,21 @@ footer{
 </div>
 
 
-    <h2>🎮 Filtrera på genre</h2>
+<h2>🎮 Filtrera på genre</h2>
 
+<!-- 🔍 NY: SÖKRUTA FÖR GENRE -->
+<div class="filter-row">
+  <input
+    type="text"
+    id="genreSearch"
+    list="genreSuggestions"
+    placeholder="Sök spelgenre…"
+    style="min-width:260px"
+  >
+  <datalist id="genreSuggestions"></datalist>
+</div>
+
+<!-- BEFINTLIG FILTER-RAD -->
 <div class="filter-row">
   <select id="genreSelect">
     <option value="">– Välj genre –</option>
@@ -416,22 +429,17 @@ footer{
     <option value="Switch 2">Switch 2</option>
   </select>
 
-  <!-- ✅ PC-TIER – HÄR -->
   <select id="pcTierFilter" style="display:none">
-  <option value="">Alla PC-tier</option>
-  <option value="low">Low</option>
-  <option value="mid">Mid</option>
-  <option value="high">High</option>
-  <option value="extreme">Extreme</option>
-</select>
-
-<div id="pcTierWarning" class="pc-tier-warning" style="display:none">
-  ⚠️ Low tier – dubbelkolla systemkrav. Endast lättare spel rekommenderas.
-</div>
-
+    <option value="">Alla PC-tier</option>
+    <option value="low">Low</option>
+    <option value="mid">Mid</option>
+    <option value="high">High</option>
+    <option value="extreme">Extreme</option>
+  </select>
 
   <button id="visaGenreBtn">Visa</button>
 </div>
+
 
     <div id="genreResultat"></div>
 
@@ -527,7 +535,6 @@ plattformSelect.addEventListener("change", () => {
   }
 });
 
-const pcTierWarning = document.getElementById("pcTierWarning");
 
 pcTierSelect.addEventListener("change", () => {
   // Rensa gamla klasser
@@ -557,6 +564,18 @@ Object.values(DATA.personerData).forEach(p=>{
   o.value=o.textContent=g;
   genreSelect.appendChild(o);
 });
+
+/* ===== FYLL GENRE-SÖK (AUTOCOMPLETE) ===== */
+const genreDatalist = document.getElementById("genreSuggestions");
+
+[...allaGenrer]
+  .sort((a,b)=>a.localeCompare(b,"sv"))
+  .forEach(genre => {
+    const option = document.createElement("option");
+    option.value = genre;
+    genreDatalist.appendChild(option);
+  });
+
 
 /* ===== VISA GENRE ===== */
 document.getElementById("visaGenreBtn").onclick=()=>{
@@ -709,6 +728,27 @@ resultatDiv.innerHTML = `
 
 
 function lista(a){return a.length?`<ul>${a.map(i=>`<li>${i}</li>`).join("")}</ul>`:"<em>Ingen</em>";}
+
+/* ===== KOPPLA SÖK → DROPDOWN ===== */
+const genreSearch = document.getElementById("genreSearch");
+
+genreSearch.addEventListener("change", () => {
+  const value = genreSearch.value;
+  const match = [...genreSelect.options].find(o => o.value === value);
+
+  if (match) {
+    genreSelect.value = value;
+    document.getElementById("visaGenreBtn").click();
+  }
+});
+
+/* 🔁 rensa sökrutan om dropdown ändras manuellt */
+genreSelect.addEventListener("change", () => {
+  genreSearch.value = "";
+});
+
+
+
 </script>
 
 </body>

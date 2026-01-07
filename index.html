@@ -564,6 +564,7 @@ const buttonsDiv=document.getElementById("personButtons");
   "Emil",
   "Victoria",
   "Natalie",
+  "Fredrik 'Poki'",
   "Niclas"
 ];
 
@@ -741,7 +742,14 @@ if (d.plattformar && d.plattformar.length) {
   }
 
   /* ===== RENDER ===== */
-const imagePath = `images/people/${p.toLowerCase()}.jpg`;
+/* ===== PERSONBILD ===== */
+const imageMap = {
+  "Fredrik 'Poki'": "poki.jpg"
+};
+
+const imageFile = imageMap[p] || `${p.toLowerCase()}.jpg`;
+const imagePath = `images/people/${imageFile}`;
+
 
 resultatDiv.innerHTML = `
   <h2>${p}</h2>
@@ -809,6 +817,3 @@ genreSelect.addEventListener("change", () => {
 
 </body>
 </html>
-
-
-

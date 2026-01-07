@@ -1693,25 +1693,35 @@ ejValt: [
   },
 
   alskar: [
-    "FPS / Action (Singel)",
-    "Looter shooters",
-    "Stealth-spel (smygarspel)",
     "Action Adventure",
-    "3D Plattformare",
     "2D Plattformare",
     "Metroidvania-spel",
     "RPG / CRPG",
     "JRPG",
-    "Taktiskt RPG / Turbaserat taktiskt RPG",
-    "ARPG / Action-rollspel",
     "Souls- och Soulslike",
-    "Open-World / Öppna världar",
-    "Rogue-like / Rogue-lite spel",
-    "Realtidsstrategi (RTS)",
+    "Rogue-like / Rogue-lite spel"
+  ],
+
+  oppen: [
+    "FPS / Action (Singel)",
+    "Looter shooters",
+    "Stealth-spel (smygarspel)",
+	"Boomer shooters",
+	"3D Plattformare",
+    "Taktisk FPS",
+	"Taktiskt RPG / Turbaserat taktiskt RPG",
+    "ARPG / Action-rollspel",
+	"Open-World / Öppna världar",
+    "Battle Royale",
+    "Hero shooter / MOBA-liknande FPS",
+    "Pusselspel i förstaperson",
+	"Realtidsstrategi (RTS)",
     "Turbaserade strategispel (TBS)",
     "4X-strategi",
     "Sportspel",
-    "Överlevnad / Crafting / Sandbox",
+    "Interactive Story / Episodspel",
+    "Grand Strategy",
+	"Överlevnad / Crafting / Sandbox",
     "City building / Farming",
     "Skräckspel",
     "Survival Horror FPS",
@@ -1719,17 +1729,7 @@ ejValt: [
     "Beat-em-Up / Brawler",
     "Klassiska arkadhallsspel",
     "Bullet hell / Shoot ’em up (Shmup)",
-    "Kortspel / Deckbuilding"
-  ],
-
-  oppen: [
-    "Boomer shooters",
-    "Taktisk FPS",
-    "Battle Royale",
-    "Hero shooter / MOBA-liknande FPS",
-    "Pusselspel i förstaperson",
-    "Interactive Story / Episodspel",
-    "Grand Strategy",
+    "Kortspel / Deckbuilding",
     "Tower Defense",
     "MOBA / Tactical Arena / Auto-battler",
     "Card-based Strategy / Digital CCG",
@@ -1779,3 +1779,4 @@ Niclas: {
   }
 }
 };
+

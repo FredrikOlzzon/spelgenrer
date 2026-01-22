@@ -19,7 +19,7 @@ const PC_TIERS = {
 
 const DATA = {
 personer: [
-  "Fredrik","Danny","Odd","Natalie","Oscar",
+  "Fredrik","Odd","Natalie","Oscar",
   "Tony","Victoria","Fyghar","Peter","Emil",
   "Daniel","Robin","Jesper","Andres",
   "Mattias","Jim","Emilia","Arvid","Vanessa","Fredrik 'Poki'",
@@ -429,87 +429,6 @@ pcTier: "low",
   "Multiplayer / Coop",
   "MMO (Onlinespel)",
   "Klassiska arkadhallsspel"
-      ]
-    },
-	    Danny: {
-		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", ],
-pcTier: "mid",
-
-  pc: {
-    cpu: "Intel Core i5 11400F",
-    gpu: "Radeon RX 6750 XT 12GB",
-    ram: 32,
-    notes: "Okej allrounddator. Om än på väg att bli lite väl till åren. Grafikkortets VRAM gör att den höjer sig över genomsnittet."
-  },
-			
-      alskar: [
-        "FPS / Action (Singel)",
-        "Looter shooters",
-        "Stealth-spel (smygarspel)",
-		"Action Adventure",
-        "3D Plattformare",
-        "2D Plattformare",
-        "Metroidvania-spel",
-        "RPG / CRPG",
-        "JRPG",
-        "ARPG / Action-rollspel",
-        "Open-World / Öppna världar",
-        "Arkad- och Simcade Racing",
-        "Kart-racing",
-        "Skräckspel",
-        "Walking Simulator i förstaperson",
-        "Peka & Klicka Äventyr",
-        "Survival Horror FPS",
-        "Multiplayer / Coop",
-        "Beat-em-Up / Brawler",
-        "Arkadspel",
-        "Klassiska arkadhallsspel"
-      ],
-      oppen: [
-        "Boomer shooters",
-        "Pusselspel i förstaperson",
-        "Physics-baserade spel / bygg- och experimentspel",
-        "Interactive Story / Episodspel",
-        "Visuella romaner / Storybaserade spel",
-        "Realtidsstrategi (RTS)",
-        "Full racing simulator",
-        "Mech-/Robot-strategi eller action",
-        "Överlevnad / Crafting / Sandbox",
-        "Sandbox / Creativity / World-building",
-        "Bullet hell / Shoot ’em up (Shmup)",
-		"Monsterfångar-RPG",
-		"Flygsimulator",
-		"Övriga fordonsimulatorer",
-		"Ubåt / Rymdsimulatorer",
-		"City building / Farming",
-		"Life Simulation / Social Simulation",
-		"Partyspel / Micro-games"
-      ],
-      undviker: [
-        "Taktisk FPS",
-        "Battle Royale",
-        "Hero shooter / MOBA-liknande FPS",
-        "Rogue-like / Rogue-lite spel",
-        "Taktiskt RPG / Turbaserat taktiskt RPG",
-        "Souls- och Soulslike",
-        "Turbaserade strategispel (TBS)",
-        "4X-strategi",
-        "Grand Strategy",
-        "Tower Defense",
-        "MOBA / Tactical Arena / Auto-battler",
-        "Card-based Strategy / Digital CCG",
-        "Sportspel",
-        "Economy / Tycoon Games",
-        "Competitive Online (FPS etc.)",
-        "MMO (Onlinespel)",
-        "Fighting",
-        "Rytmspel / Music / Rhythm action",
-        "Match-3 spel",
-        "Kortspel / Deckbuilding",
-        "Tabletop / Digital Board Games"
-		],
-		ejValt: [
-
       ]
     },
 
@@ -1779,5 +1698,4 @@ Niclas: {
   }
 }
 };
-
 

@@ -374,6 +374,16 @@ footer{
   min-width: 300px;
 }
 
+#tierButtons button {
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+#tierButtons button:nth-child(1) { color:#f87171; }   /* low */
+#tierButtons button:nth-child(2) { color:#facc15; }   /* mid */
+#tierButtons button:nth-child(3) { color:#4ade80; }   /* high */
+#tierButtons button:nth-child(4) { color:#38bdf8; }   /* extreme */
+
 
 
 
@@ -405,28 +415,35 @@ footer{
   <div class="top-filter">
 
   <h2 class="tool-title">
-    Redaktörsverktyg – Recensenters föredragna spelgenrer 2026
-  </h2>
+  <strong>REDAKTÖRSVERKTYG – Recensenters föredragna spelgenrer 2026</strong> </h2>
 
   <div class="tool-info">
-	  
-  <p>
-    Detta verktyg är till för att ni <strong>redaktörer</strong> lättare ska kunna hitta
-    rätt spel för rätt person. Kategorierna <strong>Älskar</strong>, <strong>Öppen</strong> och
-    <strong>Undviker</strong> är <em>preferenser</em> – <em>inte</em> absoluta regler.
-  </p>
-  <p>
-    Bara för att någon har vissa spelgenrer markerade som
-    <strong>Undviker</strong> innebär det <strong>inte</strong> att vi automatiskt
-    avstår från att fråga dem om sådana spel.
-    Det är ett stöd för att navigera smartare, inte ett förbud.
-  </p>
 
-  <p>
+    <h3 class="tool-title">
+    Vad är denna sida till för?
+  </h3>	  
+    </p>
+	<p> Det här verktyget hjälper redaktörer att matcha rätt spel med rätt person. </p>
+    <p> Kategorierna <strong>Älskar</strong>, <strong>Öppen</strong> och <strong>Undviker</strong> visar personliga preferenser – de är <strong>inte</strong> absoluta regler. Att en genre är markerad som <strong>Undviker</strong> betyder alltså <strong>inte</strong> att personen aldrig kan bli tillfrågad kring den typen av spel. Det är ett vägledande hjälpmedel för smartare beslut, inte ett förbud. <br>
+    </p>
+   
+    <p><strong><em>Steg-för-steg: </em></strong><br>
+      <br>
+      <strong>1. Filtrera efter genre:</strong> När ni vet vilken spelgenre det handlar om, använd filtreringsrutan nedan ⤵️. <br>
+      Notera vilka som <strong>älskar</strong> genren och vilka som är <strong>öppna</strong> för den. Filtrera även på plattform. <br>
+<strong>2. Kolla flera genrer:</strong> Ett spel kan passa fler än en genre. Om ni har flera kandidater från steg 1, gå till personvy och se om de gillar andra genrer som matchar spelet. Det hjälper er att begränsa urvalet. <br>
+      <strong>3. Tänk tillgänglighet:</strong> När ni har ett antal kandidater, fundera över vem som har tid och möjlighet just nu. <br>
+      <strong>4. Säkerställ leverans:</strong> Av de kvarvarande, fråga er själva: ”Vem kan vi lita på att leverera i tid, med tanke på om spelet är hög-, mellan- eller lågprioriterat?” Tänk också på deras allmänna pålitlighet. Tips: Om ni är osäkra kan ni gå till sidan Matchning. Den ger förslag på recensenter baserat på spelgenre. Det är bara ett komplement, men kan ge bra idéer.</p>
+
+<p>
     I slutänden är det alltid ett
     <strong>redaktionellt beslut</strong> vilka personer som tillfrågas,
-    <strong>oavsett</strong> var ett spel hamnar sett till spelgenrepreferens.
-  </p>
+    <strong>oavsett</strong> var ett spel hamnar sett till spelgenrepreferens.<br>
+    <br>
+    <em><strong>PS. Längre ner finns en filtrering som tar fram alla på en viss PC-tier.</strong></em></p>
+
+    <p>
+ 
 
   <hr>
 
@@ -442,7 +459,7 @@ footer{
 
   <p class="tool-info-small">
     Observera direktlänken <strong>“Ej valda”</strong> högst upp – vissa recensenter
-    har spelgenrer som inte placerats i någon kategori.
+    har spelgenrer som inte placerats i någon kategori.<br>
   </p>
 </div>
 
@@ -525,9 +542,21 @@ footer{
   <div class="container">
 
     <div class="personlista">
-      <h2>👤 Personer</h2>
-      <div id="personButtons"></div>
-    </div>
+  <h2>👤 Personer</h2>
+  <div id="personButtons"></div>
+
+  <hr style="margin:14px 0;border-color:#2a2a35">
+
+  <h2>🖥️ PC-tier</h2>
+  <div id="tierButtons">
+    <button onclick="visaTier('low')">Low tier</button>
+    <button onclick="visaTier('mid')">Mid tier</button>
+    <button onclick="visaTier('high')">High tier</button>
+    <button onclick="visaTier('extreme')">Extreme tier</button>
+  </div>
+
+  <div id="tierResult" style="margin-top:10px"></div>
+</div>
 
     <div id="resultat">
       <h2>Välj en person</h2>
@@ -683,6 +712,30 @@ document.getElementById("filtreraGenrerBtn").onclick=()=>{
       .map(([g,c])=>`<li>${g} (${c})</li>`).join("")}</ul>`;
 	  
 };
+
+function visaTier(tier) {
+  const out = document.getElementById("tierResult");
+  out.innerHTML = "";
+
+  const personer = Object.entries(DATA.personerData)
+    .filter(([_, d]) => d.pcTier === tier)
+    .map(([namn]) => namn);
+
+  if (!personer.length) {
+    out.innerHTML = "<em>Inga personer i denna tier</em>";
+    return;
+  }
+
+  personer.forEach(p => {
+    const b = document.createElement("button");
+    b.textContent = p;
+    b.style.width = "100%";
+    b.style.marginBottom = "6px";
+    b.onclick = () => visaPerson(p);
+    out.appendChild(b);
+  });
+}
+
 
 
 /* ===== PERSONVY ===== */

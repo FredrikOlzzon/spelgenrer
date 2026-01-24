@@ -1024,7 +1024,7 @@ pcTier: "mid",
     },
 	Jesper: {
 		  plattformar: ["PC", "Playstation 5", "Xbox Series S|X", "Nintendo Switch", "Switch 2" ],
-pcTier: "mid",
+pcTier: "low",
 
   pc: {
     cpu: "Intel Core i7-12650H",
@@ -1355,13 +1355,13 @@ Jim: {
 Emilia:
  {
 		  plattformar: ["PC", "Nintendo Switch", ],
-pcTier: "low",
+pcTier: "mid",
 
   pc: {
-    cpu: "AMD Ryzen 5 3550H",
-    gpu: "NVIDIA GeForce GTX 1050 3GB",
-    ram: 8,
-    notes: "Bärbar dator. Här kan ENBART extremt lågt krävande spel vara aktuella. Dubbelkolla systemkrav."
+    cpu: "Intel Core Ultra 7 265K",
+    gpu: "NVIDIA GeForce RTX 5060 8GB",
+    ram: 16,
+    notes: "En modern dator med 20 kärnor. Kan täcka de flesta nyare spelen - dock kan VRAM vara ett potentiellt hinder. Säkerställ att hon installerar spel på rätt disk. Har flera, b.la HD och NVMe SSD."
   },
   alskar: [
   "3D Plattformare",
@@ -1698,4 +1698,5 @@ Niclas: {
   }
 }
 };
+
 

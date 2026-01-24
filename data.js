@@ -706,7 +706,7 @@ pcTier: "low",
     cpu: "Ryzen 5 2600",
     gpu: "Nvidia Geforce RTX 3060 12GB",
     ram: 16,
-    notes: "Låg 'Mid-tier'. Okej dator, grafikkort är dock föråldrat, även om det har större mängd VRAM än genomsnittet."
+    notes: "Övre 'Low-tier' - borderline 'Mid'. Okej dator, grafikkort är dock föråldrat, även om det har större mängd VRAM än genomsnittet."
   },
       alskar: [
         "RPG / CRPG",
@@ -1698,6 +1698,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

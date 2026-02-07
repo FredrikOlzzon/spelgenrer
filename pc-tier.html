@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Nördliv – PC-tier & Grafikkort</title>
+
+  <style>
+    :root {
+      --bg:#0e0e11;
+      --panel:#18181f;
+      --text:#eaeaf0;
+      --muted:#a0a0b0;
+      --border:#2a2a35;
+    }
+
+    body{
+      margin:0;
+      font-family:system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    header{
+      background:linear-gradient(90deg,#000,#111);
+      border-bottom:1px solid var(--border);
+      padding:20px;
+    }
+
+    .header-inner{
+      max-width:1300px;
+      margin:auto;
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+
+    header img{height:60px}
+
+    .top-nav{
+      margin-left:auto;
+      display:flex;
+      gap:12px;
+    }
+
+    .top-nav a{
+      text-decoration:none;
+      padding:8px 14px;
+      background:#f2f2f2;
+      border-radius:6px;
+      color:#333;
+      font-weight:bold;
+    }
+
+    main{
+      max-width:1100px;
+      margin:auto;
+      padding:30px 20px;
+    }
+
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:22px;
+      margin-bottom:24px;
+    }
+
+    h1,h2,h3{
+      margin-top:0;
+    }
+
+    ul{
+      margin:8px 0 0 18px;
+    }
+
+    li{
+      margin-bottom:6px;
+      color:var(--muted);
+    }
+
+    .tier{
+      border-left:5px solid;
+      padding-left:16px;
+      margin-bottom:26px;
+    }
+
+    .tier.low{ border-color:#f87171 }
+    .tier.mid{ border-color:#facc15 }
+    .tier.high{ border-color:#4ade80 }
+    .tier.extreme{ border-color:#38bdf8 }
+
+    .note{
+      background:#020617;
+      border:1px solid var(--border);
+      border-radius:8px;
+      padding:14px;
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <img src="Logo_Nerdlife.png">
+    <h1>PC-tier & Grafikkort</h1>
+
+    <nav class="top-nav">
+      <a href="index.html">👤 Personvy</a>
+      <a href="pc-tier.html">🖥️ PC-tier</a>
+      <a href="matchning.html">🎯 Matchning</a>
+      <a href="statistik.html">📊 Statistik</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="panel">
+    <h2>Vad är PC-tier?</h2>
+    <p>
+  PC-tier används för att snabbt bedöma <strong>vilken typ av spel</strong>
+  en recensents dator realistiskt klarar av.
+</p>
+
+<p>
+  <strong>Viktigt:</strong> PC-tier baseras <em>inte</em> helt och hållet på grafikkort.
+  De nivåer som listas nedan är <strong>endast grafikkortsbaserade riktlinjer</strong>.
+</p>
+
+<p>
+  I praktiken kan en PC-tier <strong>höjas eller sänkas</strong> beroende på hur
+  grafikkortet matchas med övrig hårdvara – framför allt
+  <strong>CPU-prestanda</strong> och <strong>mängd RAM</strong>.
+  En kraftfull CPU eller generös RAM-mängd kan kompensera,
+  medan en svag eller obalanserad konfiguration kan dra ner helhetsbedömningen.
+</p>
+
+<p>
+  Det innebär att ni alltid bör kontrollera varje individuell recensents
+  <strong>Personvy</strong> och den PC-tier de faktiskt är satta till där.
+  Det är den nivån som gäller i praktiken.
+</p>
+
+      PC-tier används för att snabbt bedöma <strong>vilken typ av spel</strong>
+      en recensents dator realistiskt klarar av.
+      Grundbedömningen görs utifrån <strong>grafikkort</strong>,
+      men slutlig nivå avgörs alltid av <strong>helheten</strong>.
+    </p>
+  </div>
+
+  <div class="panel tier extreme">
+    <h3>🚀 Extreme tier</h3>
+    <p>Maxinställningar, ray tracing, 4K, framtidssäkert.</p>
+    <ul>
+      <li>RTX 5090 / 5080 / 4090 / 4080</li>
+      <li>RTX 3090 / 3090 Ti</li>
+      <li>Radeon RX 7900 XTX / RX 9070 XT</li>
+    </ul>
+  </div>
+
+  <div class="panel tier high">
+    <h3>🟢 High tier</h3>
+    <p>Moderna AAA-spel på hög nivå i 1440p.</p>
+    <ul>
+      <li>RTX 5070 / 4070-serien</li>
+      <li>RTX 3080 / 3070</li>
+      <li>Radeon RX 7800 XT / 7900 XT</li>
+    </ul>
+  </div>
+
+  <div class="panel tier mid">
+    <h3>🟡 Mid tier</h3>
+    <p>De flesta spel på medium–high, ibland kompromisser.</p>
+    <ul>
+      <li>RTX 5060 / 4060 / 3060 Ti</li>
+      <li>RTX 2080 / 2070</li>
+      <li>Radeon RX 7700 XT / 6700 XT</li>
+      <li>Intel Arc B580</li>
+    </ul>
+  </div>
+
+  <div class="panel tier low">
+    <h3>🔴 Low tier</h3>
+    <p>Lättare spel, äldre titlar, indie, låga inställningar.</p>
+    <ul>
+      <li>RTX 5050 / 3060 12 GB / 3050</li>
+      <li>GTX 1070 och äldre</li>
+      <li>Radeon RX 6600 och äldre</li>
+      <li>Intel Arc A-serien</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <strong>Viktigt:</strong><br>
+    Grafikkortet sätter grundnivån – men svag CPU, låg RAM-mängd,
+    laptop-GPU eller obalanserad hårdvara kan sänka slutlig PC-tier.
+  </div>
+
+</main>
+
+</body>
+</html>

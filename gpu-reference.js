@@ -39,9 +39,9 @@ const GPU_REFERENCE = {
   "GeForce RTX 2080": { tier: "mid", vram: 8 },
   "GeForce RTX 2070 SUPER": { tier: "mid", vram: 8 },
   "GeForce RTX 2070": { tier: "mid", vram: 8 },
-  "GeForce RTX 2060 SUPER": { tier: "mid", vram: 8 },
-  "GeForce RTX 2060": { tier: "mid", vram: 6 },
-  "GeForce RTX 3050 8 GB": { tier: "mid", vram: 8 },
+  "GeForce RTX 2060 SUPER": { tier: "low", vram: 8 },
+  "GeForce RTX 2060": { tier: "low", vram: 6 },
+  "GeForce RTX 3050 8 GB": { tier: "low", vram: 8 },
 
   /* ===== NVIDIA – GTX ===== */
   "GeForce GTX 1080 Ti": { tier: "mid", vram: 11 },
@@ -56,7 +56,7 @@ const GPU_REFERENCE = {
   "GeForce GTX 1050 3 GB": { tier: "low", vram: 3 },
 
   /* ===== AMD – RX 9000 ===== */
-  "Radeon RX 9070 XT": { tier: "high", vram: 16 },
+  "Radeon RX 9070 XT": { tier: "extreme", vram: 16 },
   "Radeon RX 9070": { tier: "high", vram: 16 },
   "Radeon RX 9060 XT 16 GB": { tier: "mid", vram: 16 },
   "Radeon RX 9060 XT 8 GB": { tier: "mid", vram: 8 },
@@ -85,8 +85,8 @@ const GPU_REFERENCE = {
   "Radeon RX 5600 XT": { tier: "low", vram: 6 },
 
   /* ===== Intel Arc ===== */
-  "Arc A770": { tier: "mid", vram: 16 },
-  "Arc A750": { tier: "mid", vram: 8 },
+  "Arc A770": { tier: "low", vram: 16 },
+  "Arc A750": { tier: "low", vram: 8 },
   "Arc A580": { tier: "low", vram: 8 },
   "Arc B580": { tier: "mid", vram: 12 }
 };
@@ -97,3 +97,4 @@ function klararGpu(personTier, kravTier) {
   return TIER_ORDER.indexOf(personTier) >=
          TIER_ORDER.indexOf(kravTier);
 }
+

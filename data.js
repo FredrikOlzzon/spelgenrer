@@ -1608,7 +1608,7 @@ ejValt: [
     cpu: "Intel Core i9-11900K 3,5GHz",
     gpu: "NVIDIA GeForce RTX 3090",
     ram: 32,
-    notes: "Mitt i 'High tier'. Mycket stark PC för AAA-spel, hög upplösning och krävande titlar."
+    notes: "Når strax över 'extreme' tier. Mycket stark PC för AAA-spel, hög upplösning och krävande titlar."
   },
 
   alskar: [
@@ -1698,6 +1698,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

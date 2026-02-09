@@ -1602,7 +1602,7 @@ ejValt: [
     "Switch 2"
   ],
 
-  pcTier: "high",
+  pcTier: "extreme",
 
   pc: {
     cpu: "Intel Core i9-11900K 3,5GHz",
@@ -1698,6 +1698,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

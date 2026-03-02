@@ -880,7 +880,6 @@ Daniel: {
 		"Pusselspel i förstaperson",
 		"JRPG",
 		"ARPG / Action-rollspel",
-        "Hero shooter / MOBA-liknande FPS",
 		"Open-World / Öppna världar",
 		"Interactive Story / Episodspel",
         "Realtidsstrategi (RTS)",
@@ -899,8 +898,6 @@ Daniel: {
 		"Peka & Klicka Äventyr",
 		"Överlevnad / Crafting / Sandbox",
 		"Sandbox / Creativity / World-building",
-        "MOBA / Tactical Arena / Auto-battler",
-        "Card-based Strategy / Digital CCG",
 		"Partyspel / Micro-games",
         "City building / Farming",
         "Life Simulation / Social Simulation",
@@ -909,9 +906,6 @@ Daniel: {
 		"Rytmspel / Music / Rhythm action",
         "Match-3 spel",
         "Tabletop / Digital Board Games",
-        "Competitive Online (FPS etc.)",
-        "Multiplayer / Coop",
-        "MMO (Onlinespel)",
         "Kortspel / Deckbuilding"
       ],
       undviker: [
@@ -1691,6 +1685,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

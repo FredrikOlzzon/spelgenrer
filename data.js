@@ -900,7 +900,6 @@ Daniel: {
 		"Sandbox / Creativity / World-building",
 		"Partyspel / Micro-games",
         "City building / Farming",
-        "Life Simulation / Social Simulation",
 		"Visuella romaner / Storybaserade spel",
         "Economy / Tycoon Games",
 		"Rytmspel / Music / Rhythm action",
@@ -923,7 +922,6 @@ Daniel: {
         "Multiplayer / Coop",
         "MMO (Onlinespel)",
         "Kortspel / Deckbuilding",
-		"City building / Farming",
   		"Economy / Tycoon Games"
 		],
 		ejValt: [
@@ -1685,6 +1683,7 @@ Niclas: {
   }
 }
 };
+
 
 
 

@@ -23,7 +23,7 @@ personer: [
   "Tony","Victoria","Fyghar","Peter","Emil",
   "Daniel","Robin","Jesper","Andres",
   "Mattias","Jim","Emilia","Arvid","Vanessa","Fredrik 'Poki'",
-  "Niclas"
+  "Niclas","Marcus"
   
 ],
 
@@ -69,6 +69,8 @@ personer: [
     "Överlevnad / Crafting / Sandbox",
     "Sandbox / Creativity / World-building",
     "City building / Farming",
+	"Chill farming",
+	"Realistisk farming",
     "Life Simulation / Social Simulation",
     "Economy / Tycoon Games",
     "Skräckspel",
@@ -266,7 +268,7 @@ pcTier: "low",
     cpu: "Intel Core i7 4790K",
     gpu: "Radeon RX 6600 XT 8GB (snart)",
     ram: 16,
-    notes: "GPU = 'Mid tier', men resten drar ner. Uppgradering av grafikkort möjliggör avsevärt fler spel.Dock hålls datorn tillbaka av föråldrad CPU. Dubbelkolla extra noga innan spel ges."
+    notes: "BACKUP-RECENSENT. GPU = 'Mid tier', men resten drar ner. Uppgradering av grafikkort möjliggör avsevärt fler spel.Dock hålls datorn tillbaka av föråldrad CPU. Dubbelkolla extra noga innan spel ges."
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -348,7 +350,7 @@ pcTier: "low",
     cpu: "Intel Core",
     gpu: "Nvidia Geforce RTX 2060 Super 8GB",
     ram: 16,
-    notes: "Grafikkortet är dugligt, men överlag en svag dator. Inväntar ny HW Info undersökning."
+    notes: "BACKUP-RECENSENT. Grafikkortet är dugligt, men överlag en svag dator. Inväntar ny HW Info undersökning."
   },	
 	
       alskar: [
@@ -626,7 +628,7 @@ pcTier: "mid",
     cpu: "AMD Ryzen 5 9600X",
     gpu: "Intel ARC B580 12GB",
     ram: 32,
-    notes: "Lägre till mitten av 'Mid tier'. Bra för alla typer av spel utifrån råprestanda. Obs! Dubbelkolla drivrutin- och spelstöd för Intel ARC!"
+    notes: "BACKUP-RECENSENT. Lägre till mitten av 'Mid tier'. Bra för alla typer av spel utifrån råprestanda. Obs! Dubbelkolla drivrutin- och spelstöd för Intel ARC!"
   },
       alskar: [
         "FPS / Action (Singel)",
@@ -1674,21 +1676,87 @@ Niclas: {
     cpu: "Intel Core m3",
     gpu: "Intel HD Graphics 515",
     ram: 8,
-    notes: "Det finns ingen värld där Niclas dator kan användas för PC-recensioner. Han måste uppgradera."
+    notes: "Prestandan är dessvärre extremt låg för PC-recensioner."
   },
   alskar: [],
   oppen: [],
   undviker: [],
   ejValt: []
-  }
+  },
+Marcus: {
+  plattformar: ["Playstation 5", "Nintendo Switch", "Switch 2"],
+
+  pc: {
+    cpu: "Intel Xeon E3",
+    gpu: "Nvidia GeForce GTX 960 2GB",
+    ram: 16,
+    notes: "Detta är en skrivdator – ej avsedd för spel. GTX 960 (2GB) är mycket begränsat och datorn bör inte användas för spelrecensioner."
+  },
+
+  alskar: [
+    "3D Plattformare",
+    "2D Plattformare",
+    "Metroidvania-spel",
+    "RPG / CRPG",
+    "JRPG",
+    "Taktiskt RPG / Turbaserat taktiskt RPG",
+    "ARPG / Action-rollspel",
+    "Souls- och Soulslike",
+    "Monsterfångar-RPG",
+    "Open-World / Öppna världar",
+    "Rogue-like / Rogue-lite spel",
+    "Mech-/Robot-strategi eller action",
+    "Överlevnad / Crafting / Sandbox",
+    "Chill farming",
+    "Skräckspel",
+    "Survival Horror FPS",
+    "Competitive Online (FPS etc.)",
+    "Multiplayer / Coop",
+    "Fighting",
+    "Beat-em-Up / Brawler",
+    "Arkadspel",
+    "Klassiska arkadhallsspel"
+  ],
+
+  oppen: [
+    "Pusselspel i förstaperson",
+    "Physics-baserade spel / bygg- och experimentspel",
+    "Interactive Story / Episodspel",
+    "Visuella romaner / Storybaserade spel",
+    "Realtidsstrategi (RTS)",
+    "Turbaserade strategispel (TBS)",
+    "4X-strategi",
+    "Tower Defense",
+    "MOBA / Tactical Arena / Auto-battler",
+    "Card-based Strategy / Digital CCG",
+    "Arkad- och Simcade Racing",
+    "Kart-racing",
+    "Full racing simulator",
+    "Flygsimulator",
+    "Life Simulation / Social Simulation",
+    "Economy / Tycoon Games",
+    "Realistisk farming",
+    "Peka & Klicka Äventyr",
+    "MMO (Onlinespel)",
+    "Partyspel / Micro-games",
+    "Bullet hell / Shoot ’em up (Shmup)",
+    "Rytmspel / Music / Rhythm action",
+    "Match-3 spel",
+    "Kortspel / Deckbuilding",
+    "Tabletop / Digital Board Games"
+  ],
+
+  undviker: [
+    "Grand Strategy",
+    "Övriga fordonsimulatorer",
+    "Ubåt / Rymdsimulatorer",
+    "Sportspel",
+    "City building / Farming",
+    "Walking Simulator i förstaperson"
+  ],
+
+  ejValt: []
+}
+
 }
 };
-
-
-
-
-
-
-
-
-

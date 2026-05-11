@@ -268,7 +268,7 @@ pcTier: "low",
     cpu: "Intel Core i7 4790K",
     gpu: "Radeon RX 6600 XT 8GB (snart)",
     ram: 16,
-    notes: "BACKUP-RECENSENT. GPU = 'Mid tier', men resten drar ner. Uppgradering av grafikkort möjliggör avsevärt fler spel.Dock hålls datorn tillbaka av föråldrad CPU. Dubbelkolla extra noga innan spel ges."
+    notes: "BACKUP-RECENSENT. GPU (Obs. Detta gäller först när han bytt till Radeon 6600 XT )= 'Mid tier', men resten drar ner. Uppgradering av grafikkort möjliggör avsevärt fler spel. Dock hålls datorn tillbaka av föråldrad CPU. Dubbelkolla extra noga innan spel ges."
   },
       alskar: [
         "FPS / Action (Singel)",
